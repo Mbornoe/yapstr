@@ -18,6 +18,21 @@
 		EAD4B8C51653EB6D00ACA306 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8C41653EB6C00ACA306 /* Default-568h@2x.png */; };
 		EAD4B8C81653EB6D00ACA306 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */; };
 		EAD4B8CB1653EB6D00ACA306 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8CA1653EB6D00ACA306 /* ViewController.m */; };
+		EAD4B8D61653EBE700ACA306 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D51653EBE700ACA306 /* User.m */; };
+		EAD4B8D91653EBF200ACA306 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D81653EBF200ACA306 /* Facebook.m */; };
+		EAD4B8DC1653EBFB00ACA306 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DB1653EBFB00ACA306 /* Photo.m */; };
+		EAD4B8DF1653EC0700ACA306 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DE1653EC0700ACA306 /* Location.m */; };
+		EAD4B8E21653EC0E00ACA306 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E11653EC0E00ACA306 /* Event.m */; };
+		EAD4B8E61653EC4800ACA306 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E51653EC4800ACA306 /* CameraViewController.m */; };
+		EAD4B8E91653EC5100ACA306 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */; };
+		EAD4B8EC1653EC5E00ACA306 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8EB1653EC5E00ACA306 /* CreateEventViewController.m */; };
+		EAD4B8EF1653EC6700ACA306 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8EE1653EC6700ACA306 /* MapViewController.m */; };
+		EAD4B8F21653EC7D00ACA306 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8F11653EC7D00ACA306 /* LoginViewController.m */; };
+		EAD4B8F51653EC8800ACA306 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8F41653EC8800ACA306 /* EventViewController.m */; };
+		EAD4B8F81653EC9300ACA306 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8F71653EC9200ACA306 /* MenuViewController.m */; };
+		EAD4B8FB1653ECA200ACA306 /* ViewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8FA1653ECA200ACA306 /* ViewPhotoViewController.m */; };
+		EAD4B8FE1653ECAE00ACA306 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8FD1653ECAE00ACA306 /* SettingsViewController.m */; };
+		EAD4B9011653ECC300ACA306 /* NetworkDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B9001653ECC300ACA306 /* NetworkDriver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +52,36 @@
 		EAD4B8C71653EB6D00ACA306 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8C91653EB6D00ACA306 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EAD4B8CA1653EB6D00ACA306 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EAD4B8D41653EBE700ACA306 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		EAD4B8D51653EBE700ACA306 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		EAD4B8D71653EBF200ACA306 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		EAD4B8D81653EBF200ACA306 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
+		EAD4B8DA1653EBFB00ACA306 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		EAD4B8DB1653EBFB00ACA306 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		EAD4B8DD1653EC0700ACA306 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		EAD4B8DE1653EC0700ACA306 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		EAD4B8E01653EC0E00ACA306 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		EAD4B8E11653EC0E00ACA306 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		EAD4B8E41653EC4800ACA306 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		EAD4B8E51653EC4800ACA306 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		EAD4B8E71653EC5100ACA306 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		EAD4B8EA1653EC5E00ACA306 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
+		EAD4B8EB1653EC5E00ACA306 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
+		EAD4B8ED1653EC6700ACA306 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		EAD4B8EE1653EC6700ACA306 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		EAD4B8F01653EC7D00ACA306 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EAD4B8F11653EC7D00ACA306 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EAD4B8F31653EC8800ACA306 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		EAD4B8F41653EC8800ACA306 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		EAD4B8F61653EC9200ACA306 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		EAD4B8F71653EC9200ACA306 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		EAD4B8F91653ECA200ACA306 /* ViewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPhotoViewController.h; sourceTree = "<group>"; };
+		EAD4B8FA1653ECA200ACA306 /* ViewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPhotoViewController.m; sourceTree = "<group>"; };
+		EAD4B8FC1653ECAE00ACA306 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		EAD4B8FD1653ECAE00ACA306 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		EAD4B8FF1653ECC200ACA306 /* NetworkDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDriver.h; sourceTree = "<group>"; };
+		EAD4B9001653ECC300ACA306 /* NetworkDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDriver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +128,8 @@
 		EAD4B8B41653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXGroup;
 			children = (
+				EAD4B8E31653EC3100ACA306 /* ViewControllers */,
+				EAD4B8D31653EBCC00ACA306 /* Models */,
 				EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */,
 				EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */,
 				EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */,
@@ -105,6 +152,50 @@
 				EAD4B8C41653EB6C00ACA306 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EAD4B8D31653EBCC00ACA306 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4B8D41653EBE700ACA306 /* User.h */,
+				EAD4B8D51653EBE700ACA306 /* User.m */,
+				EAD4B8D71653EBF200ACA306 /* Facebook.h */,
+				EAD4B8D81653EBF200ACA306 /* Facebook.m */,
+				EAD4B8DA1653EBFB00ACA306 /* Photo.h */,
+				EAD4B8DB1653EBFB00ACA306 /* Photo.m */,
+				EAD4B8DD1653EC0700ACA306 /* Location.h */,
+				EAD4B8DE1653EC0700ACA306 /* Location.m */,
+				EAD4B8E01653EC0E00ACA306 /* Event.h */,
+				EAD4B8E11653EC0E00ACA306 /* Event.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EAD4B8E31653EC3100ACA306 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4B8E41653EC4800ACA306 /* CameraViewController.h */,
+				EAD4B8E51653EC4800ACA306 /* CameraViewController.m */,
+				EAD4B8E71653EC5100ACA306 /* CollectionViewController.h */,
+				EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */,
+				EAD4B8EA1653EC5E00ACA306 /* CreateEventViewController.h */,
+				EAD4B8EB1653EC5E00ACA306 /* CreateEventViewController.m */,
+				EAD4B8ED1653EC6700ACA306 /* MapViewController.h */,
+				EAD4B8EE1653EC6700ACA306 /* MapViewController.m */,
+				EAD4B8F01653EC7D00ACA306 /* LoginViewController.h */,
+				EAD4B8F11653EC7D00ACA306 /* LoginViewController.m */,
+				EAD4B8F31653EC8800ACA306 /* EventViewController.h */,
+				EAD4B8F41653EC8800ACA306 /* EventViewController.m */,
+				EAD4B8F61653EC9200ACA306 /* MenuViewController.h */,
+				EAD4B8F71653EC9200ACA306 /* MenuViewController.m */,
+				EAD4B8F91653ECA200ACA306 /* ViewPhotoViewController.h */,
+				EAD4B8FA1653ECA200ACA306 /* ViewPhotoViewController.m */,
+				EAD4B8FC1653ECAE00ACA306 /* SettingsViewController.h */,
+				EAD4B8FD1653ECAE00ACA306 /* SettingsViewController.m */,
+				EAD4B8FF1653ECC200ACA306 /* NetworkDriver.h */,
+				EAD4B9001653ECC300ACA306 /* NetworkDriver.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +267,21 @@
 				EAD4B8BB1653EB6C00ACA306 /* main.m in Sources */,
 				EAD4B8BF1653EB6C00ACA306 /* AppDelegate.m in Sources */,
 				EAD4B8CB1653EB6D00ACA306 /* ViewController.m in Sources */,
+				EAD4B8D61653EBE700ACA306 /* User.m in Sources */,
+				EAD4B8D91653EBF200ACA306 /* Facebook.m in Sources */,
+				EAD4B8DC1653EBFB00ACA306 /* Photo.m in Sources */,
+				EAD4B8DF1653EC0700ACA306 /* Location.m in Sources */,
+				EAD4B8E21653EC0E00ACA306 /* Event.m in Sources */,
+				EAD4B8E61653EC4800ACA306 /* CameraViewController.m in Sources */,
+				EAD4B8E91653EC5100ACA306 /* CollectionViewController.m in Sources */,
+				EAD4B8EC1653EC5E00ACA306 /* CreateEventViewController.m in Sources */,
+				EAD4B8EF1653EC6700ACA306 /* MapViewController.m in Sources */,
+				EAD4B8F21653EC7D00ACA306 /* LoginViewController.m in Sources */,
+				EAD4B8F51653EC8800ACA306 /* EventViewController.m in Sources */,
+				EAD4B8F81653EC9300ACA306 /* MenuViewController.m in Sources */,
+				EAD4B8FB1653ECA200ACA306 /* ViewPhotoViewController.m in Sources */,
+				EAD4B8FE1653ECAE00ACA306 /* SettingsViewController.m in Sources */,
+				EAD4B9011653ECC300ACA306 /* NetworkDriver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
