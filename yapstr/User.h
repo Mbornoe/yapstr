@@ -14,4 +14,6 @@
 
 @interface User : NSObject
 
+- (void) uploadUser;
+
 @end

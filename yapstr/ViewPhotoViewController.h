@@ -14,7 +14,6 @@
 
 @interface ViewPhotoViewController : UIViewController
 
-- (void) requestPhotosFromCameraRoll;
 - (void) requestPhotosFromServer;
 - (void) selectPhotoFromCameraRoll;
 - (void) showPhoto;

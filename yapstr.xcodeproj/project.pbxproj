@@ -17,7 +17,6 @@
 		EAD4B8C31653EB6C00ACA306 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8C21653EB6C00ACA306 /* Default@2x.png */; };
 		EAD4B8C51653EB6D00ACA306 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8C41653EB6C00ACA306 /* Default-568h@2x.png */; };
 		EAD4B8C81653EB6D00ACA306 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */; };
-		EAD4B8CB1653EB6D00ACA306 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8CA1653EB6D00ACA306 /* ViewController.m */; };
 		EAD4B8D61653EBE700ACA306 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D51653EBE700ACA306 /* User.m */; };
 		EAD4B8D91653EBF200ACA306 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D81653EBF200ACA306 /* Facebook.m */; };
 		EAD4B8DC1653EBFB00ACA306 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DB1653EBFB00ACA306 /* Photo.m */; };
@@ -50,8 +49,6 @@
 		EAD4B8C21653EB6C00ACA306 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		EAD4B8C41653EB6C00ACA306 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAD4B8C71653EB6D00ACA306 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		EAD4B8C91653EB6D00ACA306 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EAD4B8CA1653EB6D00ACA306 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EAD4B8D41653EBE700ACA306 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		EAD4B8D51653EBE700ACA306 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		EAD4B8D71653EBF200ACA306 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
@@ -133,8 +130,6 @@
 				EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */,
 				EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */,
 				EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */,
-				EAD4B8C91653EB6D00ACA306 /* ViewController.h */,
-				EAD4B8CA1653EB6D00ACA306 /* ViewController.m */,
 				EAD4B8B51653EB6C00ACA306 /* Supporting Files */,
 			);
 			path = yapstr;
@@ -266,7 +261,6 @@
 			files = (
 				EAD4B8BB1653EB6C00ACA306 /* main.m in Sources */,
 				EAD4B8BF1653EB6C00ACA306 /* AppDelegate.m in Sources */,
-				EAD4B8CB1653EB6D00ACA306 /* ViewController.m in Sources */,
 				EAD4B8D61653EBE700ACA306 /* User.m in Sources */,
 				EAD4B8D91653EBF200ACA306 /* Facebook.m in Sources */,
 				EAD4B8DC1653EBFB00ACA306 /* Photo.m in Sources */,
@@ -398,6 +392,7 @@
 				EAD4B8D01653EB6D00ACA306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

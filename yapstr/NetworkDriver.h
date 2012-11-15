@@ -14,4 +14,6 @@
 
 @interface NetworkDriver : NSObject
 
+- (void) uploadPhoto;
+
 @end
