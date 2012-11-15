@@ -11,9 +11,18 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "Facebook.h"
+#import "User.h"
+#import "AppDelegate.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController{
+    //    User* myUser;
+    FacebookUser* myFacebook;
+    AppDelegate *mainDelegate;
+    
+}
+//@property (strong, nonatomic) User* myUser;
+@property (strong, nonatomic) FacebookUser* myFacebook;
 
-- (void) uploadUser;
 
 @end

@@ -14,4 +14,9 @@
 
 @implementation NetworkDriver
 
+
+- (void) uploadPhoto
+{
+    
+}
 @end

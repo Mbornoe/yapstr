@@ -14,4 +14,25 @@
 
 @implementation Event
 
+- (void) createEvent
+{
+    
+}
+- (void) requestEvents
+{
+    
+}
+- (void) selectEvent
+{
+    
+}
+- (void) showEvent
+{
+    
+}
+- (void) showEvents
+{
+    
+}
+
 @end

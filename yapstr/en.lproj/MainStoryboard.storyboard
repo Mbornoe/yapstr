@@ -1,23 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="loginScreen_jomfruanegade.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-YY-hCA"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeK-jS-CLG">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login" backgroundImage="login-button-small.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Login:" destination="2" eventType="touchUpInside" id="yhq-Jx-HGb"/>
+                                    <segue destination="W57-vj-MOp" kind="modal" identifier="loggedInSegue" modalTransitionStyle="crossDissolve" id="hYU-42-OhU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="YAPSTR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-Qe-UD5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2SP-q1-u6i"/>
+                                    <constraint firstAttribute="height" constant="60" id="LJF-X1-ona"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RhU-Qe-UD5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="97" id="N7I-pU-hNT"/>
+                            <constraint firstItem="RhU-Qe-UD5" firstAttribute="centerX" secondItem="qeK-jS-CLG" secondAttribute="centerX" type="default" id="RUY-im-2rT"/>
+                            <constraint firstItem="RhU-Qe-UD5" firstAttribute="centerX" secondItem="4Ce-YY-hCA" secondAttribute="centerX" type="default" id="ZP2-EM-Ycr"/>
+                            <constraint firstItem="4Ce-YY-hCA" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="ejP-9v-8oG"/>
+                            <constraint firstItem="4Ce-YY-hCA" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="gSd-cg-bru"/>
+                            <constraint firstAttribute="bottom" secondItem="qeK-jS-CLG" secondAttribute="bottom" constant="121" id="qoM-4x-i6u"/>
+                            <constraint firstItem="4Ce-YY-hCA" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="svG-jc-7NQ"/>
+                            <constraint firstItem="4Ce-YY-hCA" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="teD-jq-ar9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="eUN-o3-n5V">
+            <objects>
+                <viewController id="W57-vj-MOp" customClass="CameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXv-wa-XKD">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CamView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3d-dd-5Mr">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S3d-dd-5Mr" firstAttribute="centerX" secondItem="cXv-wa-XKD" secondAttribute="centerX" type="default" id="8P1-br-hJF"/>
+                            <constraint firstItem="S3d-dd-5Mr" firstAttribute="top" secondItem="cXv-wa-XKD" secondAttribute="top" constant="130" id="SV2-Mb-QdS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OR-de-Ugr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643" y="83"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="login-button-small.png" width="151" height="43"/>
+        <image name="loginScreen_jomfruanegade.png" width="640" height="960"/>
+    </resources>
+    <classes>
+        <class className="CameraViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CameraViewController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

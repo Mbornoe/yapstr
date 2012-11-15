@@ -11,9 +11,12 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Facebook.h"
 
 @interface User : NSObject
 
-- (void) uploadUser;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSNumber *id;
+@property (strong, nonatomic) NSString *facebookID;
 
 @end

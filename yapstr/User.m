@@ -13,5 +13,6 @@
 #import "User.h"
 
 @implementation User
+@synthesize facebookID, name;
 
 @end

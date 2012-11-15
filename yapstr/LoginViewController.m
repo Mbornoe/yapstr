@@ -16,31 +16,55 @@
 
 @end
 
+
 @implementation LoginViewController
+@synthesize myFacebook;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) uploadUser
-{
+    
+    mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    myFacebook = [[FacebookUser alloc] init];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(facebookDataLoaded:)
+     name:FacebookDataLoadedNotification
+     object:nil];
     
 }
+
+- (void)viewDidAppear:(BOOL)animated{
+    // Do any additional setup after loading the view, typically from a nib.
+    if ([myFacebook getFacebookID]) {
+        mainDelegate.myUser.facebookID = [myFacebook getFacebookID];
+        mainDelegate.myUser.name = [myFacebook getFacebookName];
+        [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
+        NSLog(@"Is login");
+    }
+    else
+    {
+        NSLog(@"Is NOT login");
+        [myFacebook openSessionWithAllowLoginUI:NO];
+    }
+}
+
+- (void)viewDidUnload{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)facebookDataLoaded:(NSNotification*)notification {
+        mainDelegate.myUser.facebookID = [myFacebook getFacebookID];
+    NSLog(@"User.facebookID = %@", mainDelegate.myUser.facebookID);
+    mainDelegate.myUser.name = [myFacebook getFacebookName];
+    [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
+}
+
+- (IBAction)Login:(id)sender {
+    NSLog(@"Button pust");
+    [myFacebook openSessionWithAllowLoginUI:YES];
+    NSLog(@"Method logWithFacebook is calld");
+}
+
 @end

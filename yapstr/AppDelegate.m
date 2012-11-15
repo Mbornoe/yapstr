@@ -9,10 +9,12 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize myUser;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    myUser = [[User alloc] init];
     return YES;
 }
 							
