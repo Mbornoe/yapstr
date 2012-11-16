@@ -52,31 +52,138 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="80" y="97"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Initial Sliding View Controller-->
         <scene sceneID="eUN-o3-n5V">
             <objects>
-                <viewController id="W57-vj-MOp" customClass="CameraViewController" sceneMemberID="viewController">
+                <viewController id="W57-vj-MOp" customClass="InitialSlidingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cXv-wa-XKD">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CamView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3d-dd-5Mr">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="S3d-dd-5Mr" firstAttribute="centerX" secondItem="cXv-wa-XKD" secondAttribute="centerX" type="default" id="8P1-br-hJF"/>
-                            <constraint firstItem="S3d-dd-5Mr" firstAttribute="top" secondItem="cXv-wa-XKD" secondAttribute="top" constant="130" id="SV2-Mb-QdS"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OR-de-Ugr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="83"/>
+            <point key="canvasLocation" x="518" y="97"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="swJ-YZ-AET">
+            <objects>
+                <viewController storyboardIdentifier="Menu" id="jRh-hn-Ffz" customClass="MenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kmr-M3-fSM">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqo-40-HT5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179" id="XD4-V0-arM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhotoButton:" destination="jRh-hn-Ffz" eventType="touchUpInside" id="jGD-nL-skv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgT-yM-bww">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="View Events">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aa-Xl-GuD">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.023734775200886078" green="0.0" blue="0.45272640306122447" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lqo-40-HT5" firstAttribute="top" secondItem="kmr-M3-fSM" secondAttribute="top" constant="119" id="75n-Qm-epY"/>
+                            <constraint firstItem="9aa-Xl-GuD" firstAttribute="trailing" secondItem="zgT-yM-bww" secondAttribute="trailing" type="default" id="93d-Yz-yZh"/>
+                            <constraint firstItem="9aa-Xl-GuD" firstAttribute="top" secondItem="kmr-M3-fSM" secondAttribute="top" constant="252" id="KDG-sL-Ijd"/>
+                            <constraint firstItem="zgT-yM-bww" firstAttribute="top" secondItem="kmr-M3-fSM" secondAttribute="top" constant="187" id="QYh-Hp-ML5"/>
+                            <constraint firstItem="zgT-yM-bww" firstAttribute="trailing" secondItem="lqo-40-HT5" secondAttribute="trailing" type="default" id="c7f-xs-bPJ"/>
+                            <constraint firstItem="lqo-40-HT5" firstAttribute="leading" secondItem="zgT-yM-bww" secondAttribute="leading" type="default" id="e2e-3s-gql"/>
+                            <constraint firstItem="9aa-Xl-GuD" firstAttribute="leading" secondItem="zgT-yM-bww" secondAttribute="leading" type="default" id="nV4-7E-FBN"/>
+                            <constraint firstItem="9aa-Xl-GuD" firstAttribute="centerX" secondItem="kmr-M3-fSM" secondAttribute="centerX" type="default" id="neV-VT-FPD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEE-f9-p2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720" y="-627"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="n6q-8F-odl">
+            <objects>
+                <viewController storyboardIdentifier="cameraView" id="0SP-fY-NAt" customClass="CameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o3a-iF-Wpl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYG-nY-88Z">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLr-Tb-bK8">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="revealSideMenu:" destination="0SP-fY-NAt" eventType="touchUpInside" id="0n9-9a-L3z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-Y1-QRp">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCameraUI:" destination="0SP-fY-NAt" eventType="touchUpInside" id="GU7-kc-s79"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4D1-Y1-QRp" firstAttribute="top" secondItem="o3a-iF-Wpl" secondAttribute="top" constant="20" symbolic="YES" type="default" id="7XN-a3-rnY"/>
+                            <constraint firstItem="zYG-nY-88Z" firstAttribute="top" secondItem="o3a-iF-Wpl" secondAttribute="top" constant="67" id="H5h-na-4Go"/>
+                            <constraint firstItem="PLr-Tb-bK8" firstAttribute="leading" secondItem="o3a-iF-Wpl" secondAttribute="leading" constant="8" id="I2z-4X-Orc"/>
+                            <constraint firstAttribute="trailing" secondItem="4D1-Y1-QRp" secondAttribute="trailing" constant="31" id="i7u-f1-oAW"/>
+                            <constraint firstItem="zYG-nY-88Z" firstAttribute="centerX" secondItem="o3a-iF-Wpl" secondAttribute="centerX" type="default" id="jSR-6b-LB2"/>
+                            <constraint firstItem="PLr-Tb-bK8" firstAttribute="top" secondItem="o3a-iF-Wpl" secondAttribute="top" constant="8" id="uTo-A1-2f8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gy-JZ-evh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="98"/>
         </scene>
     </scenes>
     <resources>
@@ -86,11 +193,28 @@
     <classes>
         <class className="CameraViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CameraViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSideMenu:"/>
+                <relationship kind="action" name="showCameraUI:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
+        </class>
+        <class className="InitialSlidingViewController" superclassName="ECSlidingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialSlidingViewController.h"/>
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
                 <relationship kind="action" name="Login:"/>
+            </relationships>
+        </class>
+        <class className="MenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="takePhotoButton:"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
