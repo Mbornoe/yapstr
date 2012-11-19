@@ -11,9 +11,17 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "NetworkDriver.h"
+@interface CreateEventViewController : UIViewController<UITextFieldDelegate>
 
-@interface CreateEventViewController : UIViewController
 
-- (void) createEvent;
+@property (weak, nonatomic) IBOutlet UISwitch *privateSwitch;
+@property (strong, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *description;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UILabel *privatLabel;
 
+- (IBAction)createEvent:(id)sender;
+
+NSString *getDateString();
 @end

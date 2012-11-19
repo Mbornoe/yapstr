@@ -15,5 +15,8 @@
 @interface NetworkDriver : NSObject
 
 - (void) uploadPhoto;
++ (void) uploadEvent:(NSData*)eventData;
++(NSString *) parseToJSON: (NSData*)dataToParse;
+
 
 @end
