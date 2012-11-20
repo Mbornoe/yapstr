@@ -53,4 +53,15 @@
         [self.slidingViewController resetTopView];
     }];
 }
+- (IBAction)viewEventButton:(id)sender {
+    NSString *identifier = [NSString stringWithFormat:@"eventView"];
+    UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+    
+    [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{
+        CGRect frame = self.slidingViewController.topViewController.view.frame;
+        self.slidingViewController.topViewController = newTopViewController;
+        self.slidingViewController.topViewController.view.frame = frame;
+        [self.slidingViewController resetTopView];
+    }];
+}
 @end
