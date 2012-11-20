@@ -10,18 +10,23 @@
  * The class handles creation of new events.
  */
 
+
+
 #import <UIKit/UIKit.h>
 #import "NetworkDriver.h"
-@interface CreateEventViewController : UIViewController<UITextFieldDelegate>
+#import <CoreLocation/CoreLocation.h>
 
 
+@interface CreateEventViewController : UIViewController <UITextFieldDelegate,CLLocationManagerDelegate>
+- (IBAction)checkPrivat:(id)sender;
 @property (weak, nonatomic) IBOutlet UISwitch *privateSwitch;
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *description;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UILabel *privatLabel;
-
-- (IBAction)createEvent:(id)sender;
+@property(assign, nonatomic)double longitude;
+@property(assign, nonatomic)double latitude;
+- (IBAction)create:(id)sender;
 
 NSString *getDateString();
 @end
