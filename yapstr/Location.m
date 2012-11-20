@@ -13,8 +13,8 @@
 #import "Location.h"
 
 @implementation Location
-@synthesize x;
-@synthesize y;
+@synthesize longitude;
+@synthesize latitude;
 -(id) initWithLatitude: (double)latitude andLongitude: (double)longitude{
     x = latitude;
     y = longitude;
