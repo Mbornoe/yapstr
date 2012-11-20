@@ -16,8 +16,8 @@
 @synthesize x;
 @synthesize y;
 -(id) initWithLatitude: (double)latitude andLongitude: (double)longitude{
-    y = latitude;
-    x = longitude;
+    x = latitude;
+    y = longitude;
     return self;
 }
 @end
