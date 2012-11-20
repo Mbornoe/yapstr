@@ -24,7 +24,7 @@
 {
     [super viewWillAppear:animated];
     
-    NSLog(@"Hej! Jeg har er viewWillAppear");
+//    NSLog(@"Hej! Jeg har er viewWillAppear");
     
     // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
     // You just need to set the opacity, radius, and color.
@@ -51,7 +51,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    imageView.image=nil;
+    //imageView.image=nil;
     [self startCameraControllerFromViewController: self
      
                                     usingDelegate: self];
@@ -60,6 +60,7 @@
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    //NSLog(@"Jeg gemmer billede");
     UIImage *image;
     image =(UIImage *)[info valueForKey:UIImagePickerControllerOriginalImage];
     imageView.image=image;
@@ -68,6 +69,8 @@
     UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
     //[self dismissViewControllerAnimated:YES completion:nil];
     [picker dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"Jeg gemmer billede");
+    
 }
 
 
@@ -82,7 +85,7 @@
     
     
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-        [picker dismissViewControllerAnimated:YES completion:nil];
+        [picker dismissViewControllerAnimated:NO completion:nil];
 }
 
 
@@ -140,7 +143,7 @@
     
     // Make camera view full screen:
 	cameraUI.wantsFullScreenLayout = YES;
-	cameraUI.cameraViewTransform = CGAffineTransformScale(cameraUI.cameraViewTransform, CAMERA_TRANSFORM_X, CAMERA_TRANSFORM_Y);
+	//cameraUI.cameraViewTransform = CGAffineTransformScale(cameraUI.cameraViewTransform, CAMERA_TRANSFORM_X, CAMERA_TRANSFORM_Y);
     
     cameraUI.delegate = delegate;
     

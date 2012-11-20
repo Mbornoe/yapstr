@@ -24,13 +24,13 @@
 		DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0BCEB165B76C600D06983 /* MapKit.framework */; };
 		DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */; };
 		DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */; };
+		EAD18BF3165B94F7007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18BF1165B94F7007BB868 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
 		EAD4B8B31653EB6C00ACA306 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */; };
 		EAD4B8B91653EB6C00ACA306 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8B71653EB6C00ACA306 /* InfoPlist.strings */; };
 		EAD4B8BB1653EB6C00ACA306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8BA1653EB6C00ACA306 /* main.m */; };
 		EAD4B8BF1653EB6C00ACA306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */; };
-		EAD4B8C81653EB6D00ACA306 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */; };
 		EAD4B8D61653EBE700ACA306 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D51653EBE700ACA306 /* User.m */; };
 		EAD4B8D91653EBF200ACA306 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D81653EBF200ACA306 /* Facebook.m */; };
 		EAD4B8DC1653EBFB00ACA306 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DB1653EBFB00ACA306 /* Photo.m */; };
@@ -71,6 +71,7 @@
 		DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		DDA0BCEB165B76C600D06983 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EAD18BF2165B94F7007BB868 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "../../../../../../../Downloads/yapstr-master/yapstr/en.lproj/MainStoryboard.storyboard"; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAD4B8B01653EB6C00ACA306 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,7 +82,6 @@
 		EAD4B8BC1653EB6C00ACA306 /* yapstr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yapstr-Prefix.pch"; sourceTree = "<group>"; };
 		EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EAD4B8C71653EB6D00ACA306 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8D41653EBE700ACA306 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		EAD4B8D51653EBE700ACA306 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		EAD4B8D71653EBF200ACA306 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
@@ -191,11 +191,11 @@
 		EAD4B8B41653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXGroup;
 			children = (
+				EAD18BF1165B94F7007BB868 /* MainStoryboard.storyboard */,
 				EAD4B8E31653EC3100ACA306 /* ViewControllers */,
 				EAD4B8D31653EBCC00ACA306 /* Models */,
 				EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */,
 				EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */,
-				EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */,
 				EAD4B8B51653EB6C00ACA306 /* Supporting Files */,
 			);
 			path = yapstr;
@@ -319,13 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD4B8B91653EB6C00ACA306 /* InfoPlist.strings in Resources */,
-				EAD4B8C81653EB6D00ACA306 /* MainStoryboard.storyboard in Resources */,
 				A31F6B29165501F4001D0D76 /* FacebookSDKResources.bundle in Resources */,
 				A31F6B2D16550404001D0D76 /* loginScreen_jomfruanegade.png in Resources */,
 				A31F6B2F1655082D001D0D76 /* login-button-small.png in Resources */,
 				A3086AA51655132C0079B83D /* Default.png in Resources */,
 				A3086AA81655136F0079B83D /* Default@2x.png in Resources */,
 				A3086AAA165513920079B83D /* Default-568h@2x.png in Resources */,
+				EAD18BF3165B94F7007BB868 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,20 +364,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		EAD18BF1165B94F7007BB868 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAD18BF2165B94F7007BB868 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		EAD4B8B71653EB6C00ACA306 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EAD4B8B81653EB6C00ACA306 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAD4B8C71653EB6D00ACA306 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
