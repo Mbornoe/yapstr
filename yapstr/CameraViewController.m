@@ -17,6 +17,44 @@
 @end
 
 @implementation CameraViewController
+@synthesize imageView;
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
+    // You just need to set the opacity, radius, and color.
+    self.view.layer.shadowOpacity = 0.75f;
+    self.view.layer.shadowRadius = 10.0f;
+    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    }
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
+
+- (IBAction)showCameraUI:(id)sender {
+    imageView.image=nil;
+    [self startCameraControllerFromViewController: self
+     
+                                    usingDelegate: self];
+    
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *image;
+    image =(UIImage *)[info valueForKey:UIImagePickerControllerOriginalImage];
+    imageView.image=image;
+    UIImage *imageToSave;
+    imageToSave=imageView.image;
+    UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 @synthesize imageView;
 
@@ -78,11 +116,28 @@
 }
 
 
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 - (void)viewDidLoad
 {
     imagePicker=[[UIImagePickerController alloc]init];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+
+
+- (void)viewWillAppear
+{
+	// Do any additional setup after loading the view.
+    imageView.image=nil;
+    [self startCameraControllerFromViewController: self
+     
+                                    usingDelegate: self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -163,6 +218,10 @@
 {
     
 }
+- (IBAction)revealSideMenu:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECRight];
+}
+
 - (IBAction)revealSideMenu:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
 }

@@ -11,9 +11,22 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Location.h"
+#import <MapKit/MapKit.h>
 
-@interface Event : NSObject
-
+@interface Event : NSObject<MKAnnotation>{
+    CLLocationCoordinate2D coordinate;
+    NSString *subtitle;
+    NSString *title;
+}
+@property NSString *privateOn;
+@property NSString *name;
+@property NSString *date;
+@property NSString *description;
+@property NSString *password;
+@property Location *location;
+@property (retain) NSNumber* eventId;
+-(void)setCoordinate:(CLLocationCoordinate2D) c;
 - (void) createEvent;
 - (void) requestEvents;
 - (void) selectEvent;

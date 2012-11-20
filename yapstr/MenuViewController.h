@@ -11,7 +11,9 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "ECSlidingViewController.h"
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController <UITableViewDataSource, UITabBarControllerDelegate>
+- (IBAction)takePhotoButton:(id)sender;
 
 @end
