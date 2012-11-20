@@ -27,6 +27,8 @@
 - (void) takePhoto;
 - (void) uploadPhoto;
 
+- (IBAction)revealSideMenu:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 // Transform values for full screen support:
