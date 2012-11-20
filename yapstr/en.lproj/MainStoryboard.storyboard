@@ -56,47 +56,75 @@
         <!--Camera View Controller-->
         <scene sceneID="eUN-o3-n5V">
             <objects>
-                <viewController id="W57-vj-MOp" customClass="CameraViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cXv-wa-XKD">
+                <viewController id="W57-vj-MOp" customClass="CameraViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OR-de-Ugr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645" y="0.0"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="8DX-ie-17W">
+            <objects>
+                <viewController storyboardIdentifier="cameaView" id="ju8-Yq-TA2" customClass="CameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4jG-XS-Jfu">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CamView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3d-dd-5Mr">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-3r-E0W">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="466" id="uE2-Dj-A44"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bc-Nh-pU1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCameraUI:" destination="ju8-Yq-TA2" eventType="touchUpInside" id="di5-tW-bcR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvz-Q7-RFZ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Upload Photo">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="ju8-Yq-TA2" eventType="touchUpInside" id="B5B-4f-ROm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="S3d-dd-5Mr" firstAttribute="centerX" secondItem="cXv-wa-XKD" secondAttribute="centerX" type="default" id="8P1-br-hJF"/>
-                            <constraint firstItem="S3d-dd-5Mr" firstAttribute="top" secondItem="cXv-wa-XKD" secondAttribute="top" constant="130" id="SV2-Mb-QdS"/>
+                            <constraint firstItem="jZR-3r-E0W" firstAttribute="leading" secondItem="4jG-XS-Jfu" secondAttribute="leading" type="default" id="Ckl-AW-Rpd"/>
+                            <constraint firstItem="jZR-3r-E0W" firstAttribute="trailing" secondItem="4jG-XS-Jfu" secondAttribute="trailing" type="default" id="G3X-Y6-W3W"/>
+                            <constraint firstAttribute="bottom" secondItem="Xvz-Q7-RFZ" secondAttribute="bottom" constant="19" id="MHQ-ab-wHO"/>
+                            <constraint firstItem="jZR-3r-E0W" firstAttribute="top" secondItem="4jG-XS-Jfu" secondAttribute="top" type="default" id="Rii-In-UVL"/>
+                            <constraint firstItem="0bc-Nh-pU1" firstAttribute="leading" secondItem="4jG-XS-Jfu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cp5-Uq-I7c"/>
+                            <constraint firstAttribute="bottom" secondItem="0bc-Nh-pU1" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="wLP-Wg-SrT"/>
+                            <constraint firstAttribute="trailing" secondItem="Xvz-Q7-RFZ" secondAttribute="trailing" constant="45" id="z4n-YR-7f2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="jZR-3r-E0W" id="W5v-2O-MyF"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6OR-de-Ugr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0D-ju-dwB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="83"/>
+            <point key="canvasLocation" x="302" y="825"/>
         </scene>
     </scenes>
     <resources>
         <image name="login-button-small.png" width="151" height="43"/>
         <image name="loginScreen_jomfruanegade.png" width="640" height="960"/>
     </resources>
-    <classes>
-        <class className="CameraViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CameraViewController.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Login:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
