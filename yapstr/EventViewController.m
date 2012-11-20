@@ -11,26 +11,52 @@
  */
 
 #import "EventViewController.h"
+#import "PhotoCollectionViewController.h"
+#import "NetworkDriver.h"
 
 @interface EventViewController ()
 
 @end
 
 @implementation EventViewController
+@synthesize events;
+@synthesize tableView;
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [events count];
+}
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)unused cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    return self;
+    Event *event = [events objectAtIndex: [indexPath row]];
+    cell.textLabel.text = event.name;
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath  *)indexPath {
+    [self selectEvent];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"eventListToCollection"])
+    {
+        NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
+        Event *temp = [events objectAtIndex: [indexPath row]];
+        PhotoCollectionViewController *vs = [segue destinationViewController];
+        vs.event=temp;
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self requestEvents];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,11 +67,11 @@
 
 - (void) requestEvents
 {
-    
+  events = [NetworkDriver regEvents];   
 }
 - (void) selectEvent
 {
-    
+    [self performSegueWithIdentifier:@"eventListToCollection" sender:self];
 }
 - (void) showEvent
 {

@@ -12,8 +12,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventViewController : UIViewController
-
+@interface EventViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    IBOutlet UITableView *tableView;
+}
+@property (strong) NSArray *events;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 - (void) requestEvents;
 - (void) selectEvent;
 - (void) showEvent;

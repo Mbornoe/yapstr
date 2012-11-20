@@ -11,9 +11,17 @@
  */
 
 #import "Event.h"
-
 @implementation Event
+@synthesize coordinate;
+@synthesize title;
+@synthesize subtitle;
+@synthesize eventId;
 
+-(void)setCoordinate:(CLLocationCoordinate2D) c {
+    coordinate=c;
+    title = [self name];
+    subtitle = [NSString stringWithFormat:@"Event id: %i",[eventId intValue]];
+}
 - (void) createEvent
 {
     

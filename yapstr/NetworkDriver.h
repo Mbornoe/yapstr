@@ -11,12 +11,14 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Event.h"
 
 @interface NetworkDriver : NSObject
 
 - (void) uploadPhoto;
 + (void) uploadEvent:(NSData*)eventData;
 +(NSString *) parseToJSON: (NSData*)dataToParse;
-
++(NSArray*)regEvents;
++(NSArray*)reqPhotosWithEvent:(Event*)event;
 
 @end

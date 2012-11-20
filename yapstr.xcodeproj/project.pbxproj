@@ -21,6 +21,9 @@
 		A393D62E165637EA00BA850C /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62B165637EA00BA850C /* ECSlidingViewController.m */; };
 		A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */; };
 		A393D6321656387000BA850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A393D6311656387000BA850C /* QuartzCore.framework */; };
+		DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0BCEB165B76C600D06983 /* MapKit.framework */; };
+		DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */; };
+		DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
 		EAD4B8B31653EB6C00ACA306 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */; };
@@ -63,6 +66,11 @@
 		A393D62C165637EA00BA850C /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
 		A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
 		A393D6311656387000BA850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DDA0BCE6165B725B00D06983 /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
+		DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
+		DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		DDA0BCEB165B76C600D06983 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAD4B8B01653EB6C00ACA306 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */,
 				A393D6321656387000BA850C /* QuartzCore.framework in Frameworks */,
 				A31F6B26165501E0001D0D76 /* AdSupport.framework in Frameworks */,
 				A31F6B24165501D2001D0D76 /* Social.framework in Frameworks */,
@@ -148,6 +157,7 @@
 		EAD4B89F1653EB6C00ACA306 = {
 			isa = PBXGroup;
 			children = (
+				DDA0BCEB165B76C600D06983 /* MapKit.framework */,
 				EAD4B8B41653EB6C00ACA306 /* yapstr */,
 				EAD4B8AD1653EB6C00ACA306 /* Frameworks */,
 				EAD4B8AB1653EB6C00ACA306 /* Products */,
@@ -226,6 +236,8 @@
 		EAD4B8E31653EC3100ACA306 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DDA0BCE6165B725B00D06983 /* PhotoCollectionViewController.h */,
+				DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */,
 				A393D627165637D600BA850C /* InitialSlidingViewController.h */,
 				A393D628165637D600BA850C /* InitialSlidingViewController.m */,
 				A393D630165637EF00BA850C /* ECSlidingViewController */,
@@ -249,6 +261,8 @@
 				EAD4B8FD1653ECAE00ACA306 /* SettingsViewController.m */,
 				EAD4B8FF1653ECC200ACA306 /* NetworkDriver.h */,
 				EAD4B9001653ECC300ACA306 /* NetworkDriver.m */,
+				DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */,
+				DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -342,6 +356,8 @@
 				A393D629165637D600BA850C /* InitialSlidingViewController.m in Sources */,
 				A393D62E165637EA00BA850C /* ECSlidingViewController.m in Sources */,
 				A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */,
+				DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */,
+				DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

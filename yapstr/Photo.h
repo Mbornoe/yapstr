@@ -11,9 +11,15 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Location.h"
 
 @interface Photo : NSObject
-
+@property (retain) NSString* photoPath;
+@property (retain) NSString* thumpnailPath;
+@property (retain) NSNumber* userID;
+@property (retain) Location* location;
+@property (retain) NSNumber* eventID;
+@property (retain) NSNumber* photoID;
 - (void) startCamera;
 - (void) takePhoto;
 - (void) showPhoto;
