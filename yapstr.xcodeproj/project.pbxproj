@@ -24,7 +24,10 @@
 		DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0BCEB165B76C600D06983 /* MapKit.framework */; };
 		DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */; };
 		DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */; };
-		EAD18BF3165B94F7007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18BF1165B94F7007BB868 /* MainStoryboard.storyboard */; };
+		EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6581E8165BE511009A729A /* CaptureSessionManager.m */; };
+		EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581EC165BE6AF009A729A /* overlaygraphic.png */; };
+		EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581ED165BE6AF009A729A /* scanbutton.png */; };
+		EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
 		EAD4B8B31653EB6C00ACA306 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */; };
@@ -71,7 +74,11 @@
 		DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		DDA0BCEB165B76C600D06983 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		EAD18BF2165B94F7007BB868 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "../../../../../../../Downloads/yapstr-master/yapstr/en.lproj/MainStoryboard.storyboard"; sourceTree = "<group>"; };
+		EA6581E8165BE511009A729A /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		EA6581EB165BE53A009A729A /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		EA6581EC165BE6AF009A729A /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
+		EA6581ED165BE6AF009A729A /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
+		EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAD4B8B01653EB6C00ACA306 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,6 +144,8 @@
 		A31F6B2B165503E3001D0D76 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EA6581EC165BE6AF009A729A /* overlaygraphic.png */,
+				EA6581ED165BE6AF009A729A /* scanbutton.png */,
 				A31F6B2C16550404001D0D76 /* loginScreen_jomfruanegade.png */,
 				A31F6B2E1655082D001D0D76 /* login-button-small.png */,
 			);
@@ -191,7 +200,7 @@
 		EAD4B8B41653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXGroup;
 			children = (
-				EAD18BF1165B94F7007BB868 /* MainStoryboard.storyboard */,
+				EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */,
 				EAD4B8E31653EC3100ACA306 /* ViewControllers */,
 				EAD4B8D31653EBCC00ACA306 /* Models */,
 				EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */,
@@ -243,6 +252,8 @@
 				A393D630165637EF00BA850C /* ECSlidingViewController */,
 				EAD4B8E41653EC4800ACA306 /* CameraViewController.h */,
 				EAD4B8E51653EC4800ACA306 /* CameraViewController.m */,
+				EA6581EB165BE53A009A729A /* CaptureSessionManager.h */,
+				EA6581E8165BE511009A729A /* CaptureSessionManager.m */,
 				EAD4B8E71653EC5100ACA306 /* CollectionViewController.h */,
 				EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */,
 				EAD4B8EA1653EC5E00ACA306 /* CreateEventViewController.h */,
@@ -325,7 +336,9 @@
 				A3086AA51655132C0079B83D /* Default.png in Resources */,
 				A3086AA81655136F0079B83D /* Default@2x.png in Resources */,
 				A3086AAA165513920079B83D /* Default-568h@2x.png in Resources */,
-				EAD18BF3165B94F7007BB868 /* MainStoryboard.storyboard in Resources */,
+				EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */,
+				EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */,
+				EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,20 +371,13 @@
 				A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */,
 				DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */,
 				DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */,
+				EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EAD18BF1165B94F7007BB868 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAD18BF2165B94F7007BB868 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 		EAD4B8B71653EB6C00ACA306 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
