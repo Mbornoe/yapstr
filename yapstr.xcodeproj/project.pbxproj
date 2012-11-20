@@ -27,6 +27,8 @@
 		EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6581E8165BE511009A729A /* CaptureSessionManager.m */; };
 		EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581EC165BE6AF009A729A /* overlaygraphic.png */; };
 		EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581ED165BE6AF009A729A /* scanbutton.png */; };
+		EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6581F0165BE76B009A729A /* AVFoundation.framework */; };
+		EA6581F3165BE7E6009A729A /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581F2165BE7E6009A729A /* menu.png */; };
 		EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
@@ -78,6 +80,8 @@
 		EA6581EB165BE53A009A729A /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		EA6581EC165BE6AF009A729A /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
 		EA6581ED165BE6AF009A729A /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
+		EA6581F0165BE76B009A729A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EA6581F2165BE7E6009A729A /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */,
 				DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */,
 				A393D6321656387000BA850C /* QuartzCore.framework in Frameworks */,
 				A31F6B26165501E0001D0D76 /* AdSupport.framework in Frameworks */,
@@ -144,6 +149,7 @@
 		A31F6B2B165503E3001D0D76 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EA6581F2165BE7E6009A729A /* menu.png */,
 				EA6581EC165BE6AF009A729A /* overlaygraphic.png */,
 				EA6581ED165BE6AF009A729A /* scanbutton.png */,
 				A31F6B2C16550404001D0D76 /* loginScreen_jomfruanegade.png */,
@@ -166,6 +172,7 @@
 		EAD4B89F1653EB6C00ACA306 = {
 			isa = PBXGroup;
 			children = (
+				EA6581F0165BE76B009A729A /* AVFoundation.framework */,
 				DDA0BCEB165B76C600D06983 /* MapKit.framework */,
 				EAD4B8B41653EB6C00ACA306 /* yapstr */,
 				EAD4B8AD1653EB6C00ACA306 /* Frameworks */,
@@ -339,6 +346,7 @@
 				EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */,
 				EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */,
 				EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */,
+				EA6581F3165BE7E6009A729A /* menu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
