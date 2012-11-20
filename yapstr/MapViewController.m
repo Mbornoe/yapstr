@@ -39,8 +39,8 @@
     }
     for (Event *event in events) {
         CLLocationCoordinate2D coordinate;
-        coordinate.latitude = event.location.x;
-        coordinate.longitude = event.location.y;
+        coordinate.latitude = event.location.latitude;
+        coordinate.longitude = event.location.longitude;
         [event setCoordinate:coordinate];
         [mapView addAnnotation:event];
     }

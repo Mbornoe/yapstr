@@ -15,9 +15,9 @@
 @implementation Location
 @synthesize longitude;
 @synthesize latitude;
--(id) initWithLatitude: (double)latitude andLongitude: (double)longitude{
-    x = latitude;
-    y = longitude;
+-(id) initWithLatitude: (double)inLatitude andLongitude: (double)inLongitude{
+    self.latitude = inLatitude;
+    self.longitude = inLongitude;
     return self;
 }
 @end
