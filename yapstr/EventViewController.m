@@ -24,6 +24,7 @@
 @implementation EventViewController
 @synthesize events;
 @synthesize tableView;
+@synthesize loading;
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)unused numberOfRowsInSection:(NSInteger)section {
     return [events count];
@@ -70,8 +71,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
+     // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
     // You just need to set the opacity, radius, and color.
     //self.view.layer.shadowOpacity = 0.75f;
     //self.view.layer.shadowRadius = 10.0f;

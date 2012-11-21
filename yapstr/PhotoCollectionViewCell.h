@@ -10,4 +10,5 @@
 
 @interface PhotoCollectionViewCell : UICollectionViewCell
 @property(weak) IBOutlet UIImageView *imageView;
+@property (strong) IBOutlet UIActivityIndicatorView *loading;
 @end

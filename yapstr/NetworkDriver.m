@@ -43,6 +43,9 @@
     NSError* error = nil;
     NSURL *jsonUrl = [NSURL URLWithString:@"http://12gr550.lab.es.aau.dk/PhotoController/getPhotos"];
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonUrl];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        // Back to the main thread for UI updates, etc.
+    });
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     NSArray *photoList = [json objectForKey:@"photoList"];
     for(NSDictionary *photo in photoList) {
