@@ -9,13 +9,14 @@
 #import "PhotoCollectionViewCell.h"
 
 @implementation PhotoCollectionViewCell
-
+@synthesize loading;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self.loading startAnimating];
     }
+    
     return self;
 }
 

@@ -13,4 +13,6 @@
 }
 @property (nonatomic,retain) Event *event;
 @property (strong) NSArray *photoList;
+@property (nonatomic) IBOutlet UICollectionView *collectionView;
+
 @end
