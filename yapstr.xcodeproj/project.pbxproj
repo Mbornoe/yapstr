@@ -49,8 +49,6 @@
 		EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */; };
 		EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */; };
 		EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */; };
-		EA9188EB165D261E00A961A8 /* UploadPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9188EA165D261E00A961A8 /* UploadPhotoViewController.m */; };
-		EA9188EE165D269400A961A8 /* UploadPhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9188ED165D269300A961A8 /* UploadPhotoViewCell.m */; };
 		EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
@@ -118,10 +116,6 @@
 		EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takePhoto_seeThroughButton2.png; sourceTree = "<group>"; };
 		EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_retina.png; path = ../buttonIcon_facetime_retina.png; sourceTree = "<group>"; };
 		EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_small.png; path = ../buttonIcon_facetime_small.png; sourceTree = "<group>"; };
-		EA9188E9165D261D00A961A8 /* UploadPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadPhotoViewController.h; sourceTree = "<group>"; };
-		EA9188EA165D261E00A961A8 /* UploadPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotoViewController.m; sourceTree = "<group>"; };
-		EA9188EC165D269200A961A8 /* UploadPhotoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadPhotoViewCell.h; sourceTree = "<group>"; };
-		EA9188ED165D269300A961A8 /* UploadPhotoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotoViewCell.m; sourceTree = "<group>"; };
 		EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -367,10 +361,6 @@
 				EAD4B9001653ECC300ACA306 /* NetworkDriver.m */,
 				DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */,
 				DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */,
-				EA9188E9165D261D00A961A8 /* UploadPhotoViewController.h */,
-				EA9188EA165D261E00A961A8 /* UploadPhotoViewController.m */,
-				EA9188EC165D269200A961A8 /* UploadPhotoViewCell.h */,
-				EA9188ED165D269300A961A8 /* UploadPhotoViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -530,8 +520,6 @@
 				DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */,
 				DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */,
 				EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */,
-				EA9188EB165D261E00A961A8 /* UploadPhotoViewController.m in Sources */,
-				EA9188EE165D269400A961A8 /* UploadPhotoViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
