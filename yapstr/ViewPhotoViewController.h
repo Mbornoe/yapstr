@@ -11,9 +11,15 @@
  */
 
 #import <UIKit/UIKit.h>
-
-@interface ViewPhotoViewController : UIViewController
-
+#import "Photo.h"
+@interface ViewPhotoViewController : UIViewController{
+}
+@property (strong) NSArray* photos;
+@property int currentPic;
+@property(weak) IBOutlet UIImageView *imageView;
+@property (strong) IBOutlet UIActivityIndicatorView *loading;
+-(IBAction)swipeRight:(id)sender;
+-(IBAction)swipeLeft:(id)sender;
 - (void) requestPhotosFromServer;
 - (void) selectPhotoFromCameraRoll;
 - (void) showPhoto;

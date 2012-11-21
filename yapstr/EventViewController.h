@@ -17,6 +17,7 @@
 }
 @property (strong) NSArray *events;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (strong) IBOutlet UIActivityIndicatorView *loading;
 - (void) requestEvents;
 - (void) selectEvent;
 - (void) showEvent;

@@ -13,6 +13,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import "ViewPhotoViewController.h"
 
 @interface PhotoCollectionViewController ()
 @end
@@ -20,6 +21,7 @@
 @implementation PhotoCollectionViewController
 @synthesize event;
 @synthesize photoList;
+@synthesize collectionView;
 
 - (void)viewDidLoad
 {
@@ -32,16 +34,41 @@
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)unused cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"PhotoCell";
     PhotoCollectionViewCell *cvc = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    [cvc.loading startAnimating];
+    NSOperationQueue *queue = [NSOperationQueue new];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc]
+                                        initWithTarget:self
+                                        selector:@selector(loadImage:)
+                                        object:indexPath];
+    [queue addOperation:operation];
+    cvc.imageView.contentMode=UIViewContentModeScaleToFill;
+    return cvc;
+}
+- (void)loadImage:(NSIndexPath*)indexPath {
     Photo *tempPhoto = [Photo alloc];
     tempPhoto= [photoList objectAtIndex:[indexPath row]];
     NSURL *url = [NSURL URLWithString:tempPhoto.thumpnailPath];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc] initWithData:data];
+    PhotoCollectionViewCell *cvc = (PhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cvc.imageView.image = img;
-    return cvc;
+    cvc.contentMode = UIViewContentModeScaleToFill;
+    cvc.imageView.contentMode = UIViewContentModeScaleToFill;
+    [cvc.loading stopAnimating];
+    [[NSRunLoop mainRunLoop] runUntilDate: [NSDate dateWithTimeIntervalSinceNow: 0.01]];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"collectionToPhoto"]){
+        PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+        ViewPhotoViewController *vc = (ViewPhotoViewController *)[segue destinationViewController];
+        vc.photos=photoList;
+        vc.currentPic = [indexPath row];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +78,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
     // You just need to set the opacity, radius, and color.
     //self.view.layer.shadowOpacity = 0.75f;
