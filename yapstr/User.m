@@ -13,6 +13,12 @@
 #import "User.h"
 
 @implementation User
-@synthesize facebookID, name;
+@synthesize facebookID, name, userID;
+
+- (void)dumpUserDataInTerminal{
+    NSLog(@"Name: %@", name);
+    NSLog(@"userID: %@", userID);
+    NSLog(@"facebookID: %@", facebookID);
+}
 
 @end
