@@ -26,8 +26,6 @@
 		DD3AA91C165CBCCA0092E05E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
 		DD3AA922165CBCCA0092E05E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD3AA920165CBCCA0092E05E /* InfoPlist.strings */; };
 		DD3AA925165CBCCA0092E05E /* yapstOCUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */; };
-		DD3AA92D165CBF690092E05E /* viewEventsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3AA92C165CBF690092E05E /* viewEventsTest.m */; };
-		DD3AA92E165CBF740092E05E /* viewEventsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3AA92C165CBF690092E05E /* viewEventsTest.m */; };
 		DD3AA92F165CC1A90092E05E /* NetworkDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B9001653ECC300ACA306 /* NetworkDriver.m */; };
 		DD3AA930165CC1CB0092E05E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D51653EBE700ACA306 /* User.m */; };
 		DD3AA932165CC1CB0092E05E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DB1653EBFB00ACA306 /* Photo.m */; };
@@ -44,6 +42,15 @@
 		EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581ED165BE6AF009A729A /* scanbutton.png */; };
 		EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6581F0165BE76B009A729A /* AVFoundation.framework */; };
 		EA6581F3165BE7E6009A729A /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581F2165BE7E6009A729A /* menu.png */; };
+		EA9188C7165CE18200A961A8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188C6165CE18200A961A8 /* CoreMedia.framework */; };
+		EA9188CA165CE18B00A961A8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188C9165CE18B00A961A8 /* CoreVideo.framework */; };
+		EA9188CC165CE19600A961A8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188CB165CE19600A961A8 /* ImageIO.framework */; };
+		EA9188CD165CE3D700A961A8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */; };
+		EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */; };
+		EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */; };
+		EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */; };
+		EA9188EB165D261E00A961A8 /* UploadPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9188EA165D261E00A961A8 /* UploadPhotoViewController.m */; };
+		EA9188EE165D269400A961A8 /* UploadPhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9188ED165D269300A961A8 /* UploadPhotoViewCell.m */; };
 		EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
@@ -93,8 +100,6 @@
 		DD3AA923165CBCCA0092E05E /* yapstOCUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yapstOCUnit.h; sourceTree = "<group>"; };
 		DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yapstOCUnit.m; sourceTree = "<group>"; };
 		DD3AA926165CBCCA0092E05E /* yapstOCUnit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yapstOCUnit-Prefix.pch"; sourceTree = "<group>"; };
-		DD3AA92B165CBF690092E05E /* viewEventsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewEventsTest.h; sourceTree = "<group>"; };
-		DD3AA92C165CBF690092E05E /* viewEventsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = viewEventsTest.m; sourceTree = "<group>"; };
 		DDA0BCE6165B725B00D06983 /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
 		DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
 		DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -107,6 +112,16 @@
 		EA6581ED165BE6AF009A729A /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
 		EA6581F0165BE76B009A729A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA6581F2165BE7E6009A729A /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		EA9188C6165CE18200A961A8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EA9188C9165CE18B00A961A8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		EA9188CB165CE19600A961A8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takePhoto_seeThroughButton2.png; sourceTree = "<group>"; };
+		EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_retina.png; path = ../buttonIcon_facetime_retina.png; sourceTree = "<group>"; };
+		EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_small.png; path = ../buttonIcon_facetime_small.png; sourceTree = "<group>"; };
+		EA9188E9165D261D00A961A8 /* UploadPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadPhotoViewController.h; sourceTree = "<group>"; };
+		EA9188EA165D261E00A961A8 /* UploadPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotoViewController.m; sourceTree = "<group>"; };
+		EA9188EC165D269200A961A8 /* UploadPhotoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadPhotoViewCell.h; sourceTree = "<group>"; };
+		EA9188ED165D269300A961A8 /* UploadPhotoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotoViewCell.m; sourceTree = "<group>"; };
 		EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -166,6 +181,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9188CD165CE3D700A961A8 /* SenTestingKit.framework in Frameworks */,
+				EA9188CC165CE19600A961A8 /* ImageIO.framework in Frameworks */,
+				EA9188CA165CE18B00A961A8 /* CoreVideo.framework in Frameworks */,
+				EA9188C7165CE18200A961A8 /* CoreMedia.framework in Frameworks */,
 				EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */,
 				DDA0BCF0165BA0B200D06983 /* CoreLocation.framework in Frameworks */,
 				DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */,
@@ -186,6 +205,9 @@
 		A31F6B2B165503E3001D0D76 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */,
+				EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */,
+				EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */,
 				EA6581F2165BE7E6009A729A /* menu.png */,
 				EA6581EC165BE6AF009A729A /* overlaygraphic.png */,
 				EA6581ED165BE6AF009A729A /* scanbutton.png */,
@@ -211,8 +233,6 @@
 			children = (
 				DD3AA923165CBCCA0092E05E /* yapstOCUnit.h */,
 				DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */,
-				DD3AA92B165CBF690092E05E /* viewEventsTest.h */,
-				DD3AA92C165CBF690092E05E /* viewEventsTest.m */,
 				DD3AA91E165CBCCA0092E05E /* Supporting Files */,
 			);
 			path = yapstOCUnit;
@@ -250,6 +270,9 @@
 		EAD4B8AD1653EB6C00ACA306 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA9188CB165CE19600A961A8 /* ImageIO.framework */,
+				EA9188C9165CE18B00A961A8 /* CoreVideo.framework */,
+				EA9188C6165CE18200A961A8 /* CoreMedia.framework */,
 				EA6581F0165BE76B009A729A /* AVFoundation.framework */,
 				DDA0BCEF165BA0B200D06983 /* CoreLocation.framework */,
 				DDA0BCEB165B76C600D06983 /* MapKit.framework */,
@@ -344,6 +367,10 @@
 				EAD4B9001653ECC300ACA306 /* NetworkDriver.m */,
 				DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */,
 				DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */,
+				EA9188E9165D261D00A961A8 /* UploadPhotoViewController.h */,
+				EA9188EA165D261E00A961A8 /* UploadPhotoViewController.m */,
+				EA9188EC165D269200A961A8 /* UploadPhotoViewCell.h */,
+				EA9188ED165D269300A961A8 /* UploadPhotoViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -438,6 +465,9 @@
 				EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */,
 				EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */,
 				EA6581F3165BE7E6009A729A /* menu.png in Resources */,
+				EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */,
+				EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */,
+				EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +495,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD3AA925165CBCCA0092E05E /* yapstOCUnit.m in Sources */,
-				DD3AA92D165CBF690092E05E /* viewEventsTest.m in Sources */,
 				DD3AA92F165CC1A90092E05E /* NetworkDriver.m in Sources */,
 				DD3AA930165CC1CB0092E05E /* User.m in Sources */,
 				DD3AA932165CC1CB0092E05E /* Photo.m in Sources */,
@@ -501,7 +530,8 @@
 				DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */,
 				DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */,
 				EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */,
-				DD3AA92E165CBF740092E05E /* viewEventsTest.m in Sources */,
+				EA9188EB165D261E00A961A8 /* UploadPhotoViewController.m in Sources */,
+				EA9188EE165D269400A961A8 /* UploadPhotoViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +645,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yapstr/yapstr-Prefix.pch";
@@ -631,6 +662,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yapstr/yapstr-Prefix.pch";
@@ -651,6 +683,7 @@
 				DD3AA928165CBCCA0092E05E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAD4B8A41653EB6C00ACA306 /* Build configuration list for PBXProject "yapstr" */ = {
 			isa = XCConfigurationList;

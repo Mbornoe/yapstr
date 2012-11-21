@@ -13,14 +13,30 @@
 
 #import "CameraViewController.h"
 
+@interface CameraViewController ()
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+@end
+
 @implementation CameraViewController
 
 @synthesize captureManager;
 @synthesize scanningLabel;
 
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (error != NULL) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Image couldn't be saved" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else {
+        [[self scanningLabel] setHidden:YES];
+    }
+}
+
 - (void)viewDidLoad {
     
 	[self setCaptureManager:[[CaptureSessionManager alloc] init]];
+    
     
 	[[self captureManager] addVideoInput];
     
@@ -37,8 +53,26 @@
     [overlayButton addTarget:self action:@selector(scanButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [[self view] addSubview:overlayButton];
     
-    UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 120, 30)];
+    UIButton *takePhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [takePhotoButton setImage:[UIImage imageNamed:@"takePhoto_seeThroughButton2.png"] forState:UIControlStateNormal];
+    [takePhotoButton setFrame:CGRectMake(0, 65, 320, 640)];
+    [takePhotoButton addTarget:self action:@selector(takePhotoButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
+    [[self view] addSubview:takePhotoButton];
+    
+    UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 60, 140, 40)];
+    [self setScanningLabel:tempLabel];
+	[scanningLabel setBackgroundColor:[UIColor clearColor]];
+	[scanningLabel setFont:[UIFont fontWithName:@"Courier" size: 18.0]];
+	[scanningLabel setTextColor:[UIColor whiteColor]];
+	[scanningLabel setText:@"Saving Image"];
+    [scanningLabel setHidden:YES];
+	[[self view] addSubview:scanningLabel];
+    
+    
+   // UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 120, 30)];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveImageToPhotoAlbum) name:kImageCapturedSuccessfully object:nil];
+    [[self captureManager] addStillImageOutput];
 	[[captureManager captureSession] startRunning];
 }
 
@@ -61,21 +95,29 @@
 
 - (void) scanButtonPressed {
 	[[self scanningLabel] setHidden:NO];
+
 	[self performSelector:@selector(hideLabel:) withObject:[self scanningLabel] afterDelay:2];
     [self.slidingViewController anchorTopViewTo:ECRight];
+}
+
+- (void) takePhotoButtonPressed {
+
+	[[self scanningLabel] setHidden:NO];
+	[self performSelector:@selector(hideLabel:) withObject:[self scanningLabel] afterDelay:2];
+    [[self scanningLabel] setHidden:NO];
+    [[self captureManager] captureStillImage];
+
+}
+
+- (void)saveImageToPhotoAlbum
+{
+    UIImageWriteToSavedPhotosAlbum([[self captureManager] stillImage], self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
 - (void)hideLabel:(UILabel *)label {
 	[label setHidden:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc {
-    
-}
 
 @end
 

@@ -15,5 +15,8 @@
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITabBarControllerDelegate>
 - (IBAction)takePhotoButton:(id)sender;
+- (IBAction)viewEventButton:(id)sender;
+- (IBAction)uploadPhotoButton:(id)sender;
+
 
 @end
