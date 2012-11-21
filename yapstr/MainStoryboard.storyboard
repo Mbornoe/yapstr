@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -23,7 +23,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Login:" destination="2" eventType="touchUpInside" id="yhq-Jx-HGb"/>
+                                    <action selector="Login:" destination="2" eventType="touchUpInside" id="X8D-01-EYi"/>
                                     <segue destination="W57-vj-MOp" kind="modal" identifier="loggedInSegue" modalTransitionStyle="crossDissolve" id="hYU-42-OhU"/>
                                 </connections>
                             </button>
@@ -36,19 +36,29 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gbI-Nl-iWE"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Km9-SK-9Vo"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gbI-Nl-iWE" firstAttribute="centerX" secondItem="RhU-Qe-UD5" secondAttribute="centerX" type="default" id="HuL-tF-ekN"/>
+                            <constraint firstItem="Km9-SK-9Vo" firstAttribute="centerY" secondItem="4Ce-YY-hCA" secondAttribute="centerY" type="default" id="LXe-iE-M8M"/>
                             <constraint firstItem="RhU-Qe-UD5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="97" id="N7I-pU-hNT"/>
-                            <constraint firstItem="RhU-Qe-UD5" firstAttribute="centerX" secondItem="qeK-jS-CLG" secondAttribute="centerX" type="default" id="RUY-im-2rT"/>
-                            <constraint firstItem="RhU-Qe-UD5" firstAttribute="centerX" secondItem="4Ce-YY-hCA" secondAttribute="centerX" type="default" id="ZP2-EM-Ycr"/>
+                            <constraint firstItem="gbI-Nl-iWE" firstAttribute="top" secondItem="Km9-SK-9Vo" secondAttribute="top" type="default" id="O8k-4Y-CHm"/>
+                            <constraint firstItem="qeK-jS-CLG" firstAttribute="centerX" secondItem="gbI-Nl-iWE" secondAttribute="centerX" type="default" id="QFK-0Y-B3x"/>
+                            <constraint firstItem="Km9-SK-9Vo" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="141" id="UfW-Wb-Ohf"/>
                             <constraint firstItem="4Ce-YY-hCA" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="ejP-9v-8oG"/>
                             <constraint firstItem="4Ce-YY-hCA" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="gSd-cg-bru"/>
                             <constraint firstAttribute="bottom" secondItem="qeK-jS-CLG" secondAttribute="bottom" constant="121" id="qoM-4x-i6u"/>
                             <constraint firstItem="4Ce-YY-hCA" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="svG-jc-7NQ"/>
                             <constraint firstItem="4Ce-YY-hCA" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="teD-jq-ar9"/>
+                            <constraint firstItem="qeK-jS-CLG" firstAttribute="centerX" secondItem="4Ce-YY-hCA" secondAttribute="centerX" type="default" id="u5u-jp-Cjt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loading" destination="Km9-SK-9Vo" id="dfl-Ct-JE8"/>
+                        <outlet property="loginButton" destination="qeK-jS-CLG" id="geM-O9-YdY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -298,6 +308,73 @@
         <image name="login-button-small.png" width="151" height="43"/>
         <image name="loginScreen_jomfruanegade.png" width="640" height="960"/>
     </resources>
+    <classes>
+        <class className="CameraViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CameraViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSideMenu:"/>
+                <relationship kind="action" name="showCameraUI:"/>
+                <relationship kind="action" name="uploadPhoto:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
+        </class>
+        <class className="EventViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="InitialSlidingViewController" superclassName="ECSlidingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialSlidingViewController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="loading" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="MenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="takePhotoButton:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotoCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PhotoCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoCollectionViewController.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
