@@ -39,8 +39,8 @@
     }
     for (Event *event in events) {
         CLLocationCoordinate2D coordinate;
-        coordinate.latitude = event.location.x;
-        coordinate.longitude = event.location.y;
+        coordinate.latitude = event.location.latitude;
+        coordinate.longitude = event.location.longitude;
         [event setCoordinate:coordinate];
         [mapView addAnnotation:event];
     }
@@ -96,9 +96,9 @@
     
     // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
     // You just need to set the opacity, radius, and color.
-    self.view.layer.shadowOpacity = 0.75f;
-    self.view.layer.shadowRadius = 10.0f;
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    //self.view.layer.shadowOpacity = 0.75f;
+    //self.view.layer.shadowRadius = 10.0f;
+    //self.view.layer.shadowColor = [UIColor blackColor].CGColor;
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];

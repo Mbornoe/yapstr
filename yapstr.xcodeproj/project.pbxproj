@@ -21,16 +21,34 @@
 		A393D62E165637EA00BA850C /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62B165637EA00BA850C /* ECSlidingViewController.m */; };
 		A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */; };
 		A393D6321656387000BA850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A393D6311656387000BA850C /* QuartzCore.framework */; };
+		DD3AA91A165CBCCA0092E05E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */; };
+		DD3AA91B165CBCCA0092E05E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
+		DD3AA91C165CBCCA0092E05E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
+		DD3AA922165CBCCA0092E05E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD3AA920165CBCCA0092E05E /* InfoPlist.strings */; };
+		DD3AA925165CBCCA0092E05E /* yapstOCUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */; };
+		DD3AA92F165CC1A90092E05E /* NetworkDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B9001653ECC300ACA306 /* NetworkDriver.m */; };
+		DD3AA930165CC1CB0092E05E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D51653EBE700ACA306 /* User.m */; };
+		DD3AA932165CC1CB0092E05E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DB1653EBFB00ACA306 /* Photo.m */; };
+		DD3AA933165CC1CB0092E05E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DE1653EC0700ACA306 /* Location.m */; };
+		DD3AA934165CC1CB0092E05E /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E11653EC0E00ACA306 /* Event.m */; };
+		DD3AA935165CC2120092E05E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F6B28165501F4001D0D76 /* FacebookSDK.framework */; };
+		DD3AA936165CC2150092E05E /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A31F6B27165501F4001D0D76 /* FacebookSDKResources.bundle */; };
 		DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0BCEB165B76C600D06983 /* MapKit.framework */; };
 		DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */; };
 		DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */; };
+		DDA0BCF0165BA0B200D06983 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0BCEF165BA0B200D06983 /* CoreLocation.framework */; };
+		EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6581E8165BE511009A729A /* CaptureSessionManager.m */; };
+		EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581EC165BE6AF009A729A /* overlaygraphic.png */; };
+		EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581ED165BE6AF009A729A /* scanbutton.png */; };
+		EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6581F0165BE76B009A729A /* AVFoundation.framework */; };
+		EA6581F3165BE7E6009A729A /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581F2165BE7E6009A729A /* menu.png */; };
+		EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
 		EAD4B8B31653EB6C00ACA306 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */; };
 		EAD4B8B91653EB6C00ACA306 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8B71653EB6C00ACA306 /* InfoPlist.strings */; };
 		EAD4B8BB1653EB6C00ACA306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8BA1653EB6C00ACA306 /* main.m */; };
 		EAD4B8BF1653EB6C00ACA306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */; };
-		EAD4B8C81653EB6D00ACA306 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */; };
 		EAD4B8D61653EBE700ACA306 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D51653EBE700ACA306 /* User.m */; };
 		EAD4B8D91653EBF200ACA306 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D81653EBF200ACA306 /* Facebook.m */; };
 		EAD4B8DC1653EBFB00ACA306 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DB1653EBFB00ACA306 /* Photo.m */; };
@@ -66,11 +84,26 @@
 		A393D62C165637EA00BA850C /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
 		A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
 		A393D6311656387000BA850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DD3AA918165CBCCA0092E05E /* yapstOCUnit.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yapstOCUnit.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DD3AA91F165CBCCA0092E05E /* yapstOCUnit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yapstOCUnit-Info.plist"; sourceTree = "<group>"; };
+		DD3AA921165CBCCA0092E05E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DD3AA923165CBCCA0092E05E /* yapstOCUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yapstOCUnit.h; sourceTree = "<group>"; };
+		DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yapstOCUnit.m; sourceTree = "<group>"; };
+		DD3AA926165CBCCA0092E05E /* yapstOCUnit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yapstOCUnit-Prefix.pch"; sourceTree = "<group>"; };
 		DDA0BCE6165B725B00D06983 /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
 		DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
 		DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		DDA0BCEB165B76C600D06983 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DDA0BCEF165BA0B200D06983 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EA6581E8165BE511009A729A /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		EA6581EB165BE53A009A729A /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		EA6581EC165BE6AF009A729A /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
+		EA6581ED165BE6AF009A729A /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
+		EA6581F0165BE76B009A729A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EA6581F2165BE7E6009A729A /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAD4B8B01653EB6C00ACA306 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,7 +114,6 @@
 		EAD4B8BC1653EB6C00ACA306 /* yapstr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yapstr-Prefix.pch"; sourceTree = "<group>"; };
 		EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EAD4B8C71653EB6D00ACA306 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8D41653EBE700ACA306 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		EAD4B8D51653EBE700ACA306 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		EAD4B8D71653EBF200ACA306 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
@@ -115,10 +147,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD3AA914165CBCCA0092E05E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3AA91A165CBCCA0092E05E /* SenTestingKit.framework in Frameworks */,
+				DD3AA91B165CBCCA0092E05E /* UIKit.framework in Frameworks */,
+				DD3AA91C165CBCCA0092E05E /* Foundation.framework in Frameworks */,
+				DD3AA935165CC2120092E05E /* FacebookSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD4B8A71653EB6C00ACA306 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */,
+				DDA0BCF0165BA0B200D06983 /* CoreLocation.framework in Frameworks */,
 				DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */,
 				A393D6321656387000BA850C /* QuartzCore.framework in Frameworks */,
 				A31F6B26165501E0001D0D76 /* AdSupport.framework in Frameworks */,
@@ -137,6 +182,9 @@
 		A31F6B2B165503E3001D0D76 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EA6581F2165BE7E6009A729A /* menu.png */,
+				EA6581EC165BE6AF009A729A /* overlaygraphic.png */,
+				EA6581ED165BE6AF009A729A /* scanbutton.png */,
 				A31F6B2C16550404001D0D76 /* loginScreen_jomfruanegade.png */,
 				A31F6B2E1655082D001D0D76 /* login-button-small.png */,
 			);
@@ -154,11 +202,31 @@
 			name = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
+		DD3AA91D165CBCCA0092E05E /* yapstOCUnit */ = {
+			isa = PBXGroup;
+			children = (
+				DD3AA923165CBCCA0092E05E /* yapstOCUnit.h */,
+				DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */,
+				DD3AA91E165CBCCA0092E05E /* Supporting Files */,
+			);
+			path = yapstOCUnit;
+			sourceTree = "<group>";
+		};
+		DD3AA91E165CBCCA0092E05E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD3AA91F165CBCCA0092E05E /* yapstOCUnit-Info.plist */,
+				DD3AA920165CBCCA0092E05E /* InfoPlist.strings */,
+				DD3AA926165CBCCA0092E05E /* yapstOCUnit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EAD4B89F1653EB6C00ACA306 = {
 			isa = PBXGroup;
 			children = (
-				DDA0BCEB165B76C600D06983 /* MapKit.framework */,
 				EAD4B8B41653EB6C00ACA306 /* yapstr */,
+				DD3AA91D165CBCCA0092E05E /* yapstOCUnit */,
 				EAD4B8AD1653EB6C00ACA306 /* Frameworks */,
 				EAD4B8AB1653EB6C00ACA306 /* Products */,
 			);
@@ -168,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD4B8AA1653EB6C00ACA306 /* yapstr.app */,
+				DD3AA918165CBCCA0092E05E /* yapstOCUnit.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +244,9 @@
 		EAD4B8AD1653EB6C00ACA306 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA6581F0165BE76B009A729A /* AVFoundation.framework */,
+				DDA0BCEF165BA0B200D06983 /* CoreLocation.framework */,
+				DDA0BCEB165B76C600D06983 /* MapKit.framework */,
 				A393D6311656387000BA850C /* QuartzCore.framework */,
 				A31F6B27165501F4001D0D76 /* FacebookSDKResources.bundle */,
 				A31F6B28165501F4001D0D76 /* FacebookSDK.framework */,
@@ -184,6 +256,7 @@
 				EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */,
 				EAD4B8B01653EB6C00ACA306 /* Foundation.framework */,
 				EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */,
+				DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,11 +264,11 @@
 		EAD4B8B41653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXGroup;
 			children = (
+				EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */,
 				EAD4B8E31653EC3100ACA306 /* ViewControllers */,
 				EAD4B8D31653EBCC00ACA306 /* Models */,
 				EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */,
 				EAD4B8BE1653EB6C00ACA306 /* AppDelegate.m */,
-				EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */,
 				EAD4B8B51653EB6C00ACA306 /* Supporting Files */,
 			);
 			path = yapstr;
@@ -243,6 +316,8 @@
 				A393D630165637EF00BA850C /* ECSlidingViewController */,
 				EAD4B8E41653EC4800ACA306 /* CameraViewController.h */,
 				EAD4B8E51653EC4800ACA306 /* CameraViewController.m */,
+				EA6581EB165BE53A009A729A /* CaptureSessionManager.h */,
+				EA6581E8165BE511009A729A /* CaptureSessionManager.m */,
 				EAD4B8E71653EC5100ACA306 /* CollectionViewController.h */,
 				EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */,
 				EAD4B8EA1653EC5E00ACA306 /* CreateEventViewController.h */,
@@ -270,6 +345,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DD3AA917165CBCCA0092E05E /* yapstOCUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3AA929165CBCCA0092E05E /* Build configuration list for PBXNativeTarget "yapstOCUnit" */;
+			buildPhases = (
+				DD3AA913165CBCCA0092E05E /* Sources */,
+				DD3AA914165CBCCA0092E05E /* Frameworks */,
+				DD3AA915165CBCCA0092E05E /* Resources */,
+				DD3AA916165CBCCA0092E05E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = yapstOCUnit;
+			productName = yapstOCUnit;
+			productReference = DD3AA918165CBCCA0092E05E /* yapstOCUnit.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		EAD4B8A91653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD4B8CE1653EB6D00ACA306 /* Build configuration list for PBXNativeTarget "yapstr" */;
@@ -309,29 +402,71 @@
 			projectRoot = "";
 			targets = (
 				EAD4B8A91653EB6C00ACA306 /* yapstr */,
+				DD3AA917165CBCCA0092E05E /* yapstOCUnit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD3AA915165CBCCA0092E05E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3AA922165CBCCA0092E05E /* InfoPlist.strings in Resources */,
+				DD3AA936165CC2150092E05E /* FacebookSDKResources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD4B8A81653EB6C00ACA306 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EAD4B8B91653EB6C00ACA306 /* InfoPlist.strings in Resources */,
-				EAD4B8C81653EB6D00ACA306 /* MainStoryboard.storyboard in Resources */,
 				A31F6B29165501F4001D0D76 /* FacebookSDKResources.bundle in Resources */,
 				A31F6B2D16550404001D0D76 /* loginScreen_jomfruanegade.png in Resources */,
 				A31F6B2F1655082D001D0D76 /* login-button-small.png in Resources */,
 				A3086AA51655132C0079B83D /* Default.png in Resources */,
 				A3086AA81655136F0079B83D /* Default@2x.png in Resources */,
 				A3086AAA165513920079B83D /* Default-568h@2x.png in Resources */,
+				EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */,
+				EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */,
+				EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */,
+				EA6581F3165BE7E6009A729A /* menu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DD3AA916165CBCCA0092E05E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		DD3AA913165CBCCA0092E05E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3AA925165CBCCA0092E05E /* yapstOCUnit.m in Sources */,
+				DD3AA92F165CC1A90092E05E /* NetworkDriver.m in Sources */,
+				DD3AA930165CC1CB0092E05E /* User.m in Sources */,
+				DD3AA932165CC1CB0092E05E /* Photo.m in Sources */,
+				DD3AA933165CC1CB0092E05E /* Location.m in Sources */,
+				DD3AA934165CC1CB0092E05E /* Event.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD4B8A61653EB6C00ACA306 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,12 +493,21 @@
 				A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */,
 				DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */,
 				DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */,
+				EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DD3AA920165CBCCA0092E05E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD3AA921165CBCCA0092E05E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		EAD4B8B71653EB6C00ACA306 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -372,17 +516,41 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		EAD4B8C61653EB6D00ACA306 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAD4B8C71653EB6D00ACA306 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DD3AA927165CBCCA0092E05E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yapstOCUnit/yapstOCUnit-Prefix.pch";
+				INFOPLIST_FILE = "yapstOCUnit/yapstOCUnit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DD3AA928165CBCCA0092E05E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yapstOCUnit/yapstOCUnit-Prefix.pch";
+				INFOPLIST_FILE = "yapstOCUnit/yapstOCUnit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		EAD4B8CC1653EB6D00ACA306 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -468,6 +636,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DD3AA929165CBCCA0092E05E /* Build configuration list for PBXNativeTarget "yapstOCUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3AA927165CBCCA0092E05E /* Debug */,
+				DD3AA928165CBCCA0092E05E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EAD4B8A41653EB6C00ACA306 /* Build configuration list for PBXProject "yapstr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

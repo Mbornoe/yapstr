@@ -11,13 +11,22 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "CaptureSessionManager.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
 @interface CameraViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
     UIImagePickerController*imagePicker;
+    
 }
+
+- (IBAction)showCameraUI:(id)sender;
+- (IBAction)uploadPhoto:(id)sender;
+
+@property (retain) CaptureSessionManager *captureManager;
+@property (nonatomic, retain) UILabel *scanningLabel;
+
 
 - (void) startCamera;
 - (void) takePhoto;
