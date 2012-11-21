@@ -21,6 +21,20 @@
 		A393D62E165637EA00BA850C /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62B165637EA00BA850C /* ECSlidingViewController.m */; };
 		A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */; };
 		A393D6321656387000BA850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A393D6311656387000BA850C /* QuartzCore.framework */; };
+		DD3AA91A165CBCCA0092E05E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */; };
+		DD3AA91B165CBCCA0092E05E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
+		DD3AA91C165CBCCA0092E05E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
+		DD3AA922165CBCCA0092E05E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD3AA920165CBCCA0092E05E /* InfoPlist.strings */; };
+		DD3AA925165CBCCA0092E05E /* yapstOCUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */; };
+		DD3AA92D165CBF690092E05E /* viewEventsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3AA92C165CBF690092E05E /* viewEventsTest.m */; };
+		DD3AA92E165CBF740092E05E /* viewEventsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3AA92C165CBF690092E05E /* viewEventsTest.m */; };
+		DD3AA92F165CC1A90092E05E /* NetworkDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B9001653ECC300ACA306 /* NetworkDriver.m */; };
+		DD3AA930165CC1CB0092E05E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8D51653EBE700ACA306 /* User.m */; };
+		DD3AA932165CC1CB0092E05E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DB1653EBFB00ACA306 /* Photo.m */; };
+		DD3AA933165CC1CB0092E05E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DE1653EC0700ACA306 /* Location.m */; };
+		DD3AA934165CC1CB0092E05E /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E11653EC0E00ACA306 /* Event.m */; };
+		DD3AA935165CC2120092E05E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F6B28165501F4001D0D76 /* FacebookSDK.framework */; };
+		DD3AA936165CC2150092E05E /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A31F6B27165501F4001D0D76 /* FacebookSDKResources.bundle */; };
 		DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0BCEB165B76C600D06983 /* MapKit.framework */; };
 		DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */; };
 		DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */; };
@@ -72,6 +86,15 @@
 		A393D62C165637EA00BA850C /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
 		A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
 		A393D6311656387000BA850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DD3AA918165CBCCA0092E05E /* yapstOCUnit.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yapstOCUnit.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DD3AA91F165CBCCA0092E05E /* yapstOCUnit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yapstOCUnit-Info.plist"; sourceTree = "<group>"; };
+		DD3AA921165CBCCA0092E05E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DD3AA923165CBCCA0092E05E /* yapstOCUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yapstOCUnit.h; sourceTree = "<group>"; };
+		DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yapstOCUnit.m; sourceTree = "<group>"; };
+		DD3AA926165CBCCA0092E05E /* yapstOCUnit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yapstOCUnit-Prefix.pch"; sourceTree = "<group>"; };
+		DD3AA92B165CBF690092E05E /* viewEventsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewEventsTest.h; sourceTree = "<group>"; };
+		DD3AA92C165CBF690092E05E /* viewEventsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = viewEventsTest.m; sourceTree = "<group>"; };
 		DDA0BCE6165B725B00D06983 /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
 		DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
 		DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -128,6 +151,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD3AA914165CBCCA0092E05E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3AA91A165CBCCA0092E05E /* SenTestingKit.framework in Frameworks */,
+				DD3AA91B165CBCCA0092E05E /* UIKit.framework in Frameworks */,
+				DD3AA91C165CBCCA0092E05E /* Foundation.framework in Frameworks */,
+				DD3AA935165CC2120092E05E /* FacebookSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD4B8A71653EB6C00ACA306 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,10 +206,33 @@
 			name = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
+		DD3AA91D165CBCCA0092E05E /* yapstOCUnit */ = {
+			isa = PBXGroup;
+			children = (
+				DD3AA923165CBCCA0092E05E /* yapstOCUnit.h */,
+				DD3AA924165CBCCA0092E05E /* yapstOCUnit.m */,
+				DD3AA92B165CBF690092E05E /* viewEventsTest.h */,
+				DD3AA92C165CBF690092E05E /* viewEventsTest.m */,
+				DD3AA91E165CBCCA0092E05E /* Supporting Files */,
+			);
+			path = yapstOCUnit;
+			sourceTree = "<group>";
+		};
+		DD3AA91E165CBCCA0092E05E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD3AA91F165CBCCA0092E05E /* yapstOCUnit-Info.plist */,
+				DD3AA920165CBCCA0092E05E /* InfoPlist.strings */,
+				DD3AA926165CBCCA0092E05E /* yapstOCUnit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EAD4B89F1653EB6C00ACA306 = {
 			isa = PBXGroup;
 			children = (
 				EAD4B8B41653EB6C00ACA306 /* yapstr */,
+				DD3AA91D165CBCCA0092E05E /* yapstOCUnit */,
 				EAD4B8AD1653EB6C00ACA306 /* Frameworks */,
 				EAD4B8AB1653EB6C00ACA306 /* Products */,
 			);
@@ -185,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD4B8AA1653EB6C00ACA306 /* yapstr.app */,
+				DD3AA918165CBCCA0092E05E /* yapstOCUnit.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,6 +262,7 @@
 				EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */,
 				EAD4B8B01653EB6C00ACA306 /* Foundation.framework */,
 				EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */,
+				DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,6 +351,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DD3AA917165CBCCA0092E05E /* yapstOCUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3AA929165CBCCA0092E05E /* Build configuration list for PBXNativeTarget "yapstOCUnit" */;
+			buildPhases = (
+				DD3AA913165CBCCA0092E05E /* Sources */,
+				DD3AA914165CBCCA0092E05E /* Frameworks */,
+				DD3AA915165CBCCA0092E05E /* Resources */,
+				DD3AA916165CBCCA0092E05E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = yapstOCUnit;
+			productName = yapstOCUnit;
+			productReference = DD3AA918165CBCCA0092E05E /* yapstOCUnit.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		EAD4B8A91653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD4B8CE1653EB6D00ACA306 /* Build configuration list for PBXNativeTarget "yapstr" */;
@@ -331,11 +408,21 @@
 			projectRoot = "";
 			targets = (
 				EAD4B8A91653EB6C00ACA306 /* yapstr */,
+				DD3AA917165CBCCA0092E05E /* yapstOCUnit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD3AA915165CBCCA0092E05E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3AA922165CBCCA0092E05E /* InfoPlist.strings in Resources */,
+				DD3AA936165CC2150092E05E /* FacebookSDKResources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD4B8A81653EB6C00ACA306 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,7 +443,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DD3AA916165CBCCA0092E05E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		DD3AA913165CBCCA0092E05E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3AA925165CBCCA0092E05E /* yapstOCUnit.m in Sources */,
+				DD3AA92D165CBF690092E05E /* viewEventsTest.m in Sources */,
+				DD3AA92F165CC1A90092E05E /* NetworkDriver.m in Sources */,
+				DD3AA930165CC1CB0092E05E /* User.m in Sources */,
+				DD3AA932165CC1CB0092E05E /* Photo.m in Sources */,
+				DD3AA933165CC1CB0092E05E /* Location.m in Sources */,
+				DD3AA934165CC1CB0092E05E /* Event.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD4B8A61653EB6C00ACA306 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,12 +501,21 @@
 				DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */,
 				DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */,
 				EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */,
+				DD3AA92E165CBF740092E05E /* viewEventsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DD3AA920165CBCCA0092E05E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD3AA921165CBCCA0092E05E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		EAD4B8B71653EB6C00ACA306 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -401,6 +527,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DD3AA927165CBCCA0092E05E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yapstOCUnit/yapstOCUnit-Prefix.pch";
+				INFOPLIST_FILE = "yapstOCUnit/yapstOCUnit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DD3AA928165CBCCA0092E05E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "yapstOCUnit/yapstOCUnit-Prefix.pch";
+				INFOPLIST_FILE = "yapstOCUnit/yapstOCUnit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		EAD4B8CC1653EB6D00ACA306 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,6 +644,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DD3AA929165CBCCA0092E05E /* Build configuration list for PBXNativeTarget "yapstOCUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3AA927165CBCCA0092E05E /* Debug */,
+				DD3AA928165CBCCA0092E05E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		EAD4B8A41653EB6C00ACA306 /* Build configuration list for PBXProject "yapstr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
