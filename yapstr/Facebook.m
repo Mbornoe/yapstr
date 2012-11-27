@@ -28,8 +28,6 @@ NSString *const FacebookDataLoadedNotification =
     return birthday;
 }
 
-
-
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI { NSLog(@"openSessionWithAllowLoginUI is calld");
     return [FBSession openActiveSessionWithReadPermissions:nil
                                               allowLoginUI:allowLoginUI
@@ -76,13 +74,23 @@ NSString *const FacebookDataLoadedNotification =
     
     
     if (error) {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Error"
-                                  message:error.localizedDescription
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"could not connect to facebook :'("
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        /*
+         UIAlertView *alertView = [[UIAlertView alloc]
+         initWithTitle:@"Error"
+         message:error.localizedDescription
+         delegate:nil
+         cancelButtonTitle:@"OK"
+         otherButtonTitles:nil];
+         [alertView show];
+         */
     }
 }
 

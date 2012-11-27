@@ -15,37 +15,18 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import <ImageIO/ImageIO.h>
 
-@interface CameraViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
-    UIImagePickerController*imagePicker;
-    
-}
+@interface CameraViewController : UIViewController;
 
-- (IBAction)showCameraUI:(id)sender;
-- (IBAction)uploadPhoto:(id)sender;
 
 @property (retain) CaptureSessionManager *captureManager;
 @property (nonatomic, retain) UILabel *scanningLabel;
 
-
-- (void) startCamera;
-- (void) takePhoto;
-- (void) uploadPhoto;
-
-- (IBAction)revealSideMenu:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
-// Transform values for full screen support:
-#define CAMERA_TRANSFORM_X 1
-//#define CAMERA_TRANSFORM_Y 1.12412 // this was for iOS 3.x
-#define CAMERA_TRANSFORM_Y 1.24299 // this works for iOS 4.x
-
-// iPhone screen dimensions:
-#define SCREEN_WIDTH  320
-#define SCREEN_HEIGTH 480
-
-//#define SCREEN_WIDTH  640
-//#define SCREEN_HEIGTH 1136
+- (void) saveImageToPhotoAlbum;
+- (void) scanButtonPressed;
+- (void) takePhotoButtonPressed;
+- (void) hideLabel;
+- (void) image;
 
 @end

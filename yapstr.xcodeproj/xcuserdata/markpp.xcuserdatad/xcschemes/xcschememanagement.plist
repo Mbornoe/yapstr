@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>yapstOCUnit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>yapstr.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>DD3AA917165CBCCA0092E05E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EAD4B8A91653EB6C00ACA306</key>
 		<dict>
 			<key>primary</key>

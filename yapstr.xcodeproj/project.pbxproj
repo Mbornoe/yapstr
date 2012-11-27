@@ -42,6 +42,13 @@
 		EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581ED165BE6AF009A729A /* scanbutton.png */; };
 		EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6581F0165BE76B009A729A /* AVFoundation.framework */; };
 		EA6581F3165BE7E6009A729A /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581F2165BE7E6009A729A /* menu.png */; };
+		EA9188C7165CE18200A961A8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188C6165CE18200A961A8 /* CoreMedia.framework */; };
+		EA9188CA165CE18B00A961A8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188C9165CE18B00A961A8 /* CoreVideo.framework */; };
+		EA9188CC165CE19600A961A8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188CB165CE19600A961A8 /* ImageIO.framework */; };
+		EA9188CD165CE3D700A961A8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */; };
+		EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */; };
+		EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */; };
+		EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */; };
 		EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
@@ -103,6 +110,12 @@
 		EA6581ED165BE6AF009A729A /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
 		EA6581F0165BE76B009A729A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA6581F2165BE7E6009A729A /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		EA9188C6165CE18200A961A8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EA9188C9165CE18B00A961A8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		EA9188CB165CE19600A961A8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takePhoto_seeThroughButton2.png; sourceTree = "<group>"; };
+		EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_retina.png; path = ../buttonIcon_facetime_retina.png; sourceTree = "<group>"; };
+		EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_small.png; path = ../buttonIcon_facetime_small.png; sourceTree = "<group>"; };
 		EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -162,6 +175,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9188CD165CE3D700A961A8 /* SenTestingKit.framework in Frameworks */,
+				EA9188CC165CE19600A961A8 /* ImageIO.framework in Frameworks */,
+				EA9188CA165CE18B00A961A8 /* CoreVideo.framework in Frameworks */,
+				EA9188C7165CE18200A961A8 /* CoreMedia.framework in Frameworks */,
 				EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */,
 				DDA0BCF0165BA0B200D06983 /* CoreLocation.framework in Frameworks */,
 				DDA0BCEC165B76C600D06983 /* MapKit.framework in Frameworks */,
@@ -182,6 +199,9 @@
 		A31F6B2B165503E3001D0D76 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */,
+				EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */,
+				EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */,
 				EA6581F2165BE7E6009A729A /* menu.png */,
 				EA6581EC165BE6AF009A729A /* overlaygraphic.png */,
 				EA6581ED165BE6AF009A729A /* scanbutton.png */,
@@ -244,6 +264,9 @@
 		EAD4B8AD1653EB6C00ACA306 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA9188CB165CE19600A961A8 /* ImageIO.framework */,
+				EA9188C9165CE18B00A961A8 /* CoreVideo.framework */,
+				EA9188C6165CE18200A961A8 /* CoreMedia.framework */,
 				EA6581F0165BE76B009A729A /* AVFoundation.framework */,
 				DDA0BCEF165BA0B200D06983 /* CoreLocation.framework */,
 				DDA0BCEB165B76C600D06983 /* MapKit.framework */,
@@ -432,6 +455,9 @@
 				EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */,
 				EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */,
 				EA6581F3165BE7E6009A729A /* menu.png in Resources */,
+				EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */,
+				EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */,
+				EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +633,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yapstr/yapstr-Prefix.pch";
@@ -623,6 +650,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yapstr/yapstr-Prefix.pch";

@@ -20,7 +20,6 @@
 @end
 
 @implementation CreateEventViewController
-
 @synthesize privateSwitch;
 @synthesize name;
 @synthesize description;
@@ -89,13 +88,10 @@ CLLocationManager *locationManager;
     
     Event *newEvent = [[Event alloc] init];
     newEvent.location = [[Location alloc] init];
-    
     newEvent.name =[name text];
     newEvent.description = [description text];
     newEvent.password = [password text];
     newEvent.date = getDateString();
-    NSLog(@"dateEfer %@", newEvent.date);
-    
     if ([privateSwitch isOn]) {
         newEvent.privateOn = @"1";
         
@@ -107,14 +103,6 @@ CLLocationManager *locationManager;
     newEvent.location.longitude=self.longitude;
     newEvent.location.latitude=self.latitude;
     
-    NSLog(@"%@",newEvent.privateOn);
-    NSLog(@"%@",newEvent.name);
-    NSLog(@"%@",newEvent.date);
-    NSLog(@"%@",newEvent.description);
-    NSLog(@"%@",newEvent.password);
-    
-    NSLog(@"%f",newEvent.location.longitude);
-    NSLog(@"%f",newEvent.location.latitude);
     NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                newEvent.name, @"name",
                                newEvent.privateOn, @"privateOn",
@@ -127,13 +115,8 @@ CLLocationManager *locationManager;
     
     NSData *eventData =[NSJSONSerialization dataWithJSONObject:eventDict options:kNilOptions error:nil];
     
-    [locationManager stopUpdatingLocation];
-    
-    NSLog(@"ER HER HNUp");
-    
-    
+    [locationManager stopUpdatingLocation];    
     [NetworkDriver uploadEvent:eventData];
-    
     
 }
 
@@ -146,9 +129,7 @@ NSString *getDateString(){
     
 }
 
-
 #pragma mark - CLLocationManagerDelegate
-
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
@@ -167,11 +148,8 @@ NSString *getDateString(){
         self.latitude =  currentLocation.coordinate.latitude;
         NSLog(@"longitude: %f", self.longitude);
         NSLog(@"latitude: %f", self.latitude);
-        
-        
     }
 }
-
 
 - (IBAction)checkPrivat:(id)sender {
     
@@ -181,6 +159,5 @@ NSString *getDateString(){
     else{
         password.hidden=YES;
     }
-    
 }
 @end

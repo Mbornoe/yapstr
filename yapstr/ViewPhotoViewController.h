@@ -12,6 +12,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Photo.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+
 @interface ViewPhotoViewController : UIViewController{
 }
 @property (strong) NSArray* photos;
