@@ -61,7 +61,7 @@
     [[self captureSession] addOutput:[self stillImageOutput]];
 }
 
-- (void)captureStillImage
+- (UIImage*)captureStillImage
 {   
 	AVCaptureConnection *videoConnection = nil;
 	for (AVCaptureConnection *connection in [[self stillImageOutput] connections]) {
@@ -75,6 +75,8 @@
             break;
         }
 	}
+    __block UIImage *snappedPhoto;
+    __block NSData *returnData;
 	NSLog(@"about to request a capture from: %@", [self stillImageOutput]);
 	[[self stillImageOutput] captureStillImageAsynchronouslyFromConnection:videoConnection
                                                          completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
@@ -86,9 +88,16 @@
                                                              }
                                                              NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
                                                              UIImage *image = [[UIImage alloc] initWithData:imageData];
-                                                             [self setStillImage:image];
-                                                             [[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
+                                                             snappedPhoto = [[UIImage alloc] initWithData:imageData];
+                                                             //[self setStillImage:image];
+                                                             //[[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
                                                          }];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(goToSecondButton:) userInfo:nil repeats:NO];
+    
+    while(snappedPhoto==nil) {
+        NSLog(@"wha så dejr!");
+    }
+    return snappedPhoto;
 }
 
 - (void)dealloc {

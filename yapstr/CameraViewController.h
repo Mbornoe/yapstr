@@ -20,8 +20,11 @@
 @interface CameraViewController : UIViewController;
 
 
-@property (retain) CaptureSessionManager *captureManager;
 @property (nonatomic, retain) UILabel *scanningLabel;
+@property (retain) AVCaptureVideoPreviewLayer *previewLayer;
+@property (retain) AVCaptureSession *captureSession;
+@property (retain) AVCaptureStillImageOutput *stillImageOutput;
+@property (strong) UIImage* snappedPhoto;
 
 - (void) saveImageToPhotoAlbum;
 - (void) scanButtonPressed;

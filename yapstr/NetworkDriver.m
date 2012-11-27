@@ -18,9 +18,27 @@
 @implementation NetworkDriver
 
 
-- (void) uploadPhoto
++ (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event
 {
-    
+    NSData *imageData = UIImageJPEGRepresentation(image, 100);
+    NSDictionary *jsonDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: event.eventId, @"eventId", nil];
+    NSString *urlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/storePhoto?data=%@", [self parseToJSONjonas:jsonDictionary]];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+	[request setURL:[NSURL URLWithString:urlString]];
+	[request setHTTPMethod:@"POST"];
+	NSString *boundary = @"---------------------------Boundary Line---------------------------";
+	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+	NSMutableData *body = [NSMutableData data];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"userfile\"; filename=\"uploadedFile.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[NSData dataWithData:imageData]];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[request setHTTPBody:body];
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+	NSLog(@"%@", returnString);
 }
 +(NSArray*)regEvents {
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];

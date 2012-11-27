@@ -16,6 +16,6 @@
 - (void)addVideoPreviewLayer;
 - (void)addVideoInput;
 - (void)addStillImageOutput;
-- (void)captureStillImage;
+- (UIImage*)captureStillImage;
 
 @end
