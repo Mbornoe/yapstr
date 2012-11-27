@@ -66,7 +66,7 @@
 }
 
 - (IBAction)uploadPhotoButton:(id)sender {
-    NSString *identifier = [NSString stringWithFormat:@"uploadPhotoView"];
+    NSString *identifier = [NSString stringWithFormat:@"SelectPhoto"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     
     [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{
