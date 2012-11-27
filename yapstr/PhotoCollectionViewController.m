@@ -58,6 +58,7 @@
     cvc.contentMode = UIViewContentModeScaleToFill;
     cvc.imageView.contentMode = UIViewContentModeScaleToFill;
     [cvc.loading stopAnimating];
+    cvc.loading.hidden=YES;
     [[NSRunLoop mainRunLoop] runUntilDate: [NSDate dateWithTimeIntervalSinceNow: 0.01]];
 }
 
