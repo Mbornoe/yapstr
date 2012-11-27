@@ -15,7 +15,7 @@
 
 @interface NetworkDriver : NSObject
 
-- (void) uploadPhoto;
++ (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event;
 + (void) uploadEvent:(NSData*)eventData;
 +(NSString *) parseToJSON: (NSData*)dataToParse;
 +(NSArray*)regEvents;
