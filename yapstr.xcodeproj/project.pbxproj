@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A1CBA391665380100E592F4 /* SelectPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CBA381665380100E592F4 /* SelectPhotoViewController.m */; };
 		A3086AA51655132C0079B83D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A3086AA41655132C0079B83D /* Default.png */; };
 		A3086AA81655136F0079B83D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3086AA71655136F0079B83D /* Default@2x.png */; };
 		A3086AAA165513920079B83D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3086AA9165513920079B83D /* Default-568h@2x.png */; };
@@ -76,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A1CBA371665380100E592F4 /* SelectPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhotoViewController.h; sourceTree = "<group>"; };
+		6A1CBA381665380100E592F4 /* SelectPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoViewController.m; sourceTree = "<group>"; };
 		A3086AA41655132C0079B83D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		A3086AA71655136F0079B83D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		A3086AA9165513920079B83D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -371,6 +374,8 @@
 				DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */,
 				DDED5E6A1664B32F00676701 /* PreviewPhotoViewController.h */,
 				DDED5E6B1664B32F00676701 /* PreviewPhotoViewController.m */,
+				6A1CBA371665380100E592F4 /* SelectPhotoViewController.h */,
+				6A1CBA381665380100E592F4 /* SelectPhotoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */,
 				DDED5E6C1664B32F00676701 /* PreviewPhotoViewController.m in Sources */,
 				DD1978D3166504D400C71248 /* SelectEventViewController.m in Sources */,
+				6A1CBA391665380100E592F4 /* SelectPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
