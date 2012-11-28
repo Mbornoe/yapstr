@@ -107,28 +107,28 @@
 }
 
 
-+ (void) uploadEvent:(NSData*)eventData;
++ (Event*)uploadEvent:(Event*)eventIn;
 {
+    NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               eventIn.name, @"name",
+                               eventIn.privateOn, @"privateOn",
+                               eventIn.date, @"date",
+                               eventIn.description, @"description",
+                               eventIn.password, @"password",
+                               [NSString stringWithFormat:@"%f",eventIn.location.longitude], @"longitude",
+                               [NSString stringWithFormat:@"%f",eventIn.location.latitude], @"latitude",
+                               nil];
+    NSData *eventData =[NSJSONSerialization dataWithJSONObject:eventDict options:kNilOptions error:nil];
     NSString *eventJSON = [self parseToJSON:eventData];
-    NSLog(@"%@", eventJSON);
     
-    NSLog(@"CHOOSED EVENT");
     NSString *eventJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/EventController/storeEvent/?data=%@",eventJSON];
-    NSLog(@"%@",eventJSONUrlString);
-    
-    NSLog(@" ER HHER");
     NSURL *eventJSONUrl = [NSURL URLWithString:eventJSONUrlString];
-    NSLog(@" ER HHER2");
-    NSLog(@"%@",eventJSONUrl);
     NSData *jsonData = [NSData dataWithContentsOfURL:eventJSONUrl];
-    NSLog(@" ER HHER3");
-    NSLog(@"%@",eventJSONUrl);
-    NSLog(@"%@", jsonData);
     NSDictionary *serverOutput = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
-    NSLog(@" ER HHER4");
-    NSLog(@"%@", serverOutput);
-    
-    
+    Event *outEvent =  eventIn;
+    outEvent.eventId = [NSNumber numberWithInt:[[serverOutput objectForKey:@"message"] integerValue]];
+    NSLog(@"New event has been assigned id: %@", outEvent.eventId);
+    return outEvent;
 }
 +(NSString*) parseToJSONjonas: (NSDictionary*)dataToParse{
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataToParse options:kNilOptions error:nil];
