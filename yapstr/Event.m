@@ -16,11 +16,12 @@
 @synthesize title;
 @synthesize subtitle;
 @synthesize eventId;
+@synthesize description;
 
 -(void)setCoordinate:(CLLocationCoordinate2D) c {
     coordinate=c;
     title = [self name];
-    subtitle = [NSString stringWithFormat:@"Event id: %i",[eventId intValue]];
+    subtitle = description;
 }
 - (void) createEvent
 {
