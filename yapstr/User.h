@@ -20,5 +20,5 @@
 @property (strong, nonatomic) NSString *facebookID;
 
 - (void)dumpUserDataInTerminal;
-
+- (void)clearUser;
 @end

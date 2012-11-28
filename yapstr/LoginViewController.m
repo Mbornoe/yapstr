@@ -18,39 +18,47 @@
 
 
 @implementation LoginViewController
-@synthesize myFacebook;
+@synthesize myFacebook, logout;
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    NSLog(@"ViewDidLoad");
     mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     myFacebook = [[FacebookUser alloc] init];
     self.loginButton.hidden = YES;
     self.loading.hidesWhenStopped = YES;
     
-    if ([myFacebook getFacebookID]) {
-        [self collectUserData];
-        NSLog(@"Is login");
-    }
-    else
-    {
-        [self.loading startAnimating];
-        
-        [[NSNotificationCenter defaultCenter]
-         addObserver:self
-         selector:@selector(facebookDataLoaded:)
-         name:FacebookDataLoadedNotification
-         object:nil];
-        
-        NSLog(@"Is NOT login");
-        
-        if(![myFacebook openSessionWithAllowLoginUI:NO]){
-            [self.loading stopAnimating];
-            self.loginButton.hidden = NO;
-        }
-    }
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(facebookDataLoaded:)
+     name:FacebookDataLoadedNotification
+     object:nil];
     
+    if (!logout) {
+    
+        if ([myFacebook getFacebookID]) {
+            [self collectUserData];
+            NSLog(@"Is login");
+        }
+        else
+        {
+            [self.loading startAnimating];
+        
+            NSLog(@"Is NOT login");
+        
+            if(![myFacebook openSessionWithAllowLoginUI:NO]){
+                [self.loading stopAnimating];
+                self.loginButton.hidden = NO;
+            }
+    
+        }
+    }else {
+        self.loginButton.hidden = NO;
+        [mainDelegate.myUser clearUser];
+        [myFacebook logFacebookOut];
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -91,24 +99,21 @@ NSString *parseToJSON(NSData *dataToParse){
     
 }
 
-- (void)viewDidUnload{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (void)facebookDataLoaded:(NSNotification*)notification {
     //    NSLog(@"FacebookID: %@", [myFacebook getFacebookID]);
     [self collectUserData];
+     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
 }
 
 - (IBAction)Login:(id)sender {
     NSLog(@"Button pust");
     [self.loading startAnimating];
-    if (![myFacebook openSessionWithAllowLoginUI:YES]){
+    logout=NO;
+    if ([myFacebook openSessionWithAllowLoginUI:YES]){
         NSLog(@"Kunne Ikke Logge på Facebook!");
         [self.loading stopAnimating];
     }
-    NSLog(@"Method logWithFacebook is calld");
-}
+ }
 
 @end

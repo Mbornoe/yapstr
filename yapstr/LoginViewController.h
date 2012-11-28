@@ -24,9 +24,12 @@
 //@property (strong, nonatomic) User* myUser;
 @property (strong, nonatomic) FacebookUser* myFacebook;
 
+@property BOOL* logout;
+
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
     
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
+
 
 @end
