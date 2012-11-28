@@ -40,6 +40,7 @@
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	NSLog(@"%@", returnString);
 }
+
 +(NSArray*)regEvents {
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];
     NSURL *jsonUrl = [NSURL URLWithString:@"http://12gr550.lab.es.aau.dk/EventController/getEvents"];
@@ -72,7 +73,7 @@
         photoObj.thumpnailPath = [photo objectForKey:@"thumpnailPath"];
         photoObj.userID = [NSNumber numberWithInt:[[photo objectForKey:@"userID"] integerValue]];
         NSDictionary *location = [photo objectForKey:@"location"];
-        photoObj.location = [[Location alloc] initWithLatitude:[[location objectForKey:@"y"] doubleValue] andLongitude:[[location objectForKey:@"x"] doubleValue]];
+        photoObj.location = [[Location alloc] initWithLatitude:[[location objectForKey:@"longitude"] doubleValue] andLongitude:[[location objectForKey:@"longitude"] doubleValue]];
         photoObj.eventID = [NSNumber numberWithInt:[[photo objectForKey:@"eventID"] integerValue]];
         photoObj.photoID = [NSNumber numberWithInt:[[photo objectForKey:@"photoID"] integerValue]];
         [returnArray addObject:photoObj];

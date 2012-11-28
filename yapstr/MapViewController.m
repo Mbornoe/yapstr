@@ -68,8 +68,10 @@
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"partyIcon.png"];//here we use a nice image instead of the default pins
+            
+            //annotationView.image = [UIImage imageNamed:@"partyIcon.png"];//here we use a nice image instead of the default pins
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            NSLog(@"Added new pin");
         } else {
             annotationView.annotation = annotation;
         }
