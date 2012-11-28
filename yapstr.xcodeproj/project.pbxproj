@@ -22,6 +22,7 @@
 		A393D62E165637EA00BA850C /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62B165637EA00BA850C /* ECSlidingViewController.m */; };
 		A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */; };
 		A393D6321656387000BA850C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A393D6311656387000BA850C /* QuartzCore.framework */; };
+		DD1146D9166605BC002FE72A /* partyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1146D8166605BC002FE72A /* partyIcon.png */; };
 		DD1978D3166504D400C71248 /* SelectEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1978D2166504D400C71248 /* SelectEventViewController.m */; };
 		DD3AA91A165CBCCA0092E05E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */; };
 		DD3AA91B165CBCCA0092E05E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
@@ -48,7 +49,6 @@
 		EA9188C7165CE18200A961A8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188C6165CE18200A961A8 /* CoreMedia.framework */; };
 		EA9188CA165CE18B00A961A8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188C9165CE18B00A961A8 /* CoreVideo.framework */; };
 		EA9188CC165CE19600A961A8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9188CB165CE19600A961A8 /* ImageIO.framework */; };
-		EA9188CD165CE3D700A961A8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3AA919165CBCCA0092E05E /* SenTestingKit.framework */; };
 		EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */; };
 		EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */; };
 		EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */; };
@@ -96,6 +96,7 @@
 		A393D62C165637EA00BA850C /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
 		A393D62D165637EA00BA850C /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
 		A393D6311656387000BA850C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DD1146D8166605BC002FE72A /* partyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partyIcon.png; sourceTree = "<group>"; };
 		DD1978D1166504D400C71248 /* SelectEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectEventViewController.h; sourceTree = "<group>"; };
 		DD1978D2166504D400C71248 /* SelectEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectEventViewController.m; sourceTree = "<group>"; };
 		DD3AA918165CBCCA0092E05E /* yapstOCUnit.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yapstOCUnit.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,7 +185,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA9188CD165CE3D700A961A8 /* SenTestingKit.framework in Frameworks */,
 				EA9188CC165CE19600A961A8 /* ImageIO.framework in Frameworks */,
 				EA9188CA165CE18B00A961A8 /* CoreVideo.framework in Frameworks */,
 				EA9188C7165CE18200A961A8 /* CoreMedia.framework in Frameworks */,
@@ -208,6 +208,7 @@
 		A31F6B2B165503E3001D0D76 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				DD1146D8166605BC002FE72A /* partyIcon.png */,
 				EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */,
 				EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */,
 				EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */,
@@ -473,6 +474,7 @@
 				EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */,
 				EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */,
 				EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */,
+				DD1146D9166605BC002FE72A /* partyIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
