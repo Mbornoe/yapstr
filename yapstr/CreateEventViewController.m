@@ -11,6 +11,7 @@
  */
 
 #import "CreateEventViewController.h"
+#import "SelectEventViewController.h"
 #import "Location.h"
 #import "Event.h"
 
@@ -26,6 +27,8 @@
 @synthesize password;
 @synthesize longitude;
 @synthesize latitude;
+@synthesize image;
+@synthesize createdEvent;
 CLLocationManager *locationManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -102,22 +105,10 @@ CLLocationManager *locationManager;
     }
     newEvent.location.longitude=self.longitude;
     newEvent.location.latitude=self.latitude;
-    
-    NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                               newEvent.name, @"name",
-                               newEvent.privateOn, @"privateOn",
-                               newEvent.date, @"date",
-                               newEvent.description, @"description",
-                               newEvent.password, @"password",
-                               [NSString stringWithFormat:@"%f",newEvent.location.longitude], @"longitude",
-                               [NSString stringWithFormat:@"%f",newEvent.location.latitude], @"latitude",
-                               nil];
-    
-    NSData *eventData =[NSJSONSerialization dataWithJSONObject:eventDict options:kNilOptions error:nil];
-    
+    //self.createdEvent = newEvent;
     [locationManager stopUpdatingLocation];    
-    [NetworkDriver uploadEvent:eventData];
-    
+    self.createdEvent=[NetworkDriver uploadEvent:newEvent];
+    [self performSegueWithIdentifier:@"createdEventToUpload" sender:self];
 }
 
 NSString *getDateString(){
@@ -148,6 +139,20 @@ NSString *getDateString(){
         self.latitude =  currentLocation.coordinate.latitude;
         NSLog(@"longitude: %f", self.longitude);
         NSLog(@"latitude: %f", self.latitude);
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"backFromCreateEvent"])
+    {
+        SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
+        vc.image = image;
+    }
+    if([[segue identifier] isEqualToString:@"createdEventToUpload"]) {
+        SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
+        vc.image = image;
+        vc.event=self.createdEvent;
     }
 }
 

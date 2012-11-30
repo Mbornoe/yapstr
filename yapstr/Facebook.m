@@ -28,6 +28,14 @@ NSString *const FacebookDataLoadedNotification =
     return birthday;
 }
 
+- (void)logFacebookOut{
+    NSLog(@"Facebook Logout");
+    [FBSession.activeSession closeAndClearTokenInformation];
+    facebookID = nil;
+    name = nil;
+    birthday = nil;
+}
+
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI { NSLog(@"openSessionWithAllowLoginUI is calld");
     return [FBSession openActiveSessionWithReadPermissions:nil
                                               allowLoginUI:allowLoginUI

@@ -11,6 +11,7 @@
  */
 
 #import "MenuViewController.h"
+#import "LoginViewController.h"
 
 @interface MenuViewController ()
 
@@ -65,6 +66,12 @@
     }];
 }
 
+- (IBAction)logout:(id)sender {
+    [self performSegueWithIdentifier:@"logoutSague" sender:self];
+}
+
+
+
 - (IBAction)uploadPhotoButton:(id)sender {
     NSString *identifier = [NSString stringWithFormat:@"SelectPhoto"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
@@ -75,6 +82,15 @@
         self.slidingViewController.topViewController.view.frame = frame;
         [self.slidingViewController resetTopView];
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"logoutSague"]){
+        LoginViewController *vc = (LoginViewController *)[segue destinationViewController];
+        vc.logout=YES;
+    }
+
 }
 
 @end

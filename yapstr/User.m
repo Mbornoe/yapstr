@@ -21,4 +21,11 @@
     NSLog(@"facebookID: %@", facebookID);
 }
 
+- (void)clearUser{
+    NSLog(@"Clear User Data");
+    name = nil;
+    userID = nil;
+    facebookID = nil;
+}
+
 @end
