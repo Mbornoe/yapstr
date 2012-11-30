@@ -7,6 +7,7 @@
 //
 
 #import "SelectEventViewController.h"
+#import "CreateEventViewController.h"
 #import "NetworkDriver.h"
 
 @interface SelectEventViewController ()
@@ -31,6 +32,9 @@
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
 	events = [NetworkDriver regEvents];
+    if(event!=nil) {
+        eventLabel.text=event.name;
+    }
 }
 -(IBAction)showEventPicker {
     eventPicker.hidden = false;
@@ -41,19 +45,34 @@
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSLog(@"%i", [events count]);
-    return [events count];
+    return ([events count]+1);
 }
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    Event *tempEvent = [events objectAtIndex:row];
-    return tempEvent.name;
+    if(row==[events count]) {
+        return @"Create new";
+    } else {
+        Event *tempEvent = [events objectAtIndex:row];
+        return tempEvent.name;
+    }
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     eventPicker.hidden=TRUE;
-    Event *tempEvent = [events objectAtIndex:row];
-    event = tempEvent;
-    eventLabel.text = tempEvent.name;
+    if(row==[events count]) {
+        [self performSegueWithIdentifier:@"selectEventToCreate" sender:self];
+    } else {
+        Event *tempEvent = [events objectAtIndex:row];
+        event = tempEvent;
+        eventLabel.text = tempEvent.name;
+    }
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"selectEventToCreate"])
+    {
+        CreateEventViewController *vs = (CreateEventViewController*)[segue destinationViewController];
+        vs.image = image;
+    }
 }
 - (IBAction)uploadImage {
     loading.hidden=NO;
