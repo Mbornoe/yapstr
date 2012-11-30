@@ -33,4 +33,5 @@ extern NSString *const FacebookDataLoadedNotification;
 - (NSString*)getFacebookName;
 - (NSString*)getFacebookBirthday;
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
+- (void)logFacebookOut;
 @end

@@ -15,6 +15,7 @@
 #import <UIKit/UIKit.h>
 #import "NetworkDriver.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Event.h"
 
 
 @interface CreateEventViewController : UIViewController <UITextFieldDelegate,CLLocationManagerDelegate>
@@ -26,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *privatLabel;
 @property(assign, nonatomic)double longitude;
 @property(assign, nonatomic)double latitude;
+@property Event* createdEvent;
+@property UIImage* image;
 - (IBAction)create:(id)sender;
 
 NSString *getDateString();
