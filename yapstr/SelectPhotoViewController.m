@@ -74,7 +74,7 @@
 
 @implementation SelectPhotoViewController
 
-@synthesize imgPicker, img;
+@synthesize imgPicker, img, firstTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -84,19 +84,22 @@
     }
     return self;
 }
-- (IBAction)test:(UIButton *)sender {
-        [self presentViewController:imgPicker animated:YES completion:nil];
-}
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if(!firstTime){
     // Do any additional setup after loading the view.
     imgPicker = [[UIImagePickerController alloc] init];
 	//self.imgPicker.allowsEditing = YES;
 	imgPicker.delegate = self;
     imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    
+        [self presentViewController:imgPicker animated:YES completion:nil];
+    }
 
 }
 
@@ -110,7 +113,14 @@
     [super viewDidAppear:animated];
     
 }
-
+/*
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    //[picker dismissModalViewControllerAnimated:NO];
+    [picker presentViewController:self animated:NO completion:nil];
+    [self performSegueWithIdentifier:@"backToCamera" sender:self];
+}
+*/
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage*)picktImg editingInfo:(NSDictionary *)editInfo {
     img = [picktImg imageByScalingAndCroppingForSize:CGSizeMake(640, 920)];
