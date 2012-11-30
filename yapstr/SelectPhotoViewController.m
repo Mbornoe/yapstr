@@ -126,7 +126,7 @@
     img = [picktImg imageByScalingAndCroppingForSize:CGSizeMake(640, 920)];
     //preview.image = img;
     //    img = picktImg;
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:NO];
     
     [self performSegueWithIdentifier:@"SelectPhotoToPreview" sender:self];
     /*
