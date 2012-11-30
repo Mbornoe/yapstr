@@ -26,8 +26,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "26"
          endingLineNumber = "26"
-         landmarkName = "-saveImageToPhotoAlbum"
-         landmarkType = "4">
+         landmarkName = "stillImageOutput"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -52,7 +52,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "41"
          endingLineNumber = "41"
-         landmarkName = "-viewDidLoad"
+         landmarkName = "-imageByScalingAndCroppingForSize:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
