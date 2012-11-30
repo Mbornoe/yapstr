@@ -7,5 +7,6 @@
 
 @property (nonatomic, retain) UIImagePickerController *imgPicker;
 @property (nonatomic, retain) UIImage *img;
+@property BOOL *firstTime;
 
 @end
