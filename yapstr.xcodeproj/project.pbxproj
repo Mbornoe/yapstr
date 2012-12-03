@@ -50,7 +50,7 @@
 		EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */; };
 		EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */; };
 		EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */; };
-		EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */; };
+		EAD44A36166CDA09004FA1C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD44A35166CDA09004FA1C3 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
 		EAD4B8B31653EB6C00ACA306 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */; };
@@ -120,7 +120,7 @@
 		EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takePhoto_seeThroughButton2.png; sourceTree = "<group>"; };
 		EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_retina.png; path = ../buttonIcon_facetime_retina.png; sourceTree = "<group>"; };
 		EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_small.png; path = ../buttonIcon_facetime_small.png; sourceTree = "<group>"; };
-		EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		EAD44A35166CDA09004FA1C3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAD4B8B01653EB6C00ACA306 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -288,7 +288,7 @@
 		EAD4B8B41653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXGroup;
 			children = (
-				EAD18C06165BD304007BB868 /* MainStoryboard.storyboard */,
+				EAD44A35166CDA09004FA1C3 /* MainStoryboard.storyboard */,
 				EAD4B8E31653EC3100ACA306 /* ViewControllers */,
 				EAD4B8D31653EBCC00ACA306 /* Models */,
 				EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */,
@@ -338,6 +338,7 @@
 				EAD4B8F01653EC7D00ACA306 /* LoginViewController.h */,
 				EAD4B8F11653EC7D00ACA306 /* LoginViewController.m */,
 				A393D630165637EF00BA850C /* ECSlidingViewController */,
+				EAD4B8F61653EC9200ACA306 /* MenuViewController.h */,
 				EAD4B8F71653EC9200ACA306 /* MenuViewController.m */,
 				EAD4B8E41653EC4800ACA306 /* CameraViewController.h */,
 				EAD4B8E51653EC4800ACA306 /* CameraViewController.m */,
@@ -349,7 +350,6 @@
 				DD1978D2166504D400C71248 /* SelectEventViewController.m */,
 				EAD4B8F31653EC8800ACA306 /* EventViewController.h */,
 				EAD4B8F41653EC8800ACA306 /* EventViewController.m */,
-				EAD4B8F61653EC9200ACA306 /* MenuViewController.h */,
 				EAD4B8ED1653EC6700ACA306 /* MapViewController.h */,
 				EAD4B8EE1653EC6700ACA306 /* MapViewController.m */,
 				EAD4B8F91653ECA200ACA306 /* ViewPhotoViewController.h */,
@@ -454,13 +454,13 @@
 				A3086AA51655132C0079B83D /* Default.png in Resources */,
 				A3086AA81655136F0079B83D /* Default@2x.png in Resources */,
 				A3086AAA165513920079B83D /* Default-568h@2x.png in Resources */,
-				EAD18C07165BD304007BB868 /* MainStoryboard.storyboard in Resources */,
 				EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */,
 				EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */,
 				EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */,
 				EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */,
 				EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */,
 				DD1146D9166605BC002FE72A /* partyIcon.png in Resources */,
+				EAD44A36166CDA09004FA1C3 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
