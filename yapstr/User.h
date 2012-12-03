@@ -16,8 +16,8 @@
 @interface User : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSNumber *userID;
-@property (strong, nonatomic) NSString *facebookID;
+@property (strong, nonatomic) NSNumber *userId;
+@property (strong, nonatomic) NSString *facebookId;
 
 - (void)dumpUserDataInTerminal;
 - (void)clearUser;

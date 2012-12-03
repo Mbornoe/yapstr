@@ -13,19 +13,19 @@
 #import "User.h"
 
 @implementation User
-@synthesize facebookID, name, userID;
+@synthesize facebookId, name, userId;
 
 - (void)dumpUserDataInTerminal{
     NSLog(@"Name: %@", name);
-    NSLog(@"userID: %@", userID);
-    NSLog(@"facebookID: %@", facebookID);
+    NSLog(@"userID: %@", userId);
+    NSLog(@"facebookID: %@", facebookId);
 }
 
 - (void)clearUser{
     NSLog(@"Clear User Data");
     name = nil;
-    userID = nil;
-    facebookID = nil;
+    userId = nil;
+    facebookId = nil;
 }
 
 @end

@@ -51,7 +51,7 @@
         Event *eventObj = [[Event alloc] init];
         eventObj.name = [event objectForKey:@"name"];
         eventObj.eventId = [NSNumber numberWithInt:[[event objectForKey:@"eventId"] integerValue]];
-        NSDictionary *location = [event objectForKey:@"Location"];
+        NSDictionary *location = [event objectForKey:@"location"];
         eventObj.description = [event objectForKey:@"description"];
         eventObj.location = [[Location alloc] initWithLatitude:[[location objectForKey:@"latitude"] doubleValue] andLongitude:[[location objectForKey:@"longitude"] doubleValue]];
         [returnArray addObject:eventObj];

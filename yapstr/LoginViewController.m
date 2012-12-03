@@ -67,9 +67,9 @@
 
 - (void)collectUserData{
     [self.loading startAnimating];
-    mainDelegate.myUser.facebookID = [myFacebook getFacebookID];
+    mainDelegate.myUser.facebookId = [myFacebook getFacebookID];
     mainDelegate.myUser.name = [myFacebook getFacebookName];
-    NSLog(@"User.facebookID = %@", mainDelegate.myUser.facebookID);
+    NSLog(@"User.facebookID = %@", mainDelegate.myUser.facebookId);
     NSDictionary *dataToServer = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [myFacebook getFacebookID], @"facebookID",
                                   nil];
@@ -84,7 +84,7 @@
     NSURL *url = [NSURL URLWithString:dataToServerJSONUrlString];
     NSData *JASONData = [NSData dataWithContentsOfURL:url];
     NSDictionary *data = [NSJSONSerialization JSONObjectWithData:JASONData options:kNilOptions error:&error];
-    mainDelegate.myUser.userID = [data objectForKey:@"id"];
+    mainDelegate.myUser.userId = [data objectForKey:@"userId"];
     mainDelegate.myUser.name = [data objectForKey:@"name"];
     [self.loading stopAnimating];
     [mainDelegate.myUser dumpUserDataInTerminal];
