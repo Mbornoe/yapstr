@@ -71,9 +71,9 @@ NSString *const FacebookDataLoadedNotification =
     [self.loading startAnimating];
     mainDelegate.myUser.facebookId = [myFacebook getFacebookID];
     mainDelegate.myUser.name = [myFacebook getFacebookName];
-    NSLog(@"User.facebookID = %@", mainDelegate.myUser.facebookId);
+    NSLog(@"User.facebookId = %@", mainDelegate.myUser.facebookId);
     NSDictionary *dataToServer = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  [myFacebook getFacebookID], @"facebookID",
+                                  [myFacebook getFacebookID], @"facebookId",
                                   nil];
     
     NSData *dataToServerData = [NSJSONSerialization dataWithJSONObject:dataToServer options:kNilOptions error:nil];

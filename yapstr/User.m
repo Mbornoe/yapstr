@@ -17,8 +17,8 @@
 
 - (void)dumpUserDataInTerminal{
     NSLog(@"Name: %@", name);
-    NSLog(@"userID: %@", userId);
-    NSLog(@"facebookID: %@", facebookId);
+    NSLog(@"userId: %@", userId);
+    NSLog(@"facebookId: %@", facebookId);
 }
 
 - (void)clearUser{
