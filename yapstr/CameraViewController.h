@@ -11,7 +11,6 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "CaptureSessionManager.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
@@ -29,7 +28,9 @@
 - (void) saveImageToPhotoAlbum;
 - (void) scanButtonPressed;
 - (void) takePhotoButtonPressed;
+- (void) takePhoto;
 - (void) hideLabel;
 - (void) image;
+- (void) startCamera;
 
 @end

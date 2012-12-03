@@ -20,11 +20,5 @@
 @property (retain) Location* location;
 @property (retain) NSNumber* eventID;
 @property (retain) NSNumber* photoID;
-- (void) startCamera;
-- (void) takePhoto;
-- (void) showPhoto;
-- (void) setDeleteFlag;
-- (void) selectPhotoFromCameraRoll;
-- (void) requestPhotosFromServer;
 
 @end

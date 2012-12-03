@@ -87,7 +87,7 @@ CLLocationManager *locationManager;
 }
 
 
-- (IBAction)create:(id)sender {
+- (IBAction)createEvent:(id)sender {
     
     Event *newEvent = [[Event alloc] init];
     newEvent.location = [[Location alloc] init];

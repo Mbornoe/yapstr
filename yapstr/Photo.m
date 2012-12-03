@@ -14,28 +14,4 @@
 
 @implementation Photo
 
-- (void) startCamera
-{
-    
-}
-- (void) takePhoto
-{
-    
-}
-- (void) showPhoto
-{
-    
-}
-- (void) setDeleteFlag
-{
-    
-}
-- (void) selectPhotoFromCameraRoll
-{
-    
-}
-- (void) requestPhotosFromServer
-{
-    
-}
 @end

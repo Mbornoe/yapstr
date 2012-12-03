@@ -29,7 +29,7 @@
 @property(assign, nonatomic)double latitude;
 @property Event* createdEvent;
 @property UIImage* image;
-- (IBAction)create:(id)sender;
+- (IBAction)createEvent:(id)sender;
 
 NSString *getDateString();
 @end

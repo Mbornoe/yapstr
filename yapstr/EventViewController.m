@@ -30,7 +30,9 @@
     return [events count];
 }
 
-// Customize the appearance of table view cells.
+// Customize the appearance of table view cells. showEventList
+/** This methods represents the showEventList method from the design. 
+ */
 - (UITableViewCell *)tableView:(UITableView *)unused cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -60,14 +62,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self requestEvents];
+    [self requestEventList];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -83,7 +80,7 @@
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
-- (void) requestEvents
+- (void) requestEventList
 {
   events = [NetworkDriver regEvents];
 }
@@ -91,13 +88,6 @@
 {
     [self performSegueWithIdentifier:@"eventListToCollection" sender:self];
 }
-- (void) showEvent
-{
-    
-}
-- (void) showEvents
-{
-    
-}
+
 
 @end

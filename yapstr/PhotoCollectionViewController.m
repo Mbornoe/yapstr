@@ -1,10 +1,14 @@
-//
-//  PhotoCollectionViewController.m
-//  yapstr
-//
-//  Created by Jonas Markussen on 15/11/12.
-//  Copyright (c) 2012 AAU_ITC5. All rights reserved.
-//
+/**
+ * @file PhotoCollectionViewController.m
+ * @author ITC5 Group 550
+ * @date Fall 2012
+ * @version 1.0
+ *
+ *
+ * @section DESCRIPTION
+ *
+ * The class handles the requests and presentation of the thumbnails list of photos which are defined from an event selected.
+ */
 
 #import "PhotoCollectionViewController.h"
 #import "NetworkDriver.h"
@@ -38,16 +42,19 @@
     static NSString *identifier = @"PhotoCell";
     PhotoCollectionViewCell *cvc = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cvc.loading startAnimating];
+   
     NSOperationQueue *queue = [NSOperationQueue new];
     NSInvocationOperation *operation = [[NSInvocationOperation alloc]
                                         initWithTarget:self
-                                        selector:@selector(loadImage:)
+                                        selector:@selector(requestPhotosFromServer:)
                                         object:indexPath];
     [queue addOperation:operation];
     cvc.imageView.contentMode=UIViewContentModeScaleToFill;
     return cvc;
 }
-- (void)loadImage:(NSIndexPath*)indexPath {
+/** Requests all the thumbnails photos to a photoList, afterwards they are presented in the cell image view(cvc.imageview). 
+ */
+- (void)requestPhotosFromServer:(NSIndexPath*)indexPath {
     Photo *tempPhoto = [Photo alloc];
     tempPhoto= [photoList objectAtIndex:[indexPath row]];
     NSURL *url = [NSURL URLWithString:tempPhoto.thumpnailPath];
@@ -71,19 +78,10 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
-    // You just need to set the opacity, radius, and color.
-    //self.view.layer.shadowOpacity = 0.75f;
-    //self.view.layer.shadowRadius = 10.0f;
-    //self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    
+
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
