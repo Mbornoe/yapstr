@@ -46,7 +46,6 @@
 
 /** Reference to an instance of UIImage. */
 @property UIImage* image;
-- (IBAction)createEvent:(id)sender;
 
 /** Creating an event using the collected user info and location data. */
 - (IBAction)createEvent;
