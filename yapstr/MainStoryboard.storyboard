@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -620,7 +620,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createEvent" destination="qP1-dl-jqY" eventType="touchDown" id="1AA-kU-pAL"/>
+                                    <action selector="createEvent" destination="qP1-dl-jqY" eventType="touchUpInside" id="Vsv-fp-POS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -628,10 +628,12 @@
                         <constraints>
                             <constraint firstItem="jEx-Cx-Fre" firstAttribute="top" secondItem="rr9-pJ-s7A" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6AV-7E-WKc"/>
                             <constraint firstItem="aN8-qh-5zj" firstAttribute="trailing" secondItem="aTN-CU-z5d" secondAttribute="trailing" type="default" id="GKw-BR-on5"/>
+                            <constraint firstItem="fhk-9u-c4c" firstAttribute="centerX" secondItem="aN8-qh-5zj" secondAttribute="centerX" type="default" id="GOT-qi-Jrk"/>
                             <constraint firstItem="Ss5-PX-pKe" firstAttribute="top" secondItem="Y5a-7P-uog" secondAttribute="top" type="default" id="KSy-hs-17O"/>
                             <constraint firstItem="7Mn-ej-wsF" firstAttribute="top" secondItem="rr9-pJ-s7A" secondAttribute="top" type="default" id="Kip-Yy-U21"/>
                             <constraint firstItem="rr9-pJ-s7A" firstAttribute="centerX" secondItem="jEx-Cx-Fre" secondAttribute="centerX" type="default" id="OJK-zC-Y57"/>
                             <constraint firstItem="aTN-CU-z5d" firstAttribute="trailing" secondItem="jEx-Cx-Fre" secondAttribute="trailing" type="default" id="Vfl-cd-veN"/>
+                            <constraint firstItem="fhk-9u-c4c" firstAttribute="top" secondItem="Y5a-7P-uog" secondAttribute="top" constant="223" id="YEJ-Fj-J6E"/>
                             <constraint firstItem="aN8-qh-5zj" firstAttribute="top" secondItem="aTN-CU-z5d" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ymw-PO-W6N"/>
                             <constraint firstItem="Ss5-PX-pKe" firstAttribute="trailing" secondItem="Y5a-7P-uog" secondAttribute="trailing" type="default" id="ccX-TT-MHe"/>
                             <constraint firstItem="Ss5-PX-pKe" firstAttribute="centerX" secondItem="rr9-pJ-s7A" secondAttribute="centerX" type="default" id="hfc-jS-jCt"/>

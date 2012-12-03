@@ -1,10 +1,14 @@
-//
-//  SelectEventViewController.m
-//  yapstr
-//
-//  Created by Jonas Markussen on 27/11/12.
-//  Copyright (c) 2012 AAU_ITC5. All rights reserved.
-//
+/**
+ * @file SelectEventViewController.m
+ * @author ITC5 Group 550
+ * @date Fall 2012
+ * @version 1.0
+ *
+ *
+ * @section DESCRIPTION
+ *
+ * 
+ */
 
 #import "SelectEventViewController.h"
 #import "CreateEventViewController.h"
@@ -24,6 +28,7 @@
 @synthesize showPickerButton;
 @synthesize uploadButton;
 @synthesize loading;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,6 +61,9 @@
         return tempEvent.name;
     }
 }
+
+/** This method represent the selectEvent() from the design chapter.
+ */
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     eventPicker.hidden=TRUE;
     if(row==[events count]) {

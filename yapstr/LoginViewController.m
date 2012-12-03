@@ -16,9 +16,11 @@
 
 @end
 
-
 @implementation LoginViewController
 @synthesize myFacebook, logout;
+
+NSString *const FacebookDataLoadedNotification =
+@"yapstr_itc:FacebookDataLoadedNotification";
 
 - (void)viewDidLoad {
     
@@ -36,7 +38,7 @@
      object:nil];
     
     if (!logout) {
-    
+        
         if ([myFacebook getFacebookID]) {
             [self collectUserData];
             NSLog(@"Is login");
@@ -44,21 +46,21 @@
         else
         {
             [self.loading startAnimating];
-        
+            
             NSLog(@"Is NOT login");
-        
-            if(![myFacebook openSessionWithAllowLoginUI:NO]){
+            
+            if(![self openSessionWithAllowLoginUI:NO]){
                 [self.loading stopAnimating];
                 self.loginButton.hidden = NO;
             }
-    
+            
         }
     }else {
         self.loginButton.hidden = NO;
         [mainDelegate.myUser clearUser];
-        [myFacebook logFacebookOut];
+        [self logFacebookOut];
     }
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -100,9 +102,8 @@ NSString *parseToJSON(NSData *dataToParse){
 }
 
 - (void)facebookDataLoaded:(NSNotification*)notification {
-    //    NSLog(@"FacebookID: %@", [myFacebook getFacebookID]);
     [self collectUserData];
-     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
 }
 
@@ -110,10 +111,74 @@ NSString *parseToJSON(NSData *dataToParse){
     NSLog(@"Button pust");
     [self.loading startAnimating];
     logout=NO;
-    if ([myFacebook openSessionWithAllowLoginUI:YES]){
+    if ([self openSessionWithAllowLoginUI:YES]){
         NSLog(@"Kunne Ikke Logge på Facebook!");
         [self.loading stopAnimating];
     }
- }
+}
+
+- (void)logFacebookOut{
+    NSLog(@"Facebook Logout");
+    [FBSession.activeSession closeAndClearTokenInformation];
+    myFacebook.facebookID = nil;
+    myFacebook.name = nil;
+    myFacebook.birthday = nil;
+}
+
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI { NSLog(@"openSessionWithAllowLoginUI is calld");
+    return [FBSession openActiveSessionWithReadPermissions:nil
+                                              allowLoginUI:allowLoginUI
+                                         completionHandler:^(FBSession *session,
+                                                             FBSessionState state,
+                                                             NSError *error) {
+                                             [self sessionStateChanged:session
+                                                                 state:state
+                                                                 error:error];
+                                         }];
+}
+
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
+                      error:(NSError *)error
+{
+    switch (state) {
+        case FBSessionStateOpen:
+            if (!error) {
+                [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> user, NSError *error) {
+                    
+                    // We have a valid session
+                    
+                    
+                    // Gemmer User data in variavels
+                    myFacebook.facebookID = user.id;
+                    myFacebook.name = user.name;
+                    myFacebook.birthday = user.birthday;
+                    
+                    
+                    [[NSNotificationCenter defaultCenter]
+                     postNotificationName:FacebookDataLoadedNotification
+                     object:session];
+                }];
+            }
+            break;
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:
+            [FBSession.activeSession closeAndClearTokenInformation];
+            break;
+        default:
+            break;
+    }
+    
+    
+    if (error) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"could not connect to facebook :'("
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
 
 @end

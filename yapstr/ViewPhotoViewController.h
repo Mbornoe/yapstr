@@ -24,9 +24,10 @@
 @property (strong) IBOutlet UIActivityIndicatorView *loading;
 -(IBAction)swipeRight:(id)sender;
 -(IBAction)swipeLeft:(id)sender;
-- (void) requestPhotosFromServer;
-- (void) selectPhotoFromCameraRoll;
+- (void) requestPhotoFromServer;
+- (void) requestPhotoFromCameraRoll;
 - (void) showPhoto;
 - (void) setDeleteFlag;
+- (void) loadPhoto;
 
 @end

@@ -1,10 +1,15 @@
-//
-//  PhotoCollectionViewController.h
-//  yapstr
-//
-//  Created by Jonas Markussen on 15/11/12.
-//  Copyright (c) 2012 AAU_ITC5. All rights reserved.
-//
+/**
+ * @file PhotoCollectionViewController.h
+ * @author ITC5 Group 550
+ * @date Fall 2012
+ * @version 1.0
+ *
+ *
+ * @section DESCRIPTION
+ *
+ * The class handles the requests and presentation of the thumbnails list of photos which are defined from an event selected.
+ */
+
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
@@ -14,5 +19,7 @@
 @property (nonatomic,retain) Event *event;
 @property (strong) NSArray *photoList;
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
+- (void)requestPhotosFromServer:(NSIndexPath*)indexPath;
+- (UICollectionViewCell *)collectionView:(UICollectionView *)unused cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

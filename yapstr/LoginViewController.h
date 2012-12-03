@@ -16,20 +16,19 @@
 #import "AppDelegate.h"
 
 @interface LoginViewController : UIViewController{
-    //    User* myUser;
     FacebookUser* myFacebook;
     AppDelegate *mainDelegate;
-    
 }
-//@property (strong, nonatomic) User* myUser;
-@property (strong, nonatomic) FacebookUser* myFacebook;
+
+extern NSString *const FacebookDataLoadedNotification;
 
 @property BOOL* logout;
-
+@property (strong, nonatomic) FacebookUser* myFacebook;
+@property (nonatomic, assign) BOOL facebookDataLoaded;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
-
-    
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
+- (void)logFacebookOut;
 
 @end

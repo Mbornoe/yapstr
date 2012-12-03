@@ -17,6 +17,8 @@
 @end
 
 @implementation CreateEventViewController
+
+/** The compiler to create getter/setters for the following properties */
 @synthesize privateSwitch;
 @synthesize name;
 @synthesize description;
@@ -25,6 +27,8 @@
 @synthesize latitude;
 @synthesize image;
 @synthesize createdEvent;
+
+/** Reference to a locationManager object */
 CLLocationManager *locationManager;
 
 /** Setup of location services and delegates for textfields */
@@ -35,11 +39,13 @@ CLLocationManager *locationManager;
     
     password.hidden=YES;
     
+    /** Start determining location */
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
+    /** Setup delegates for the textfields */
     self.name.delegate=self;
     self.description.delegate=self;
     self.password.delegate=self;
@@ -69,9 +75,10 @@ CLLocationManager *locationManager;
     if (textField==password) {
         return [textField resignFirstResponder];
     }
-    return 0;    
+    return 0;
 }
 
+/** Creating an event using the information collected from user and position data */
 - (IBAction)createEvent
 {
     Event *newEvent = [[Event alloc] init];
@@ -92,20 +99,56 @@ CLLocationManager *locationManager;
     }
     newEvent.location.longitude=self.longitude;
     newEvent.location.latitude=self.latitude;
-    [locationManager stopUpdatingLocation];    
+    
+    /** Stop determining location */
+    [locationManager stopUpdatingLocation];
+    
+    /** Send message to network driver, to upload the new event and store the same event plus event id recived from the server*/
     self.createdEvent=[NetworkDriver uploadEvent:newEvent];
     
+    /** Preform createdEventToUpload segue to the SelectEventViewController */
     [self performSegueWithIdentifier:@"createdEventToUpload" sender:self];
 }
 
+/** Fetching the current date GTM+0 */
 NSString *getDateString()
-{    
+{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
     return strDate;
 }
 
+/** Handling Segues to and from SelectEventViewController */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"backFromCreateEvent"])
+    {
+        SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
+        vc.image = image;
+    }
+    if([[segue identifier] isEqualToString:@"createdEventToUpload"])
+    {
+        SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
+        vc.image = image;
+        vc.event=self.createdEvent;
+    }
+}
+
+/** Handling of the private/public switch */
+- (IBAction)checkPrivat
+{
+    if ([privateSwitch isOn])
+    {
+        password.hidden=NO;
+    }
+    else
+    {
+        password.hidden=YES;
+    }
+}
+
+/** Obtaining location using the CoreLocation framework, error handling */
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -115,6 +158,7 @@ NSString *getDateString()
     [errorAlert show];
 }
 
+/** Obtaining location using the CoreLocation framework */
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"didUpdateToLocation: %@", newLocation);
@@ -123,34 +167,6 @@ NSString *getDateString()
     if (currentLocation != nil) {
         self.longitude =  currentLocation.coordinate.longitude;
         self.latitude =  currentLocation.coordinate.latitude;
-        NSLog(@"longitude: %f", self.longitude);
-        NSLog(@"latitude: %f", self.latitude);
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"backFromCreateEvent"])
-    {
-        SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
-        vc.image = image;
-    }
-    if([[segue identifier] isEqualToString:@"createdEventToUpload"]) {
-        SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
-        vc.image = image;
-        vc.event=self.createdEvent;
-    }
-}
-
-- (IBAction)checkPrivat
-{    
-    if ([privateSwitch isOn])
-    {
-        password.hidden=NO;
-    }
-    else
-    {
-        password.hidden=YES;
     }
 }
 

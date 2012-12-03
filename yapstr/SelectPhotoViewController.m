@@ -1,10 +1,14 @@
-//
-//  SelectPhotoViewController.m
-//  yapstr
-//
-//  Created by Kildahl on 27/11/12.
-//  Copyright (c) 2012 AAU_ITC5. All rights reserved.
-//
+/**
+ * @file SelectPhotoViewController.m
+ * @author ITC5 Group 550
+ * @date Fall 2012
+ * @version 1.0
+ *
+ *
+ * @section DESCRIPTION
+ *
+ *
+ */
 
 #import "SelectPhotoViewController.h"
 #import "PreviewPhotoViewController.h"

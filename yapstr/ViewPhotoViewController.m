@@ -26,68 +26,66 @@
 {
     [super viewDidLoad];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self showPhoto];
+    [self loadPhoto];
+    
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 -(IBAction)swipeRight:(id)sender {
     NSLog(@"swipped right");
     if(currentPic>0) {
         currentPic--;
         NSLog(@"Decremented to: %i", self.currentPic);
-        [self showPhoto];
+        [self loadPhoto];
     }
 
 }
+
 -(IBAction)swipeLeft:(id)sender {
     NSLog(@"swipped left");
     if(currentPic<([photos count]-1)) {
         currentPic++;
         NSLog(@"Icremented to: %i", self.currentPic);
-        [self showPhoto];
+        [self loadPhoto];
     }
 }
-- (void) requestPhotosFromCameraRoll
+/** Requests selected pictured from camera roll to be presented
+ */
+- (void) requestPhotoFromCameraRoll
 {
     
 }
-- (void) requestPhotosFromServer
+
+/** Requests a photo from the server to be presented.
+ */
+- (void) requestPhotoFromServer
 {
-    
-}
-- (void) selectPhotoFromCameraRoll
-{
-    
-}
-- (void) showPhoto
-{
-    [self.loading startAnimating];
-    imageView.hidden=YES;
-    NSOperationQueue *queue = [NSOperationQueue new];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc]
-                                        initWithTarget:self
-                                        selector:@selector(loadImage)
-                                        object:nil];
-    [queue addOperation:operation];
-    [self.loading startAnimating];
-}
-- (void)loadImage {
     Photo *photo = [photos objectAtIndex:currentPic];
     NSURL *url = [NSURL URLWithString:photo.photoPath];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc] initWithData:data];
     [self performSelectorOnMainThread:@selector(displayImage:) withObject:img waitUntilDone:NO];
 }
--(void)displayImage:(UIImage*)img {
+
+
+- (void) loadPhoto
+{
+    [self.loading startAnimating];
+    imageView.hidden=YES;
+    NSOperationQueue *queue = [NSOperationQueue new];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc]
+                                        initWithTarget:self
+                                        selector:@selector(requestPhotosFromServer)
+                                        object:nil];
+    [queue addOperation:operation];
+    [self.loading startAnimating];
+}
+
+-(void)showPhoto:(UIImage*)img {
     imageView.image = img;
     imageView.hidden=NO;
     [self.loading stopAnimating];
 }
+
 - (void) setDeleteFlag
 {
     

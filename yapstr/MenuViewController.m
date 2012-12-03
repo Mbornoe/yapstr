@@ -11,7 +11,6 @@
  */
 
 #import "MenuViewController.h"
-#import "LoginViewController.h"
 
 @interface MenuViewController ()
 
