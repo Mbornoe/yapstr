@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The class hold properties of the user, that has to do with the user's facebookaccount on the mobile client.
  */
 
 #import <Foundation/Foundation.h>
@@ -19,19 +19,15 @@
     NSString *birthday;
 }
 
-extern NSString *const FacebookDataLoadedNotification;
-
-//Parmetes
+//Parameters
 @property (strong, nonatomic) NSString *facebookID;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *birthday;
-@property (nonatomic, assign) BOOL facebookDataLoaded;
 
 
 //Methods
 - (NSString*)getFacebookID;
 - (NSString*)getFacebookName;
 - (NSString*)getFacebookBirthday;
-- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
-- (void)logFacebookOut;
+
 @end
