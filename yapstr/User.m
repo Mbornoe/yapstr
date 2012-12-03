@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The class hold properties of the user on the mobile client.
  */
 
 #import "User.h"

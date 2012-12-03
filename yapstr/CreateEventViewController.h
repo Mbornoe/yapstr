@@ -41,7 +41,7 @@
 /** The latitude with double precision. */
 @property(assign, nonatomic)double latitude;
 
-/** Reference to an instance of the event class. */
+/** Reference to an instance of the event class, needed to show the newly created event, plus event id, in the event overview when returning from upload. */
 @property Event* createdEvent;
 
 /** Reference to an instance of UIImage. */

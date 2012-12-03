@@ -41,7 +41,6 @@
 		DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */; };
 		DDA0BCF0165BA0B200D06983 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0BCEF165BA0B200D06983 /* CoreLocation.framework */; };
 		DDED5E6C1664B32F00676701 /* PreviewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDED5E6B1664B32F00676701 /* PreviewPhotoViewController.m */; };
-		EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6581E8165BE511009A729A /* CaptureSessionManager.m */; };
 		EA6581EE165BE6AF009A729A /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581EC165BE6AF009A729A /* overlaygraphic.png */; };
 		EA6581EF165BE6AF009A729A /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6581ED165BE6AF009A729A /* scanbutton.png */; };
 		EA6581F1165BE76B009A729A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6581F0165BE76B009A729A /* AVFoundation.framework */; };
@@ -72,7 +71,6 @@
 		EAD4B8F51653EC8800ACA306 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8F41653EC8800ACA306 /* EventViewController.m */; };
 		EAD4B8F81653EC9300ACA306 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8F71653EC9200ACA306 /* MenuViewController.m */; };
 		EAD4B8FB1653ECA200ACA306 /* ViewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8FA1653ECA200ACA306 /* ViewPhotoViewController.m */; };
-		EAD4B8FE1653ECAE00ACA306 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8FD1653ECAE00ACA306 /* SettingsViewController.m */; };
 		EAD4B9011653ECC300ACA306 /* NetworkDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B9001653ECC300ACA306 /* NetworkDriver.m */; };
 /* End PBXBuildFile section */
 
@@ -114,8 +112,6 @@
 		DDA0BCEF165BA0B200D06983 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DDED5E6A1664B32F00676701 /* PreviewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewPhotoViewController.h; sourceTree = "<group>"; };
 		DDED5E6B1664B32F00676701 /* PreviewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewPhotoViewController.m; sourceTree = "<group>"; };
-		EA6581E8165BE511009A729A /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
-		EA6581EB165BE53A009A729A /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		EA6581EC165BE6AF009A729A /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
 		EA6581ED165BE6AF009A729A /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
 		EA6581F0165BE76B009A729A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -163,8 +159,6 @@
 		EAD4B8F71653EC9200ACA306 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		EAD4B8F91653ECA200ACA306 /* ViewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPhotoViewController.h; sourceTree = "<group>"; };
 		EAD4B8FA1653ECA200ACA306 /* ViewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPhotoViewController.m; sourceTree = "<group>"; };
-		EAD4B8FC1653ECAE00ACA306 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		EAD4B8FD1653ECAE00ACA306 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		EAD4B8FF1653ECC200ACA306 /* NetworkDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDriver.h; sourceTree = "<group>"; };
 		EAD4B9001653ECC300ACA306 /* NetworkDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDriver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,37 +336,33 @@
 		EAD4B8E31653EC3100ACA306 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD1978D1166504D400C71248 /* SelectEventViewController.h */,
-				DD1978D2166504D400C71248 /* SelectEventViewController.m */,
-				DDA0BCE6165B725B00D06983 /* PhotoCollectionViewController.h */,
-				DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */,
 				A393D627165637D600BA850C /* InitialSlidingViewController.h */,
 				A393D628165637D600BA850C /* InitialSlidingViewController.m */,
+				EAD4B8F01653EC7D00ACA306 /* LoginViewController.h */,
+				EAD4B8F11653EC7D00ACA306 /* LoginViewController.m */,
 				A393D630165637EF00BA850C /* ECSlidingViewController */,
+				EAD4B8F71653EC9200ACA306 /* MenuViewController.m */,
 				EAD4B8E41653EC4800ACA306 /* CameraViewController.h */,
 				EAD4B8E51653EC4800ACA306 /* CameraViewController.m */,
-				EA6581EB165BE53A009A729A /* CaptureSessionManager.h */,
-				EA6581E8165BE511009A729A /* CaptureSessionManager.m */,
 				EAD4B8E71653EC5100ACA306 /* CollectionViewController.h */,
 				EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */,
 				EAD4B8EA1653EC5E00ACA306 /* CreateEventViewController.h */,
 				EAD4B8EB1653EC5E00ACA306 /* CreateEventViewController.m */,
-				EAD4B8ED1653EC6700ACA306 /* MapViewController.h */,
-				EAD4B8EE1653EC6700ACA306 /* MapViewController.m */,
-				EAD4B8F01653EC7D00ACA306 /* LoginViewController.h */,
-				EAD4B8F11653EC7D00ACA306 /* LoginViewController.m */,
+				DD1978D1166504D400C71248 /* SelectEventViewController.h */,
+				DD1978D2166504D400C71248 /* SelectEventViewController.m */,
 				EAD4B8F31653EC8800ACA306 /* EventViewController.h */,
 				EAD4B8F41653EC8800ACA306 /* EventViewController.m */,
 				EAD4B8F61653EC9200ACA306 /* MenuViewController.h */,
-				EAD4B8F71653EC9200ACA306 /* MenuViewController.m */,
+				EAD4B8ED1653EC6700ACA306 /* MapViewController.h */,
+				EAD4B8EE1653EC6700ACA306 /* MapViewController.m */,
 				EAD4B8F91653ECA200ACA306 /* ViewPhotoViewController.h */,
 				EAD4B8FA1653ECA200ACA306 /* ViewPhotoViewController.m */,
-				EAD4B8FC1653ECAE00ACA306 /* SettingsViewController.h */,
-				EAD4B8FD1653ECAE00ACA306 /* SettingsViewController.m */,
 				EAD4B8FF1653ECC200ACA306 /* NetworkDriver.h */,
 				EAD4B9001653ECC300ACA306 /* NetworkDriver.m */,
 				DDA0BCE9165B742300D06983 /* PhotoCollectionViewCell.h */,
 				DDA0BCEA165B742300D06983 /* PhotoCollectionViewCell.m */,
+				DDA0BCE6165B725B00D06983 /* PhotoCollectionViewController.h */,
+				DDA0BCE7165B725C00D06983 /* PhotoCollectionViewController.m */,
 				DDED5E6A1664B32F00676701 /* PreviewPhotoViewController.h */,
 				DDED5E6B1664B32F00676701 /* PreviewPhotoViewController.m */,
 				6A1CBA371665380100E592F4 /* SelectPhotoViewController.h */,
@@ -529,14 +519,12 @@
 				EAD4B8F51653EC8800ACA306 /* EventViewController.m in Sources */,
 				EAD4B8F81653EC9300ACA306 /* MenuViewController.m in Sources */,
 				EAD4B8FB1653ECA200ACA306 /* ViewPhotoViewController.m in Sources */,
-				EAD4B8FE1653ECAE00ACA306 /* SettingsViewController.m in Sources */,
 				EAD4B9011653ECC300ACA306 /* NetworkDriver.m in Sources */,
 				A393D629165637D600BA850C /* InitialSlidingViewController.m in Sources */,
 				A393D62E165637EA00BA850C /* ECSlidingViewController.m in Sources */,
 				A393D62F165637EA00BA850C /* UIImage+ImageWithUIView.m in Sources */,
 				DDA0BCED165B774B00D06983 /* PhotoCollectionViewController.m in Sources */,
 				DDA0BCEE165B777800D06983 /* PhotoCollectionViewCell.m in Sources */,
-				EA6581E9165BE511009A729A /* CaptureSessionManager.m in Sources */,
 				DDED5E6C1664B32F00676701 /* PreviewPhotoViewController.m in Sources */,
 				DD1978D3166504D400C71248 /* SelectEventViewController.m in Sources */,
 				6A1CBA391665380100E592F4 /* SelectPhotoViewController.m in Sources */,
