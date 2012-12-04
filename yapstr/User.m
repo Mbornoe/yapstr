@@ -37,8 +37,8 @@
     NSLog(@"Clear User Data");
     
     name = nil;
-    userID = nil;
-    facebookID = nil;
+    userId = nil;
+    facebookId = nil;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A1CBA391665380100E592F4 /* SelectPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CBA381665380100E592F4 /* SelectPhotoViewController.m */; };
+		6A3193A9166CE7A500FBEAD1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3193A8166CE7A500FBEAD1 /* MainStoryboard.storyboard */; };
 		A3086AA51655132C0079B83D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A3086AA41655132C0079B83D /* Default.png */; };
 		A3086AA81655136F0079B83D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3086AA71655136F0079B83D /* Default@2x.png */; };
 		A3086AAA165513920079B83D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3086AA9165513920079B83D /* Default-568h@2x.png */; };
@@ -50,7 +51,6 @@
 		EA9188D5165CECDD00A961A8 /* takePhoto_seeThroughButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */; };
 		EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */; };
 		EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */; };
-		EAD44A36166CDA09004FA1C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD44A35166CDA09004FA1C3 /* MainStoryboard.storyboard */; };
 		EAD4B8AF1653EB6C00ACA306 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */; };
 		EAD4B8B11653EB6C00ACA306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B01653EB6C00ACA306 /* Foundation.framework */; };
 		EAD4B8B31653EB6C00ACA306 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4B8B21653EB6C00ACA306 /* CoreGraphics.framework */; };
@@ -76,6 +76,7 @@
 /* Begin PBXFileReference section */
 		6A1CBA371665380100E592F4 /* SelectPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhotoViewController.h; sourceTree = "<group>"; };
 		6A1CBA381665380100E592F4 /* SelectPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoViewController.m; sourceTree = "<group>"; };
+		6A3193A8166CE7A500FBEAD1 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A3086AA41655132C0079B83D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		A3086AA71655136F0079B83D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		A3086AA9165513920079B83D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		EA9188D3165CECDD00A961A8 /* takePhoto_seeThroughButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takePhoto_seeThroughButton2.png; sourceTree = "<group>"; };
 		EA9188E0165D251900A961A8 /* buttonIcon_facetime_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_retina.png; path = ../buttonIcon_facetime_retina.png; sourceTree = "<group>"; };
 		EA9188E6165D254C00A961A8 /* buttonIcon_facetime_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonIcon_facetime_small.png; path = ../buttonIcon_facetime_small.png; sourceTree = "<group>"; };
-		EAD44A35166CDA09004FA1C3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EAD4B8AA1653EB6C00ACA306 /* yapstr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapstr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD4B8AE1653EB6C00ACA306 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAD4B8B01653EB6C00ACA306 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -246,6 +246,7 @@
 		EAD4B89F1653EB6C00ACA306 = {
 			isa = PBXGroup;
 			children = (
+				6A3193A8166CE7A500FBEAD1 /* MainStoryboard.storyboard */,
 				EAD4B8B41653EB6C00ACA306 /* yapstr */,
 				DD3AA91D165CBCCA0092E05E /* yapstOCUnit */,
 				EAD4B8AD1653EB6C00ACA306 /* Frameworks */,
@@ -288,7 +289,6 @@
 		EAD4B8B41653EB6C00ACA306 /* yapstr */ = {
 			isa = PBXGroup;
 			children = (
-				EAD44A35166CDA09004FA1C3 /* MainStoryboard.storyboard */,
 				EAD4B8E31653EC3100ACA306 /* ViewControllers */,
 				EAD4B8D31653EBCC00ACA306 /* Models */,
 				EAD4B8BD1653EB6C00ACA306 /* AppDelegate.h */,
@@ -460,7 +460,7 @@
 				EA9188E7165D254C00A961A8 /* buttonIcon_facetime_small.png in Resources */,
 				EA9188E8165D257900A961A8 /* buttonIcon_facetime_retina.png in Resources */,
 				DD1146D9166605BC002FE72A /* partyIcon.png in Resources */,
-				EAD44A36166CDA09004FA1C3 /* MainStoryboard.storyboard in Resources */,
+				6A3193A9166CE7A500FBEAD1 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
