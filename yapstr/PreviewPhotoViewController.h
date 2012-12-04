@@ -11,6 +11,10 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+#import "SelectEventViewController.h"
 
 @interface PreviewPhotoViewController : UIViewController
 @property IBOutlet UIImageView* imageView;

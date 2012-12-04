@@ -9,12 +9,8 @@
  *
  * The class handles the iPhones integrated camera, taking, storing photos and uploading them to the server.
  */
-#import <CoreMedia/CoreMedia.h>
-#import <AVFoundation/AVFoundation.h>
-#import <ImageIO/ImageIO.h>
-
 #import "CameraViewController.h"
-#import "PreviewPhotoViewController.h"
+
 
 @interface CameraViewController ()
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;

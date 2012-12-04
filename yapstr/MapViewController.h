@@ -7,11 +7,17 @@
  *
  * @section DESCRIPTION
  *
- * The class handles user login. This includes validating the user against Facebook and YAPSTR's own user database.
+ * The class handles all interaction with the Map. 
  */
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "NetworkDriver.h"
+#import "Event.h"
+#import "PhotoCollectionViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
 }

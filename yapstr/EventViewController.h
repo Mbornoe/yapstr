@@ -11,6 +11,12 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "PhotoCollectionViewController.h"
+#import "NetworkDriver.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+
 
 @interface EventViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *tableView;

@@ -15,6 +15,10 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <ImageIO/ImageIO.h>
+#import <CoreMedia/CoreMedia.h>
+#import <AVFoundation/AVFoundation.h>
+#import <ImageIO/ImageIO.h>
+#import "PreviewPhotoViewController.h"
 
 @interface CameraViewController : UIViewController;
 

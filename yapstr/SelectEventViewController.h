@@ -12,6 +12,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import "NetworkDriver.h"
+#import "CreateEventViewController.h"
 
 @interface SelectEventViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>{
     IBOutlet UIPickerView* eventPicker;

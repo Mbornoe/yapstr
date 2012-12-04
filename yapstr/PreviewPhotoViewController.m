@@ -11,10 +11,7 @@
  */
 
 #import "PreviewPhotoViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "ECSlidingViewController.h"
-#import "MenuViewController.h"
-#import "SelectEventViewController.h"
+
 
 @interface PreviewPhotoViewController ()
 

@@ -11,6 +11,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "PreviewPhotoViewController.h"
 
 @interface SelectPhotoViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     UIImage *img;

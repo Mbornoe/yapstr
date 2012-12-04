@@ -119,7 +119,7 @@ NSString *getDateString()
     return strDate;
 }
 
-/** Handling Segues to and from SelectEventViewController */
+/** Handling Segues back to SelectEventViewController */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"backFromCreateEvent"])

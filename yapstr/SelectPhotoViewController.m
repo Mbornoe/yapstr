@@ -11,7 +11,6 @@
  */
 
 #import "SelectPhotoViewController.h"
-#import "PreviewPhotoViewController.h"
 
 @interface SelectPhotoViewController ()
 

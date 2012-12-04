@@ -13,6 +13,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import "NetworkDriver.h"
+#import "PhotoCollectionViewCell.h"
+#import "Photo.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+#import "ViewPhotoViewController.h"
+
 
 @interface PhotoCollectionViewController : UICollectionViewController {
 }
