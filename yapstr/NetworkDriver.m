@@ -83,9 +83,10 @@
 }
 +(NSArray*)reqPhotosWithEvent:(Event*)event {
     NSDictionary *jsonLimitDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: @"0", @"startNumber", @"100", @"endNumber", nil];
-    NSDictionary *jsonTypeDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%i", [[event eventId] integerValue]], @"eventID", nil];
+    NSDictionary *jsonTypeDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%i", [[event eventId] integerValue]], @"eventId", nil];
     NSDictionary *jsonSendDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:jsonTypeDictionary,@"Type", jsonLimitDictionary, @"Limit", nil];
-    NSString *url = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/getPhotos?data=%@", [self parseToJSONjonas:jsonSendDictionary]];
+    NSString *url = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/getPhotos?data=%@", [self parseToJSONjonas:jsonTypeDictionary]];
+    NSLog(@"%@",url);
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];
     NSURL *jsonUrl = [NSURL URLWithString:url];
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonUrl];
@@ -93,13 +94,13 @@
     NSArray *photoList = [json objectForKey:@"photoList"];
     for(NSDictionary *photo in photoList) {
         Photo *photoObj = [[Photo alloc] init];
-        photoObj.photoPath = [photo objectForKey:@"photoPath"];
-        photoObj.thumpnailPath = [photo objectForKey:@"thumpnailPath"];
-        photoObj.userID = [NSNumber numberWithInt:[[photo objectForKey:@"userID"] integerValue]];
+        photoObj.photoPath = [photo objectForKey:@"path"];
+        photoObj.thumpnailPath = [photo objectForKey:@"thumbPath"];
+        photoObj.userID = [NSNumber numberWithInt:[[photo objectForKey:@"userId"] integerValue]];
         NSDictionary *location = [photo objectForKey:@"location"];
-        photoObj.location = [[Location alloc] initWithLatitude:[[location objectForKey:@"y"] doubleValue] andLongitude:[[location objectForKey:@"x"] doubleValue]];
-        photoObj.eventID = [NSNumber numberWithInt:[[photo objectForKey:@"eventID"] integerValue]];
-        photoObj.photoID = [NSNumber numberWithInt:[[photo objectForKey:@"photoID"] integerValue]];
+        photoObj.location = [[Location alloc] initWithLatitude:[[location objectForKey:@"longitude"] doubleValue] andLongitude:[[location objectForKey:@"longitude"] doubleValue]];
+        photoObj.eventID = [NSNumber numberWithInt:[[photo objectForKey:@"eventId"] integerValue]];
+        photoObj.photoID = [NSNumber numberWithInt:[[photo objectForKey:@"photoId"] integerValue]];
         [returnArray addObject:photoObj];
     }
     return returnArray;
