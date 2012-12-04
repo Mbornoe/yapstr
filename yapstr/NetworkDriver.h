@@ -20,6 +20,7 @@
 
 + (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event;
 + (Event*) uploadEvent:(Event*)eventIn;
++ (void)uploadLocation:(Location*)location;
 +(NSString *) parseToJSON: (NSData*)dataToParse;
 +(NSArray*)regEvents;
 +(NSArray*)reqPhotosWithEvent:(Event*)event;

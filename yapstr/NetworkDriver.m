@@ -128,6 +128,23 @@
     NSLog(@"New event has been assigned id: %@", outEvent.eventId);
     return outEvent;
 }
++ (void)uploadLocation:(Location*)location;
+{
+    NSDictionary *locationDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               [NSString stringWithFormat:@"%f",location.longitude], @"longitude",
+                               [NSString stringWithFormat:@"%f",location.latitude], @"latitude",
+                               nil];
+    NSData *locationData =[NSJSONSerialization dataWithJSONObject:locationDict options:kNilOptions error:nil];
+    NSString *locationJSON = [self parseToJSON:locationData];
+    
+    NSString *locationJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/EventController/storeEvent/?data=%@",locationJSON];
+    NSURL *locationJSONUrl = [NSURL URLWithString:locationJSONUrlString];
+    NSData *jsonData = [NSData dataWithContentsOfURL:locationJSONUrl];
+    NSLog(@"%@",locationJSONUrl);
+    NSDictionary *serverOutput = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+    NSLog(@"%@",serverOutput);
+}
+
 +(NSString*) parseToJSONjonas: (NSDictionary*)dataToParse{
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataToParse options:kNilOptions error:nil];
     NSString *eventJSONString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
