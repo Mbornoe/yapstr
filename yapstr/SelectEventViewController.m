@@ -33,12 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+ 
     /** Transmitting the users current location to the server, to allow the server to sortout nearby events */
-    Location *location = [[Location alloc] init];
-    location.longitude=self.longitude;
-    location.latitude=self.latitude;
-    [NetworkDriver uploadLocation:location];
+    Event *locationEvent = [[Event alloc] init];
+    locationEvent.location = [[Location alloc] init];
+    locationEvent.location.longitude=self.longitude;
+    locationEvent.location.latitude=self.latitude;
     
     /** Initial setup of view */
     eventPicker.hidden=YES;
@@ -47,7 +47,7 @@
     imageView.image = image;
     
     /** Request list of events from server */
-	events = [NetworkDriver regEvents];
+	events = [NetworkDriver regEvents:locationEvent];
     if(event!=nil) {
         eventLabel.text=event.name;
     }
