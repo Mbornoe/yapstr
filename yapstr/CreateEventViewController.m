@@ -78,7 +78,7 @@ CLLocationManager *locationManager;
     return 0;
 }
 
-/** Creating an event using the information collected from user and position data */
+/** Creating an event using the information collected from user and location data */
 - (IBAction)createEvent
 {
     Event *newEvent = [[Event alloc] init];

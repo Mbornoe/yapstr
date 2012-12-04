@@ -30,7 +30,7 @@
     return photoList.count;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+/** The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath: **/
 - (UICollectionViewCell *)collectionView:(UICollectionView *)unused cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"PhotoCell";
     PhotoCollectionViewCell *cvc = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
@@ -45,6 +45,7 @@
     cvc.imageView.contentMode=UIViewContentModeScaleToFill;
     return cvc;
 }
+
 /** Requests all the thumbnails photos to a photoList, afterwards they are presented in the cell image view(cvc.imageview). 
  */
 - (void)requestPhotosFromServer:(NSIndexPath*)indexPath {

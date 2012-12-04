@@ -66,7 +66,7 @@ NSString *const FacebookDataLoadedNotification =
 - (void)viewDidAppear:(BOOL)animated{
     // Do any additional setup after loading the view, typically from a nib.
 }
-
+/** This method collects data about the user. The data that are pulled is facebookID and name. This information should be sent to the external server to see if the user has been using the application before. */
 - (void)collectUserData{
     [self.loading startAnimating];
     mainDelegate.myUser.facebookId = [myFacebook getFacebookID];
@@ -93,6 +93,7 @@ NSString *const FacebookDataLoadedNotification =
     
 }
 
+/** A JSON parser that are used to convert a normal string to an encoded JSON string. */
 NSString *parseToJSON(NSData *dataToParse){
     
     NSString *eventJSONString = [[NSString alloc] initWithData:dataToParse encoding:NSUTF8StringEncoding];
@@ -101,12 +102,14 @@ NSString *parseToJSON(NSData *dataToParse){
     
 }
 
+/**  Method that is used when the Facebook data has been succesfully loaded, and the application are ready to proceed. */
 - (void)facebookDataLoaded:(NSNotification*)notification {
     [self collectUserData];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
 }
 
+/** A button the will log the user in.*/
 - (IBAction)Login:(id)sender {
     NSLog(@"Button pust");
     [self.loading startAnimating];
@@ -117,6 +120,7 @@ NSString *parseToJSON(NSData *dataToParse){
     }
 }
 
+/** Method that will close the Facebook session and define the related attributes to nil. */
 - (void)logFacebookOut{
     NSLog(@"Facebook Logout");
     [FBSession.activeSession closeAndClearTokenInformation];
@@ -125,6 +129,7 @@ NSString *parseToJSON(NSData *dataToParse){
     myFacebook.birthday = nil;
 }
 
+/** Opens a Facebook session using the framework FacebookSDK. */
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI { NSLog(@"openSessionWithAllowLoginUI is calld");
     return [FBSession openActiveSessionWithReadPermissions:nil
                                               allowLoginUI:allowLoginUI
@@ -137,6 +142,7 @@ NSString *parseToJSON(NSData *dataToParse){
                                          }];
 }
 
+/** Determine if the Facebook session state has been changed. I.e. if the Facebook state has been closed or other errors has occured. */
 - (void)sessionStateChanged:(FBSession *)session
                       state:(FBSessionState) state
                       error:(NSError *)error
@@ -146,10 +152,7 @@ NSString *parseToJSON(NSData *dataToParse){
             if (!error) {
                 [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> user, NSError *error) {
                     
-                    // We have a valid session
-                    
-                    
-                    // Gemmer User data in variavels
+                    /** If we have a valid session, the User data are stored in parameteres */
                     myFacebook.facebookID = user.id;
                     myFacebook.name = user.name;
                     myFacebook.birthday = user.birthday;
