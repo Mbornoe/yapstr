@@ -21,6 +21,7 @@
 + (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event;
 + (Event*) uploadEvent:(Event*)eventIn;
 +(NSString *) parseToJSON: (NSData*)dataToParse;
++(NSArray*)regEvents:(Event*)locationEvent;
 +(NSArray*)regEvents;
 +(NSArray*)reqPhotosWithEvent:(Event*)event;
 

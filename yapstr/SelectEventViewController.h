@@ -26,11 +26,25 @@
 @property UIImageView* imageView;
 @property UIImage* image;
 @property UIPickerView* eventPicker;
+
 @property UILabel* eventLabel;
+
+/** Array holding the events recieved from the server. */
 @property NSArray* events;
+
+/** Reference to an instance of the event class. */
+@property (retain,strong) Event* event;
+
+/** The logitude with double precision. */
+@property(assign, nonatomic)double longitude;
+/** The latitude with double precision. */
+@property(assign, nonatomic)double latitude;
+
+/** Outlet for loading animation. */
+@property (strong) IBOutlet UIActivityIndicatorView *loading;
+
+/** Reference to an instance of the event class. */
 @property IBOutlet UIButton* showPickerButton;
 @property IBOutlet UIButton* uploadButton;
-@property (retain,strong) Event* event;
-@property (strong) IBOutlet UIActivityIndicatorView *loading;
 -(IBAction)showEventPicker;
 @end

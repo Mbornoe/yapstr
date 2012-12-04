@@ -103,7 +103,7 @@ CLLocationManager *locationManager;
     /** Stop determining location */
     [locationManager stopUpdatingLocation];
     
-    /** Send message to network driver, to upload the new event and store the same event plus event id recived from the server*/
+    /** Send message to network driver, to upload the new event and store the same event plus event id received from the server*/
     self.createdEvent=[NetworkDriver uploadEvent:newEvent];
     
     /** Preform createdEventToUpload segue to the SelectEventViewController */
@@ -148,21 +148,10 @@ NSString *getDateString()
     }
 }
 
-/** Obtaining location using the CoreLocation framework, error handling */
-#pragma mark - CLLocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
-}
-
 /** Obtaining location using the CoreLocation framework */
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
+    CLLocation *currentLocation = [locations lastObject];
     
     if (currentLocation != nil) {
         self.longitude =  currentLocation.coordinate.longitude;
@@ -170,4 +159,37 @@ NSString *getDateString()
     }
 }
 
+/** Obtaining location using the CoreLocation framework, error handling */
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSString *errorString = [[NSString alloc] init];
+    
+    switch (error.code) {
+        case kCLErrorLocationUnknown:
+            errorString = @"Location unknown";
+            break;
+            
+        case kCLErrorDenied:
+            errorString = @"Access denied";
+            break;
+            
+        case kCLErrorNetwork:
+            errorString = @"No network coverage";
+            break;
+            
+        case kCLErrorDeferredAccuracyTooLow:
+            errorString = @"Accuracy is too low to display";
+            break;
+            
+        default:
+            break;
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting location"
+                                                    message:errorString
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 @end
