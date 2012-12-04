@@ -15,7 +15,7 @@
 @implementation User
 
 /** The compiler to create getter/setters for the following properties */
-@synthesize facebookID, name, userID;
+@synthesize facebookId, name, userId;
 
 
 /** Methods for debugging. Printing the name, userID and facebookID when executed. */
@@ -24,10 +24,10 @@
     NSLog(@"Name: %@", name);
     
     /** Printing userID. */
-    NSLog(@"userID: %@", userID);
+    NSLog(@"userID: %@", userId);
     
     /** Printing facebookID. */
-    NSLog(@"facebookID: %@", facebookID);
+    NSLog(@"facebookID: %@", facebookId);
 }
 
 
