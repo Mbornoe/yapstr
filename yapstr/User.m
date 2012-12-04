@@ -13,16 +13,29 @@
 #import "User.h"
 
 @implementation User
+
+/** The compiler to create getter/setters for the following properties */
 @synthesize facebookId, name, userId;
 
+
+/** Methods for debugging. Printing the name, userID and facebookID when executed. */
 - (void)dumpUserDataInTerminal{
+    /** Printing name. */
     NSLog(@"Name: %@", name);
-    NSLog(@"userId: %@", userId);
-    NSLog(@"facebookId: %@", facebookId);
+    
+    /** Printing userID. */
+    NSLog(@"userID: %@", userId);
+    
+    /** Printing facebookID. */
+    NSLog(@"facebookID: %@", facebookId);
 }
 
+
+/** Method that clear the name, userID and facebookID by declaring it to nil. */
 - (void)clearUser{
+    /** Printing a debugging notation to make sure the User Data is cleared.. */
     NSLog(@"Clear User Data");
+    
     name = nil;
     userId = nil;
     facebookId = nil;

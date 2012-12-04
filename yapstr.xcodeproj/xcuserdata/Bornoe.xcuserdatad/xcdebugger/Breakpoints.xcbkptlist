@@ -21,13 +21,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "yapstr/CameraViewController.h"
-         timestampString = "375961670.932439"
+         timestampString = "376330050.715841"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
-         landmarkName = "stillImageOutput"
-         landmarkType = "19">
+         startingLineNumber = "38"
+         endingLineNumber = "38"
+         landmarkName = "@interface CameraViewController"
+         landmarkType = "2">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "yapstr/CameraViewController.m"
-         timestampString = "375187978.16099"
+         timestampString = "376306574.767261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
          landmarkName = "-imageByScalingAndCroppingForSize:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "yapstr/ViewPhotoViewController.m"
-         timestampString = "376228474.161043"
+         timestampString = "376330050.715841"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
          landmarkName = "-swipeLeft:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "yapstr/CameraViewController.m"
-         timestampString = "376228474.161043"
+         timestampString = "376306574.767261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-startCamera"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "yapstr/CameraViewController.m"
-         timestampString = "376228474.161043"
+         timestampString = "376330050.715841"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "228"
-         endingLineNumber = "228"
+         startingLineNumber = "212"
+         endingLineNumber = "212"
          landmarkName = "@implementation CameraViewController"
          landmarkType = "3">
       </FileBreakpoint>
@@ -112,13 +112,39 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "yapstr/EventViewController.h"
-         timestampString = "376230243.562379"
+         timestampString = "376330050.715841"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "19"
-         endingLineNumber = "19"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
          landmarkName = "tableView"
          landmarkType = "19">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "yapstr/MenuViewController.h"
+         timestampString = "376330050.715841"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
+         landmarkName = "-logout:"
+         landmarkType = "4">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "yapstr/MenuViewController.m"
+         timestampString = "376329939.059117"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
+         landmarkName = "-prepareForSegue:sender:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

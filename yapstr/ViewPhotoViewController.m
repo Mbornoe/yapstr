@@ -30,6 +30,7 @@
     
 }
 
+/** Reference to a IBAction that is used when the user swipes right. When this is done a new picture will be loaded in the imageview due to decreasement of the integer currentPic. */
 -(IBAction)swipeRight:(id)sender {
     NSLog(@"swipped right");
     if(currentPic>0) {
@@ -40,19 +41,14 @@
 
 }
 
+/** Reference to a IBAction that is used when the user swipes left. When this is done a new picture will be loaded in the imageview due to increasement of the integer currentPic. */
 -(IBAction)swipeLeft:(id)sender {
     NSLog(@"swipped left");
     if(currentPic<([photos count]-1)) {
         currentPic++;
-        NSLog(@"Icremented to: %i", self.currentPic);
+        NSLog(@"Incremented to: %i", self.currentPic);
         [self loadPhoto];
     }
-}
-/** Requests selected pictured from camera roll to be presented
- */
-- (void) requestPhotoFromCameraRoll
-{
-    
 }
 
 /** Requests a photo from the server to be presented.
@@ -66,7 +62,7 @@
     [self performSelectorOnMainThread:@selector(displayImage:) withObject:img waitUntilDone:NO];
 }
 
-
+/** Method that requests the photos from server. */
 - (void) loadPhoto
 {
     [self.loading startAnimating];
@@ -80,12 +76,14 @@
     [self.loading startAnimating];
 }
 
+/** Shows the photo that the user wants to be presented. */
 -(void)showPhoto:(UIImage*)img {
     imageView.image = img;
     imageView.hidden=NO;
     [self.loading stopAnimating];
 }
 
+/** Method that can be used in case the user wants a picture deleted. */
 - (void) setDeleteFlag
 {
     

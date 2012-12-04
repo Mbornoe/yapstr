@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The purpose of this class is to deliver a information of a photo on the external server. The class contains info about path to the image and its thumbnail, userid, a Location object, eventID and a photoID.
  */
 
 #import "Photo.h"

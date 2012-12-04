@@ -1,10 +1,14 @@
-//
-//  AppDelegate.h
-//  yapstr
-//
-//  Created by Morten Bornø Jensen on 14/11/12.
-//  Copyright (c) 2012 AAU_ITC5. All rights reserved.
-//
+/**
+ * @file AppDelegate.h
+ * @author ITC5 Group 550
+ * @date Fall 2012
+ * @version 1.0
+ *
+ *
+ * @section DESCRIPTION
+ *
+ *
+ */
 
 #import <UIKit/UIKit.h>
 #import "User.h"
