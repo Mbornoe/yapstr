@@ -76,7 +76,6 @@
 
 @implementation CameraViewController
 
-@synthesize scanningLabel;
 @synthesize captureSession;
 @synthesize previewLayer;
 @synthesize stillImageOutput;
@@ -106,10 +105,10 @@
 	else
 		NSLog(@"Couldn't create video capture device");
     
-    //Adding video Preview Layer!!!
+    /** Adding video Preview Layer */
     self.PreviewLayer=[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]];
 	[previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    //Setting Preview Layer!!
+    /** Setting Preview Layer */
     CGRect layerRect = [[[self view] layer] bounds];
 	[previewLayer setBounds:layerRect];
 	[previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect),
@@ -117,24 +116,14 @@
 	[[[self view] layer] addSublayer:previewLayer];
     
     
-    //Setting Take photo Button
+    /** Setting Take Photo Button */
     UIButton *takePhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [takePhotoButton setImage:[UIImage imageNamed:@"takePhoto_seeThroughButton2.png"] forState:UIControlStateNormal];
     [takePhotoButton setFrame:CGRectMake(0, 65, 320, 640)];
     [takePhotoButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
     [[self view] addSubview:takePhotoButton];
-    
-    //Setting the taking photo label!
-    UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 60, 140, 40)];
-    [self setScanningLabel:tempLabel];
-	[scanningLabel setBackgroundColor:[UIColor clearColor]];
-	[scanningLabel setFont:[UIFont fontWithName:@"Courier" size: 18.0]];
-	[scanningLabel setTextColor:[UIColor whiteColor]];
-	[scanningLabel setText:@"Saving Image"];
-    [scanningLabel setHidden:YES];
-	[[self view] addSubview:scanningLabel];
-    
-    //Configuring camera
+       
+    /** Configuring camera */
     [self setStillImageOutput:[[AVCaptureStillImageOutput alloc] init]];
     NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey,nil];
     [[self stillImageOutput] setOutputSettings:outputSettings];
@@ -151,19 +140,16 @@
             break;
         }
     }
-    [captureSession addOutput:[self stillImageOutput]];
 
-    
-    //Starting everyThing!
-  //  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveImageToPhotoAlbum) name:kImageCapturedSuccessfully object:nil];
+    [captureSession addOutput:[self stillImageOutput]];
+    /** Starts the camera.*/
 	[captureSession startRunning];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
-    // You just need to set the opacity, radius, and color.
+    /** shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController. */
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -175,14 +161,10 @@
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
-- (void) scanButtonPressed {
-	[[self scanningLabel] setHidden:NO];
-    
-	[self performSelector:@selector(hideLabel:) withObject:[self scanningLabel] afterDelay:2];
-    [self.slidingViewController anchorTopViewTo:ECRight];
-}
-
+/** Method for taking a photo. The overlay screen is used for determine when the user has tapped the screen, which results in a take photo action. */
 - (void) takePhoto{
+    
+    /** Configuring the take photo place to be the Camera output. */
 	AVCaptureConnection *videoConnection = nil;
 	for (AVCaptureConnection *connection in [[self stillImageOutput] connections]) {
 		for (AVCaptureInputPort *port in [connection inputPorts]) {
@@ -195,6 +177,8 @@
             break;
         }
 	}
+    
+    /** Taking a photo by making a request to the camera output. And tage an image from the video buffer.*/
 	NSLog(@"about to request a capture from: %@", [self stillImageOutput]);
 	[[self stillImageOutput] captureStillImageAsynchronouslyFromConnection:videoConnection
                                                          completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
@@ -210,10 +194,13 @@
                                                              }];
 }
 
+/** Method that is used when the photo has been captured, it is being cropped. */
 -(void)doSegue:(UIImage*)img {
     snappedPhoto=[img imageByScalingAndCroppingForSize:CGSizeMake(640, 920)];
     [self performSegueWithIdentifier:@"cameraToPreview" sender:self];
 }
+
+/** The user needs to accept or reject the captured photo. */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"cameraToPreview"]){
         PreviewPhotoViewController *vc = (PreviewPhotoViewController *)[segue destinationViewController];

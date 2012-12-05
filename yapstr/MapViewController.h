@@ -21,8 +21,14 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
 }
+
+/** */
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+/** */
 @property (assign) NSArray *events;
 
+
+/** */
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
 @end
