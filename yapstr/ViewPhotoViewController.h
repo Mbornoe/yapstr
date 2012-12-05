@@ -36,7 +36,11 @@
 
 /** Reference to a IBAction that is used when the user swipes left.*/
 -(IBAction)swipeLeft:(id)sender;
+
+/** Reference to a IBAction that is used when the user markes a photo for deletion.*/
 - (IBAction)deleteFlag:(id)sender;
+
+/** Requests a photo from the server to be presented. */
 - (void) requestPhotoFromServer;
 
 /** Shows the photo that the user wants to be presented. */
