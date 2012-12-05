@@ -48,6 +48,9 @@
         [self loadPhoto];
     }
 }
+
+- (IBAction)deleteFlag:(id)sender {
+}
 /** Requests selected pictured from camera roll to be presented
  */
 - (void) requestPhotoFromCameraRoll

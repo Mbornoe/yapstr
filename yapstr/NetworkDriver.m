@@ -44,8 +44,8 @@
     NSDictionary *typeDict = [NSDictionary dictionaryWithObjectsAndKeys:
                               [NSString stringWithFormat:@"%f",locationEvent.location.longitude], @"longitude",
                               [NSString stringWithFormat:@"%f",locationEvent.location.latitude], @"latitude",
-                              locationEvent.name, @"name",
-                              locationEvent.date, @"date",
+                              //locationEvent.name, @"name",
+                              //locationEvent.date, @"date",
                                     nil];
     NSData *typeData =[NSJSONSerialization dataWithJSONObject:typeDict options:kNilOptions error:nil];
     NSString *typeJSON = [self parseToJSON:typeData];
