@@ -126,12 +126,16 @@ NSString *getDateString()
     {
         SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
         vc.image = image;
+        vc.longitude=self.longitude;
+        vc.latitude=self.latitude;
     }
     if([[segue identifier] isEqualToString:@"createdEventToUpload"])
     {
         SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
         vc.image = image;
         vc.event=self.createdEvent;
+        vc.longitude=self.longitude;
+        vc.latitude=self.latitude;
     }
 }
 

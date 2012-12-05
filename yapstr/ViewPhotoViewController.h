@@ -15,6 +15,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import "NetworkDriver.h"
 
 @interface ViewPhotoViewController : UIViewController{
 }

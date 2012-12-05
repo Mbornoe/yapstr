@@ -15,6 +15,17 @@
 
 @implementation NetworkDriver
 
++ (void)setDeleteFlag:(Photo*)photo{
+    NSDictionary *photoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: photo.photoID, @"photoId", nil];
+    
+    NSString *json = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/setDeleteFlag?data=%@", [self parseToJSONjonas:photoDictionary]];
+    
+    NSURL *jsonURL = [NSURL URLWithString:json];
+    
+    NSLog(@"%@",jsonURL);
+    
+    [NSData dataWithContentsOfURL:jsonURL];
+}
 
 + (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event
 {
@@ -61,8 +72,6 @@
     NSLog(@"%@",typeJSONUrl);
     
     NSData *jsonData = [NSData dataWithContentsOfURL:typeJSONUrl];
-    
-    NSLog(@"json data: %@", jsonData);
     
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     NSArray *events = [json objectForKey:@"EventsList"];

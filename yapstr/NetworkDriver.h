@@ -24,5 +24,6 @@
 +(NSArray*)regEvents:(Event*)locationEvent;
 +(NSArray*)regEvents;
 +(NSArray*)reqPhotosWithEvent:(Event*)event;
++(void)setDeleteFlag:(Photo*)photo;
 
 @end

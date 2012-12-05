@@ -51,8 +51,17 @@
     }
 }
 
+/** Method that can be used in case the user wants a picture deleted. */
 - (IBAction)deleteFlag:(id)sender {
+    [NetworkDriver setDeleteFlag:[photos objectAtIndex:currentPic]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete"
+                                                    message:@"Your photo is requested deleted"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Okyi dokyi"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
+
 /** Requests selected pictured from camera roll to be presented
  */
 - (void) requestPhotoFromCameraRoll
@@ -62,13 +71,13 @@
 
 /** Requests a photo from the server to be presented.
  */
-- (void) requestPhotoFromServer
-{
+- (void) requestPhotoFromServer{
     Photo *photo = [photos objectAtIndex:currentPic];
     NSURL *url = [NSURL URLWithString:photo.photoPath];
+    NSLog(@"%@",url);
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc] initWithData:data];
-    [self performSelectorOnMainThread:@selector(displayImage:) withObject:img waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(showPhoto:) withObject:img waitUntilDone:NO];
 }
 
 /** Method that requests the photos from server. */
@@ -79,7 +88,7 @@
     NSOperationQueue *queue = [NSOperationQueue new];
     NSInvocationOperation *operation = [[NSInvocationOperation alloc]
                                         initWithTarget:self
-                                        selector:@selector(requestPhotosFromServer)
+                                        selector:@selector(requestPhotoFromServer)
                                         object:nil];
     [queue addOperation:operation];
     [self.loading startAnimating];
@@ -90,12 +99,6 @@
     imageView.image = img;
     imageView.hidden=NO;
     [self.loading stopAnimating];
-}
-
-/** Method that can be used in case the user wants a picture deleted. */
-- (void) setDeleteFlag
-{
-    
 }
 
 @end

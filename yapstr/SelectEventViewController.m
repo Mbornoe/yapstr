@@ -53,6 +53,7 @@
     }
 }
 
+
 /** Event picker appears after the user touches blue arrow */
 -(IBAction)showEventPicker {
     eventPicker.hidden = false;
