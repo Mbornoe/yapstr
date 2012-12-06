@@ -19,7 +19,7 @@
 @synthesize latitude;
 
 /** Method used to set the latitude and longitude coordinates. */
--(id) initWithLatitude: (double)inLatitude andLongitude: (double)inLongitude{
+-(id) initWithLatitude:(float)inLatitude andLongitude:(float)inLongitude{
     self.latitude = inLatitude;
     self.longitude = inLongitude;
     return self;

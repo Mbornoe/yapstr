@@ -23,8 +23,6 @@
 @synthesize name;
 @synthesize description;
 @synthesize password;
-@synthesize longitude;
-@synthesize latitude;
 @synthesize image;
 @synthesize createdEvent;
 
@@ -39,11 +37,7 @@ CLLocationManager *locationManager;
     
     password.hidden=YES;
     
-    /** Start determining location */
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
+    mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     /** Setup delegates for the textfields */
     self.name.delegate=self;
@@ -97,8 +91,8 @@ CLLocationManager *locationManager;
         newEvent.privateOn = @"0";
         password.hidden=YES;
     }
-    newEvent.location.longitude=self.longitude;
-    newEvent.location.latitude=self.latitude;
+    newEvent.location.longitude = mainDelegate.myLocation.longitude;
+    newEvent.location.latitude = mainDelegate.myLocation.latitude;
     
     /** Stop determining location */
     [locationManager stopUpdatingLocation];
@@ -126,16 +120,12 @@ NSString *getDateString()
     {
         SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
         vc.image = image;
-        vc.longitude=self.longitude;
-        vc.latitude=self.latitude;
     }
     if([[segue identifier] isEqualToString:@"createdEventToUpload"])
     {
         SelectEventViewController *vc = (SelectEventViewController*)[segue destinationViewController];
         vc.image = image;
         vc.event=self.createdEvent;
-        vc.longitude=self.longitude;
-        vc.latitude=self.latitude;
     }
 }
 
@@ -150,50 +140,5 @@ NSString *getDateString()
     {
         password.hidden=YES;
     }
-}
-
-/** Obtaining location using the CoreLocation framework */
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    CLLocation *currentLocation = [locations lastObject];
-    
-    if (currentLocation != nil) {
-        self.longitude =  currentLocation.coordinate.longitude;
-        self.latitude =  currentLocation.coordinate.latitude;
-    }
-}
-
-/** Obtaining location using the CoreLocation framework, error handling */
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSString *errorString = [[NSString alloc] init];
-    
-    switch (error.code) {
-        case kCLErrorLocationUnknown:
-            errorString = @"Location unknown";
-            break;
-            
-        case kCLErrorDenied:
-            errorString = @"Access denied";
-            break;
-            
-        case kCLErrorNetwork:
-            errorString = @"No network coverage";
-            break;
-            
-        case kCLErrorDeferredAccuracyTooLow:
-            errorString = @"Accuracy is too low to display";
-            break;
-            
-        default:
-            break;
-    }
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting location"
-                                                    message:errorString
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
 }
 @end

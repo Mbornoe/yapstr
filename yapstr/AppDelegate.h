@@ -12,12 +12,17 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import <CoreLocation/CoreLocation.h>
+#import "Location.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>{
     User* myUser;
+    Location *myLocation;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) User* myUser;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) Location *myLocation;
 
 @end

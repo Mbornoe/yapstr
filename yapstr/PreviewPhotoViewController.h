@@ -21,9 +21,9 @@
 @property IBOutlet UIImageView* imageView;
 @property (strong) UIImage* snappedPhoto;
 /** The logitude with double precision. */
-@property(assign, nonatomic)double longitude;
+//@property(assign, nonatomic)double longitude;
 
 /** The latitude with double precision. */
-@property(assign, nonatomic)double latitude;
+//@property(assign, nonatomic)double latitude;
 
 @end

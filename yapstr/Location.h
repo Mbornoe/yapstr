@@ -15,11 +15,11 @@
 @interface Location : NSObject
 
 /** Parameter which is used as a container for the longitude coordinates. */
-@property(assign, nonatomic)double longitude;
+@property(assign, nonatomic)float longitude;
 
 /** Parameter which is used as a container for latitude coordinates. */
-@property(assign, nonatomic)double latitude;
+@property(assign, nonatomic)float latitude;
 
 /** Method used to set the latitude and longitude coordinates. */
--(id) initWithLatitude: (double)latitude andLongitude: (double)longitude;
+-(id) initWithLatitude: (float)latitude andLongitude: (float)longitude;
 @end

@@ -14,11 +14,20 @@
 
 @implementation AppDelegate
 @synthesize myUser;
-
+@synthesize locationManager;
+@synthesize myLocation;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     myUser = [[User alloc] init];
+    myLocation = [[Location alloc] init];
+    
+    /** Start determining location */
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    
     return YES;
 }
 							
@@ -48,5 +57,52 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+/** Obtaining location using the CoreLocation framework, error handling */
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *currentLocation = [locations lastObject];
+    
+    if (currentLocation != nil) {
+        myLocation.longitude =  currentLocation.coordinate.longitude;
+        myLocation.latitude =  currentLocation.coordinate.latitude;
+       // NSLog(@"my location: %f;%f", myLocation.longitude, myLocation.latitude);
+       // NSLog(@"my location: %f;%f", currentLocation.coordinate.longitude, currentLocation.coordinate.latitude);
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSString *errorString = [[NSString alloc] init];
+    
+    switch (error.code) {
+        case kCLErrorLocationUnknown:
+            errorString = @"Location unknown";
+            break;
+            
+        case kCLErrorDenied:
+            errorString = @"Access denied";
+            break;
+            
+        case kCLErrorNetwork:
+            errorString = @"No network coverage";
+            break;
+            
+        case kCLErrorDeferredAccuracyTooLow:
+            errorString = @"Accuracy is too low to display";
+            break;
+            
+        default:
+            break;
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting location"
+                                                    message:errorString
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 
 @end

@@ -17,7 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
-
+#import "AppDelegate.h"
 
 @interface SelectEventViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>{
     IBOutlet UIPickerView* eventPicker;
@@ -26,6 +26,7 @@
     IBOutlet UIButton* showPickerButton;
     IBOutlet UIButton* uploadButton;
     IBOutlet UIActivityIndicatorView *loading;
+    AppDelegate *mainDelegate;
 }
 @property UIImageView* imageView;
 @property UIImage* image;
@@ -38,11 +39,6 @@
 
 /** Reference to an instance of the event class. */
 @property (retain,strong) Event* event;
-
-/** The logitude with double precision. */
-@property(assign, nonatomic)double longitude;
-/** The latitude with double precision. */
-@property(assign, nonatomic)double latitude;
 
 /** Outlet for loading animation. */
 @property (strong) IBOutlet UIActivityIndicatorView *loading;

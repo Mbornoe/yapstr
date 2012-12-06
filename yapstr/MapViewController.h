@@ -18,8 +18,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import "AppDelegate.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
+    AppDelegate *mainDelegate;
 }
 
 /** */

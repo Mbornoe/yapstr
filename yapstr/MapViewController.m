@@ -26,7 +26,10 @@
     [super viewDidLoad];
     events = [NetworkDriver regEvents];
     [self plotEvents];
+    mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
 	// Do any additional setup after loading the view.
+    //
+    
 }
 - (void)plotEvents {
     for (id<MKAnnotation> annotation in mapView.annotations) {
@@ -74,20 +77,24 @@
     return nil;
 }
 
-- (void)mapView:(MKMapView *)unused didUpdateUserLocation:(MKUserLocation *)userLocation
+- (void)centerOnUser
 {
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = mapView.userLocation.coordinate.latitude;
-    zoomLocation.longitude= mapView.userLocation.coordinate.longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1300, 1300);
-    MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];
-    [mapView setRegion:adjustedRegion animated:YES];
+    zoomLocation.latitude = mainDelegate.myLocation.latitude;
+    zoomLocation.longitude= mainDelegate.myLocation.longitude;
+    
+    //NSLog(@"my location For Map: %f;%f", zoomLocation.latitude, zoomLocation.longitude);
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 8000, 8000);
+    
+    [mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     mapView.delegate = self;
     mapView.showsUserLocation = YES;
     [super viewWillAppear:animated];
+    [self centerOnUser];
     
     // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
     // You just need to set the opacity, radius, and color.

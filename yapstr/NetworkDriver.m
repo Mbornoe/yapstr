@@ -101,9 +101,11 @@
         Event *eventObj = [[Event alloc] init];
         eventObj.name = [event objectForKey:@"name"];
         eventObj.eventId = [NSNumber numberWithInt:[[event objectForKey:@"eventId"] integerValue]];
-        NSDictionary *location = [event objectForKey:@"Location"];
+        NSDictionary *location = [event objectForKey:@"location"];
         eventObj.description = [event objectForKey:@"description"];
         eventObj.location = [[Location alloc] initWithLatitude:[[location objectForKey:@"latitude"] doubleValue] andLongitude:[[location objectForKey:@"longitude"] doubleValue]];
+        //NSLog(@"%f", eventObj.location.latitude);
+        //NSLog(@"%f", eventObj.location.longitude);
         [returnArray addObject:eventObj];
     }
     return returnArray;
@@ -133,12 +135,8 @@
     return returnArray;
 }
 +(NSArray*)reqPhotosWithEvent:(Event*)event {
-    
-    NSDictionary *jsonLimitDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: @"0", @"startNumber", @"100", @"endNumber", nil];
-    
+      
     NSDictionary *jsonTypeDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%i", [[event eventId] integerValue]], @"eventId", nil];
-    
-    NSDictionary *jsonSendDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:jsonTypeDictionary,@"Type", jsonLimitDictionary, @"Limit", nil];
     
     NSString *url = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/getPhotos?data=%@", [self parseToJSONjonas:jsonTypeDictionary]];
     

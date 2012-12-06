@@ -27,18 +27,20 @@
 @synthesize showPickerButton;
 @synthesize uploadButton;
 @synthesize loading;
-@synthesize longitude;
-@synthesize latitude;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+    
+    mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
     /** Transmitting the users current location to the server, to allow the server to sortout nearby events */
     Event *locationEvent = [[Event alloc] init];
     locationEvent.location = [[Location alloc] init];
-    locationEvent.location.longitude=self.longitude;
-    locationEvent.location.latitude=self.latitude;
+    locationEvent.location.longitude=mainDelegate.myLocation.longitude;
+    locationEvent.location.latitude=mainDelegate.myLocation.latitude;
+
     
     /** Initial setup of view */
     eventPicker.hidden=YES;
