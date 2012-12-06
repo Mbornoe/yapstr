@@ -32,5 +32,5 @@
 
 
 /** */
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
+- (void)centerOnUser;
 @end

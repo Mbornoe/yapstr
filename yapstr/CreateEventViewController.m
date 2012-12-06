@@ -26,9 +26,6 @@
 @synthesize image;
 @synthesize createdEvent;
 
-/** Reference to a locationManager object */
-CLLocationManager *locationManager;
-
 /** Setup of location services and delegates for textfields */
 - (void)viewDidLoad
 {
@@ -93,9 +90,6 @@ CLLocationManager *locationManager;
     }
     newEvent.location.longitude = mainDelegate.myLocation.longitude;
     newEvent.location.latitude = mainDelegate.myLocation.latitude;
-    
-    /** Stop determining location */
-    [locationManager stopUpdatingLocation];
     
     /** Send message to network driver, to upload the new event and store the same event plus event id received from the server*/
     self.createdEvent=[NetworkDriver uploadEvent:newEvent];

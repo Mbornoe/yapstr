@@ -63,7 +63,6 @@
 		EAD4B8DF1653EC0700ACA306 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8DE1653EC0700ACA306 /* Location.m */; };
 		EAD4B8E21653EC0E00ACA306 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E11653EC0E00ACA306 /* Event.m */; };
 		EAD4B8E61653EC4800ACA306 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E51653EC4800ACA306 /* CameraViewController.m */; };
-		EAD4B8E91653EC5100ACA306 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */; };
 		EAD4B8EC1653EC5E00ACA306 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8EB1653EC5E00ACA306 /* CreateEventViewController.m */; };
 		EAD4B8EF1653EC6700ACA306 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8EE1653EC6700ACA306 /* MapViewController.m */; };
 		EAD4B8F21653EC7D00ACA306 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B8F11653EC7D00ACA306 /* LoginViewController.m */; };
@@ -143,8 +142,6 @@
 		EAD4B8E11653EC0E00ACA306 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		EAD4B8E41653EC4800ACA306 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		EAD4B8E51653EC4800ACA306 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
-		EAD4B8E71653EC5100ACA306 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
-		EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		EAD4B8EA1653EC5E00ACA306 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
 		EAD4B8EB1653EC5E00ACA306 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		EAD4B8ED1653EC6700ACA306 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -342,8 +339,6 @@
 				EAD4B8F71653EC9200ACA306 /* MenuViewController.m */,
 				EAD4B8E41653EC4800ACA306 /* CameraViewController.h */,
 				EAD4B8E51653EC4800ACA306 /* CameraViewController.m */,
-				EAD4B8E71653EC5100ACA306 /* CollectionViewController.h */,
-				EAD4B8E81653EC5100ACA306 /* CollectionViewController.m */,
 				EAD4B8EA1653EC5E00ACA306 /* CreateEventViewController.h */,
 				EAD4B8EB1653EC5E00ACA306 /* CreateEventViewController.m */,
 				DD1978D1166504D400C71248 /* SelectEventViewController.h */,
@@ -508,7 +503,6 @@
 				EAD4B8DF1653EC0700ACA306 /* Location.m in Sources */,
 				EAD4B8E21653EC0E00ACA306 /* Event.m in Sources */,
 				EAD4B8E61653EC4800ACA306 /* CameraViewController.m in Sources */,
-				EAD4B8E91653EC5100ACA306 /* CollectionViewController.m in Sources */,
 				EAD4B8EC1653EC5E00ACA306 /* CreateEventViewController.m in Sources */,
 				EAD4B8EF1653EC6700ACA306 /* MapViewController.m in Sources */,
 				EAD4B8F21653EC7D00ACA306 /* LoginViewController.m in Sources */,

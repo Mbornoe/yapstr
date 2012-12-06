@@ -17,7 +17,9 @@
 #import "AppDelegate.h"
 
 /** CreateEventViewController is a view controller that recives userinput and collects location data, to create an event that will be uploaded to a server's database. */
-@interface CreateEventViewController : UIViewController <UITextFieldDelegate,CLLocationManagerDelegate>{
+@interface CreateEventViewController : UIViewController <UITextFieldDelegate,CLLocationManagerDelegate>
+{
+/** Reference to the AppDelegate, needed to get the users location. */
     AppDelegate *mainDelegate;
 }
 

@@ -62,7 +62,7 @@
     [alert show];
 }
 
-/** Requests selected pictured from camera roll to be presented
+/** Requests selected pictured from camera roll to be presented, unused method, apples imagepicker is used instead
  */
 - (void) requestPhotoFromCameraRoll
 {

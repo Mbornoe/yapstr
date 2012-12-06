@@ -27,9 +27,7 @@
     events = [NetworkDriver regEvents];
     [self plotEvents];
     mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-	// Do any additional setup after loading the view.
-    //
-    
+	// Do any additional setup after loading the view.    
 }
 - (void)plotEvents {
     for (id<MKAnnotation> annotation in mapView.annotations) {
@@ -83,18 +81,18 @@
     zoomLocation.latitude = mainDelegate.myLocation.latitude;
     zoomLocation.longitude= mainDelegate.myLocation.longitude;
     
-    //NSLog(@"my location For Map: %f;%f", zoomLocation.latitude, zoomLocation.longitude);
+ 
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 8000, 8000);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 5000, 5000);
     
     [mapView setRegion:viewRegion animated:YES];
+       NSLog(@"my location For Map: %f;%f", zoomLocation.latitude, zoomLocation.longitude);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     mapView.delegate = self;
     mapView.showsUserLocation = YES;
     [super viewWillAppear:animated];
-    [self centerOnUser];
     
     // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
     // You just need to set the opacity, radius, and color.
@@ -106,15 +104,12 @@
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+       [self centerOnUser];  
 }
-
-
-
 @end
 

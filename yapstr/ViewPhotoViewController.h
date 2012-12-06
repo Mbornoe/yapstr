@@ -48,7 +48,7 @@
 - (void) showPhoto;
 
 /** Method that can be used in case the user wants a picture deleted. */
-- (void) setDeleteFlag;
+- (void) deleteFlag;
 
 /** Method that requests the photos from server. */
 - (void) loadPhoto;
