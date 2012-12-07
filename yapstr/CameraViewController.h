@@ -20,7 +20,6 @@
 #import <ImageIO/ImageIO.h>
 #import "PreviewPhotoViewController.h"
 
-
 @interface CameraViewController : UIViewController;
 
 /** Reference to a parameter that is used to let the user view the video feed. */
@@ -34,7 +33,6 @@
 
 /** Refernce to a UIImage which is called snappedPhoto. This parameter is used for the captured photo. */
 @property (strong) UIImage* snappedPhoto;
-
 
 /** Method for instantiate and start the integrated camera. The Camera is instantiated with no buttons and only a overlay screen. */
 - (void) startCamera;

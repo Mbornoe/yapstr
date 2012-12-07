@@ -30,7 +30,6 @@
 /** */
 @property (assign) NSArray *events;
 
-
 /** */
 - (void)centerOnUser;
 @end

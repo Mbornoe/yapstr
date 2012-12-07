@@ -12,8 +12,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Location.h"
+#import <UIKit/UIKit.h>
 
 @interface Photo : NSObject
+
+-(UIImage*)resizeImg:(UIImage*)sourceImage;
 
 /** Parameter which is used as a container for the path to the photo. */
 @property (retain) NSString* photoPath;
@@ -32,5 +35,8 @@
 
 /** Parameter which is used as a container for a photoID belonging to the unique photo. */
 @property (retain) NSNumber* photoID;
+
+/** Reference to the image chosen from the iPhones cameraroll. */
+@property (nonatomic, retain) UIImage *img;
 
 @end

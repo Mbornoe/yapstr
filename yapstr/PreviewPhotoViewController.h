@@ -16,14 +16,10 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "SelectEventViewController.h"
+#import "Photo.h"
 
 @interface PreviewPhotoViewController : UIViewController <CLLocationManagerDelegate>
 @property IBOutlet UIImageView* imageView;
 @property (strong) UIImage* snappedPhoto;
-/** The logitude with double precision. */
-//@property(assign, nonatomic)double longitude;
-
-/** The latitude with double precision. */
-//@property(assign, nonatomic)double latitude;
 
 @end

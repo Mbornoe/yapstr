@@ -18,8 +18,13 @@
 	UIImagePickerController *imgPicker;
 }
 
+/** Reference to the image picker controller, enabling access to the iPhones cameraroll. */
 @property (nonatomic, retain) UIImagePickerController *imgPicker;
+
+/** Reference to the image chosen from the iPhones cameraroll. */
 @property (nonatomic, retain) UIImage *img;
+
+/** Reference to . */
 @property BOOL *firstTime;
 
 @end

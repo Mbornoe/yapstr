@@ -12,7 +12,6 @@
 
 #import "NetworkDriver.h"
 
-
 @implementation NetworkDriver
 
 /** Method inform the Server that a certain photo has been flaged for deletion. Takes the said photo object as input parameter. */
@@ -26,6 +25,7 @@
 /** Method allowing upload of photo. Takes an image and an event object as input parameters. */
 + (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event
 {
+    /** Converting UIImage into JPEG incoded image data, with highest quality. */
     NSData *imageData = UIImageJPEGRepresentation(image, 100);
     NSDictionary *jsonDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: event.eventId, @"eventId", nil];
     NSString *urlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/storePhoto?data=%@", [self parseToJSON:jsonDictionary]];
@@ -43,33 +43,27 @@
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[request setHTTPBody:body];
     
-/** Response from server, was the transmission successful. */
+    /** Response from server, was the transmission successful. */
 	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	NSLog(@"%@", returnString);
 }
 
-/** Method for requesting all events. */
+/** Method for requesting all events from the Server. */
 + (NSArray*)regEvents {
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];
-    
     NSURL *jsonUrl = [NSURL URLWithString:@"http://12gr550.lab.es.aau.dk/EventController/getEvents"];
-    
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonUrl];
-    
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
-    
     NSArray *events = [json objectForKey:@"EventsList"];
-    
-    for(NSDictionary *event in events) {
+    for(NSDictionary *event in events)
+    {
         Event *eventObj = [[Event alloc] init];
         eventObj.name = [event objectForKey:@"name"];
         eventObj.eventId = [NSNumber numberWithInt:[[event objectForKey:@"eventId"] integerValue]];
         NSDictionary *location = [event objectForKey:@"location"];
         eventObj.description = [event objectForKey:@"description"];
         eventObj.location = [[Location alloc] initWithLatitude:[[location objectForKey:@"latitude"] doubleValue] andLongitude:[[location objectForKey:@"longitude"] doubleValue]];
-        //NSLog(@"%f", eventObj.location.latitude);
-        //NSLog(@"%f", eventObj.location.longitude);
         [returnArray addObject:eventObj];
     }
     return returnArray;
@@ -78,24 +72,16 @@
 /** Method for requesting the events in the in the vicinity of the users location. Takes an event object holding the users current location as input parameter. */
 + (NSArray*)regEvents:(Location*)location
 {
-    NSDictionary *coordinateDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [NSString stringWithFormat:@"%f",location.longitude], @"longitude",
-                              [NSString stringWithFormat:@"%f",location.latitude], @"latitude",
-                                    nil];
+    NSDictionary *coordinateDict =  [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [NSString stringWithFormat:@"%f",location.longitude], @"longitude",
+                                    [NSString stringWithFormat:@"%f",location.latitude], @"latitude",
+                                     nil];
     NSDictionary *locationDict = [[NSDictionary alloc] initWithObjectsAndKeys: coordinateDict, @"location", nil];
-    
     NSString *locationJSON = [self parseToJSON:locationDict];
-    
-    NSMutableArray* returnArray = [[NSMutableArray alloc] init];
-    
+    NSMutableArray* returnArray = [[NSMutableArray alloc] init];    
     NSString *typeJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/EventController/getEvents?data=%@",locationJSON];
-    
-    NSURL *typeJSONUrl = [NSURL URLWithString:typeJSONUrlString];
-    
-    NSLog(@"%@",typeJSONUrl);
-    
+    NSURL *typeJSONUrl = [NSURL URLWithString:typeJSONUrlString];   
     NSData *jsonData = [NSData dataWithContentsOfURL:typeJSONUrl];
-    
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     NSArray *events = [json objectForKey:@"EventsList"];
     for(NSDictionary *event in events)
@@ -149,7 +135,6 @@
                                [NSString stringWithFormat:@"%f",eventIn.location.latitude], @"latitude",
                                nil];
     NSString *eventJSON = [self parseToJSON:eventDict];
-    
     NSString *eventJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/EventController/storeEvent/?data=%@",eventJSON];
     NSURL *eventJSONUrl = [NSURL URLWithString:eventJSONUrlString];
     NSLog(@"New event has been assigned id: %@", eventJSONUrl);
@@ -161,12 +146,12 @@
     return outEvent;
 }
 
-+ (NSString*) parseToJSON: (NSDictionary*)dataToParse{
++ (NSString*) parseToJSON: (NSDictionary*)dataToParse
+{
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataToParse options:kNilOptions error:nil];
     NSString *eventJSONString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSString *encodedJSONString = [eventJSONString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     return encodedJSONString;
-    
 }
 
 

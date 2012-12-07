@@ -12,7 +12,6 @@
 
 #import "MapViewController.h"
 
-
 @interface MapViewController ()
 @property Event* selectedEvent;
 @end
@@ -21,19 +20,23 @@
 @synthesize events;
 @synthesize mapView;
 @synthesize selectedEvent;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.   
     events = [NetworkDriver regEvents];
     [self plotEvents];
     mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-	// Do any additional setup after loading the view.    
+ 
 }
 - (void)plotEvents {
-    for (id<MKAnnotation> annotation in mapView.annotations) {
+    for (id<MKAnnotation> annotation in mapView.annotations)
+    {
         [mapView removeAnnotation:annotation];
     }
-    for (Event *event in events) {
+    for (Event *event in events)
+    {
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = event.location.latitude;
         coordinate.longitude = event.location.longitude;
@@ -41,12 +44,17 @@
         [mapView addAnnotation:event];
     }
 }
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+
+/** Handles passing the selected event along to the PhotoCollectionViewController when the user selects an event. */
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
     selectedEvent = [[Event alloc] init];
     selectedEvent=view.annotation;
     [self performSegueWithIdentifier:@"eventListMapToCollection" sender:self];
     
 }
+
+/** Send the selected event along to the PhotoCollectionViewController. */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"eventListMapToCollection"])
@@ -80,36 +88,23 @@
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = mainDelegate.myLocation.latitude;
     zoomLocation.longitude= mainDelegate.myLocation.longitude;
-    
- 
-    
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 5000, 5000);
-    
     [mapView setRegion:viewRegion animated:YES];
-       NSLog(@"my location For Map: %f;%f", zoomLocation.latitude, zoomLocation.longitude);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     mapView.delegate = self;
     mapView.showsUserLocation = YES;
     [super viewWillAppear:animated];
-    
-    // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
-    // You just need to set the opacity, radius, and color.
-    //self.view.layer.shadowOpacity = 0.75f;
-    //self.view.layer.shadowRadius = 10.0f;
-    //self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
        [self centerOnUser];  
 }
-@end
 
+@end

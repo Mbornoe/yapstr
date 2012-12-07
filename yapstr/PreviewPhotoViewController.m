@@ -21,30 +21,22 @@
 @synthesize snappedPhoto;
 @synthesize imageView;
 
-/** Reference to a locationManager object */
-//CLLocationManager *locationManager;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-	self.imageView.image=self.snappedPhoto;
-    /** Start determining location */
-//    locationManager = [[CLLocationManager alloc] init];
-//    locationManager.delegate = self;
-//    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    [locationManager startUpdatingLocation];
+	Photo *photo = [[Photo alloc] init];
+    photo.img = self.snappedPhoto;
+    self.imageView.image=[photo resizeImg:photo.img];
 }
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"PreviewToSelect"]){
         SelectEventViewController *vc = (SelectEventViewController *)[segue destinationViewController];
-        vc.image=self.snappedPhoto;
-        vc.imageView.image = vc.image;
-     //   vc.longitude=self.longitude;
-     //   vc.latitude=self.latitude;
-        
-        /** Stop determining location */
-    //    [locationManager stopUpdatingLocation];
+        /** Copy of image for uploading */
+        vc.image=self.imageView.image;
+        /** Copy of image for previewing */
+        vc.imageView.image = self.imageView.image;
     }
 }
 
