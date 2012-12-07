@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The NetworkDriver is used for communicating data between the view controlleres in the Mobile Client subsystem and the views and controllers in the Server subsystem.
  */
 
 #import <Foundation/Foundation.h>
@@ -15,15 +15,24 @@
 #import "Event.h"
 #import "Photo.h"
 
-
 @interface NetworkDriver : NSObject
 
-+ (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event;
-+ (Event*) uploadEvent:(Event*)eventIn;
-+(NSString *) parseToJSON: (NSData*)dataToParse;
-+(NSArray*)regEvents:(Event*)locationEvent;
-+(NSArray*)regEvents;
-+(NSArray*)reqPhotosWithEvent:(Event*)event;
+/** Method inform the Server that a certain photo has been flaged for deletion. Takes the said photo object as input parameter. */
 +(void)setDeleteFlag:(Photo*)photo;
+
+/** Method allowing upload of photo Takes an image and an event object as input parameters. */
++ (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event;
+
+/** Method for requesting all events. */
++(NSArray*)regEvents;
+
+/** Method for requesting the events in the in the vicinity of the users location. Takes an event object holding the users current location as input parameter. */
++(NSArray*)regEvents:(Event*)locationEvent;
+
+/** Method for requesting the photos associated with a certain event. Takes the event object that the photos are associated with as input parameter. */
++(NSArray*)reqPhotosWithEvent:(Event*)event;
+
+/** Method allowing upload of event. Takes an event object as input parameters. */
++ (Event*) uploadEvent:(Event*)eventIn;
 
 @end

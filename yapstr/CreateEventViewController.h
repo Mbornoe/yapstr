@@ -51,6 +51,6 @@
 - (IBAction)checkPrivat;
 
 /** Fetching the current date GTM+0 */
-NSString *getDateString();
+- (NSString*) getDateString;
 
 @end

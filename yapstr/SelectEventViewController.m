@@ -36,11 +36,9 @@
     mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     /** Transmitting the users current location to the server, to allow the server to sortout nearby events */
-    Event *locationEvent = [[Event alloc] init];
-    locationEvent.location = [[Location alloc] init];
-    locationEvent.location.longitude=mainDelegate.myLocation.longitude;
-    locationEvent.location.latitude=mainDelegate.myLocation.latitude;
-
+    Location *location = [[Location alloc] init];
+    location.longitude=mainDelegate.myLocation.longitude;
+    location.latitude=mainDelegate.myLocation.latitude;
     
     /** Initial setup of view */
     eventPicker.hidden=YES;
@@ -49,7 +47,7 @@
     imageView.image = image;
     
     /** Request list of events from server */
-	events = [NetworkDriver regEvents:locationEvent];
+	events = [NetworkDriver regEvents:location];
     if(event!=nil) {
         eventLabel.text=event.name;
     }

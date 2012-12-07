@@ -18,6 +18,7 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "AppDelegate.h"
+#import "Location.h"
 
 @interface SelectEventViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>{
     IBOutlet UIPickerView* eventPicker;

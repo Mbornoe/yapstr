@@ -77,7 +77,7 @@
     newEvent.name =[name text];
     newEvent.description = [description text];
     newEvent.password = [password text];
-    newEvent.date = getDateString();
+    newEvent.date = [self getDateString];
     if ([privateSwitch isOn])
     {
         newEvent.privateOn = @"1";
@@ -99,7 +99,7 @@
 }
 
 /** Fetching the current date GTM+0 */
-NSString *getDateString()
+- (NSString*) getDateString
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];

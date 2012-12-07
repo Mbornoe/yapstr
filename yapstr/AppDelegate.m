@@ -58,7 +58,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/** Obtaining location using the CoreLocation framework, error handling */
+/** Obtaining location using the CoreLocation framework */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *currentLocation = [locations lastObject];
@@ -66,11 +66,11 @@
     if (currentLocation != nil) {
         myLocation.longitude =  currentLocation.coordinate.longitude;
         myLocation.latitude =  currentLocation.coordinate.latitude;
-       // NSLog(@"my location: %f;%f", myLocation.longitude, myLocation.latitude);
-       // NSLog(@"my location: %f;%f", currentLocation.coordinate.longitude, currentLocation.coordinate.latitude);
     }
 }
 
+
+/** Error handling for locationManager
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSString *errorString = [[NSString alloc] init];
@@ -103,6 +103,6 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
-
+*/
 
 @end
