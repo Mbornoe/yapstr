@@ -15,7 +15,7 @@
 @implementation NetworkDriver
 
 /** Method inform the Server that a certain photo has been flaged for deletion. Takes the said photo object as input parameter. */
-+ (void)setDeleteFlag:(Photo*)photo{
++ (void)reqSetDeleteFlag:(Photo*)photo{
     NSDictionary *photoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: photo.photoID, @"photoId", nil];
     NSString *json = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/setDeleteFlag?data=%@", [self parseToJSON:photoDictionary]];
     NSURL *jsonURL = [NSURL URLWithString:json];    
@@ -100,7 +100,7 @@
 }
 
 /** Method for requesting the photos associated with a certain event. Takes the event object that the photos are associated with as input parameter. */
-+ (NSArray*)reqPhotosWithEvent:(Event*)event
++ (NSArray*)reqPhotosFromServer:(Event*)event
 {     
     NSDictionary *jsonTypeDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%i", [[event eventId] integerValue]], @"eventId", nil];
     NSString *url = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/getPhotos?data=%@", [self parseToJSON:jsonTypeDictionary]];
@@ -150,6 +150,7 @@
     return outEvent;
 }
 
+/** A JSON parser that are used to convert a normal string to an encoded JSON string. */
 + (NSString*) parseToJSON: (NSDictionary*)dataToParse
 {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataToParse options:kNilOptions error:nil];
@@ -158,5 +159,35 @@
     return encodedJSONString;
 }
 
+
++ (User*) regUserId:(FacebookUser*)facebookUser
+{
+    NSDictionary *dataToServer = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  [facebookUser getFacebookID], @"facebookId",
+                                  nil];
+    
+    NSString *dataToServerJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/UserController/getUser?data=%@", [self parseToJSON:dataToServer]];
+    
+    NSError* error = nil;
+    NSURL *url = [NSURL URLWithString:dataToServerJSONUrlString];
+    NSData *JASONData = [NSData dataWithContentsOfURL:url];
+    NSDictionary *data = [NSJSONSerialization JSONObjectWithData:JASONData options:kNilOptions error:&error];
+    
+    User *user = [[User alloc] init];
+    
+    user.userId = [data objectForKey:@"userId"];
+    user.name = [data objectForKey:@"name"];
+    user.facebookId = [data objectForKey:@"facebookId"];
+    
+    return user;
+}
+
+
++ (UIImage*) reqPhotoFromServer:(NSURL*)url
+{
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return [[UIImage alloc] initWithData:data];
+
+}
 
 @end

@@ -14,6 +14,7 @@
 #import "Facebook.h"
 #import "User.h"
 #import "AppDelegate.h"
+#import "NetworkDriver.h"
 
 /** The LoginViewController is a viewcontroller that is used to handle the login session with Facebook and the server */
 @interface LoginViewController : UIViewController{

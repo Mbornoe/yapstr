@@ -55,7 +55,7 @@
 
 /** Method that can be used in case the user wants a picture deleted. */
 - (IBAction)deleteFlag:(id)sender {
-    [NetworkDriver setDeleteFlag:[photos objectAtIndex:currentPic]];
+    [NetworkDriver reqSetDeleteFlag:[photos objectAtIndex:currentPic]];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete"
                                                     message:@"Your photo is requested deleted"
                                                    delegate:nil
@@ -75,10 +75,10 @@
     Photo *photo = [photos objectAtIndex:currentPic];
     NSURL *url = [NSURL URLWithString:photo.photoPath];
     NSLog(@"%@",url);
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc] initWithData:data];
+    UIImage *img = [NetworkDriver reqPhotoFromServer:url];
     [self performSelectorOnMainThread:@selector(showPhoto:) withObject:img waitUntilDone:NO];
 }
+
 
 /** Method that requests the photos from server. */
 - (void) loadPhoto

@@ -14,11 +14,13 @@
 #import "Location.h"
 #import "Event.h"
 #import "Photo.h"
+#import "Facebook.h"
+#import "User.h"
 
 @interface NetworkDriver : NSObject
 
 /** Method inform the Server that a certain photo has been flaged for deletion. Takes the said photo object as input parameter. */
-+ (void)setDeleteFlag:(Photo*)photo;
++ (void)reqSetDeleteFlag:(Photo*)photo;
 
 /** Method allowing upload of photo Takes an image and an event object as input parameters. */
 + (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event;
@@ -30,9 +32,14 @@
 + (NSArray*)regEvents:(Location*)location;
 
 /** Method for requesting the photos associated with a certain event. Takes the event object that the photos are associated with as input parameter. */
-+ (NSArray*)reqPhotosWithEvent:(Event*)event;
++ (NSArray*)reqPhotosFromServer:(Event*)event;
 
 /** Method allowing upload of event. Takes an event object as input parameters. */
 + (Event*) uploadEvent:(Event*)eventIn;
+
+/** Method for requesting userId and information. */
++ (User*) regUserId:(FacebookUser*)facebookUser;
+
++ (UIImage*) reqPhotoFromServer:(NSURL*)url;
 
 @end

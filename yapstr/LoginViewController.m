@@ -69,36 +69,12 @@ NSString *const FacebookDataLoadedNotification =
 /** This method collects data about the user. The data that are pulled is facebookID and name. This information should be sent to the external server to see if the user has been using the application before. */
 - (void)collectUserData{
     [self.loading startAnimating];
-    mainDelegate.myUser.facebookId = [myFacebook getFacebookID];
-    mainDelegate.myUser.name = [myFacebook getFacebookName];
-    NSLog(@"User.facebookId = %@", mainDelegate.myUser.facebookId);
-    NSDictionary *dataToServer = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  [myFacebook getFacebookID], @"facebookId",
-                                  nil];
     
-    NSData *dataToServerData = [NSJSONSerialization dataWithJSONObject:dataToServer options:kNilOptions error:nil];
+    mainDelegate.myUser = [NetworkDriver regUserId:myFacebook];
     
-    NSString *dataToServerJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/UserController/getUser?data=%@", parseToJSON(dataToServerData)];
-    NSLog(@"%@",dataToServerJSONUrlString);
-    
-    
-    NSError* error = nil;
-    NSURL *url = [NSURL URLWithString:dataToServerJSONUrlString];
-    NSData *JASONData = [NSData dataWithContentsOfURL:url];
-    NSDictionary *data = [NSJSONSerialization JSONObjectWithData:JASONData options:kNilOptions error:&error];
-    mainDelegate.myUser.userId = [data objectForKey:@"userId"];
-    mainDelegate.myUser.name = [data objectForKey:@"name"];
     [self.loading stopAnimating];
+    
     [mainDelegate.myUser dumpUserDataInTerminal];
-    
-}
-
-/** A JSON parser that are used to convert a normal string to an encoded JSON string. */
-NSString *parseToJSON(NSData *dataToParse){
-    
-    NSString *eventJSONString = [[NSString alloc] initWithData:dataToParse encoding:NSUTF8StringEncoding];
-    NSString *encodedJSONString = [eventJSONString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-    return encodedJSONString;
     
 }
 
