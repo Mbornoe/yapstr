@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- * The purpose of this class is to deliver a information of a photo on the external server. The class contains info about path to the image and its thumbnail, userid, a Location object, eventID and a photoID.
+ * The purpose of this class is to represent a photo and store information about it. The class contains info about path to the image and its thumbnail, userid, a Location object, eventID, photoID and a method to resize images.
  */
 
 #import "Photo.h"
@@ -22,10 +22,9 @@
     CGSize imageSize = sourceImage.size;
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
-   
     CGFloat targetWidth = 640;
     CGFloat targetHeight = 920;
-     CGSize targetSize = CGSizeMake(targetWidth, targetHeight);
+    CGSize targetSize = CGSizeMake(targetWidth, targetHeight);
     CGFloat scaleFactor = 0.0;
     CGFloat scaledWidth = targetWidth;
     CGFloat scaledHeight = targetHeight;
@@ -54,20 +53,15 @@
                 thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
             }
     }
-    
     UIGraphicsBeginImageContext(targetSize); // this will crop
-    
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
     thumbnailRect.size.width  = scaledWidth;
     thumbnailRect.size.height = scaledHeight;
-    
     [sourceImage drawInRect:thumbnailRect];
-    
     newImage = UIGraphicsGetImageFromCurrentImageContext();
     if(newImage == nil)
         NSLog(@"could not scale image");
-    
     //pop the context to get back to the default
     UIGraphicsEndImageContext();
     return newImage;

@@ -63,11 +63,12 @@
     return 1;
 }
 
+/** The number of rows in the table containing the possible events to pick + created event is found. */
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return ([events count]+1);
 }
 
-/** Monitor which entry in the event picker table has been selected */
+/** Adds titles to the rows in the event picker. */
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if(row==[events count]) {
@@ -78,7 +79,7 @@
     }
 }
 
-/** This method represent the selectEvent() from the design chapter. */
+/** This method represent the selectEvent() from the design chapter and handles the selction of events to upload to. */
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     eventPicker.hidden=TRUE;
     if(row==[events count]) {

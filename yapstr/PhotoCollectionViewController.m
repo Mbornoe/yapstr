@@ -20,6 +20,7 @@
 @synthesize photoList;
 @synthesize collectionView;
 
+/** Initial setup, requesting photos associated with a specific event from the server. */
 - (void)viewDidLoad
 {
     [super viewDidLoad];

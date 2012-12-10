@@ -7,15 +7,15 @@
  *
  * @section DESCRIPTION
  *
- * The class handles all interaction with the Map. 
+ * The class handles presentation and all interaction with the Map. 
  */
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "NetworkDriver.h"
 #import "Event.h"
 #import "PhotoCollectionViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "AppDelegate.h"
@@ -24,12 +24,10 @@
     AppDelegate *mainDelegate;
 }
 
-/** */
+/** Reference to the mapView */
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-/** */
+/** Reference to array holding the event objects */
 @property (assign) NSArray *events;
 
-/** */
-- (void)centerOnUser;
 @end

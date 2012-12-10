@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- * The purpose of this class is to deliver a whereabouts of a photo on the external server. The class contains info about path to the image and its thumbnail, userid, a Location object, eventID and a photoID.
+ * The purpose of this class is to represent a photo and store information about it. The class contains info about path to the image and its thumbnail, userid, a Location object, eventID, photoID and a method to resize images.
  */
 
 #import <Foundation/Foundation.h>

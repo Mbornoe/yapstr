@@ -20,24 +20,22 @@
 
 @synthesize imgPicker, img, firstTime;
 
+/** Initial setup, requesting photos associated with a specific event from the server. */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    if(!firstTime){
+    if(!firstTime)
+    {
     // Do any additional setup after loading the view.
     imgPicker = [[UIImagePickerController alloc] init];
-	//self.imgPicker.allowsEditing = YES;
 	imgPicker.delegate = self;
     imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
     [self presentViewController:imgPicker animated:YES completion:nil];
     }
-
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage*)pickedImg editingInfo:(NSDictionary *)editInfo {
-    //img = [pickedImg imageByScalingAndCroppingForSize:CGSizeMake(640, 920)];
     img = pickedImg;
     [self dismissModalViewControllerAnimated:NO];
     [self performSegueWithIdentifier:@"SelectPhotoToPreview" sender:self];    

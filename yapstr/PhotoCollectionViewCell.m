@@ -7,30 +7,22 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The PhotoCollectionViewCell is used for thumbnails in the PhotoCollectionViewController.
  */
 
 #import "PhotoCollectionViewCell.h"
 
 @implementation PhotoCollectionViewCell
 @synthesize loading;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         [self.loading startAnimating];
     }
-    
     return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

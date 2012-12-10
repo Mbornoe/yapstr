@@ -17,7 +17,6 @@
 /** The compiler to create getter/setters for the following properties */
 @synthesize facebookId, name, userId;
 
-
 /** Methods for debugging. Printing the name, userID and facebookID when executed. */
 - (void)dumpUserDataInTerminal{
     /** Printing name. */
@@ -29,7 +28,6 @@
     /** Printing facebookID. */
     NSLog(@"facebookID: %@", facebookId);
 }
-
 
 /** Method that clear the name, userID and facebookID by declaring it to nil. */
 - (void)clearUser{

@@ -17,8 +17,7 @@
 #import "MenuViewController.h"
 #import "NetworkDriver.h"
 
-@interface ViewPhotoViewController : UIViewController{
-}
+@interface ViewPhotoViewController : UIViewController
 
 /** Reference to an array that contains all the defined photos. */
 @property (strong) NSArray* photos;
@@ -45,7 +44,7 @@
 - (void) requestPhotoFromServer;
 
 /** Shows the photo that the user wants to be presented. */
-- (void) showPhoto;
+- (void)showPhoto:(UIImage*)img;
 
 /** Method that can be used in case the user wants a picture deleted. */
 - (void) deleteFlag;

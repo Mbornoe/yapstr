@@ -44,7 +44,7 @@
 /** Outlet for loading animation. */
 @property (strong) IBOutlet UIActivityIndicatorView *loading;
 
-/** Reference to an instance of the event class. */
+/** Reference to the button that allows the user to pick the selected event to upload to. */
 @property IBOutlet UIButton* showPickerButton;
 @property IBOutlet UIButton* uploadButton;
 -(IBAction)showEventPicker;

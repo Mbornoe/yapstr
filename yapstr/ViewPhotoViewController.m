@@ -22,6 +22,8 @@
 @synthesize currentPic;
 @synthesize imageView;
 @synthesize loading;
+
+/** Initial setup of the ViewPhotoViewContoller. */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -62,15 +64,13 @@
     [alert show];
 }
 
-/** Requests selected pictured from camera roll to be presented, unused method, apples imagepicker is used instead
- */
+/** Requests selected pictured from camera roll to be presented, unused method, apples imagepicker is used instead. */
 - (void) requestPhotoFromCameraRoll
 {
     
 }
 
-/** Requests a photo from the server to be presented.
- */
+/** Requests a photo from the server to be presented. */
 - (void) requestPhotoFromServer{
     Photo *photo = [photos objectAtIndex:currentPic];
     NSURL *url = [NSURL URLWithString:photo.photoPath];
@@ -95,7 +95,8 @@
 }
 
 /** Shows the photo that the user wants to be presented. */
--(void)showPhoto:(UIImage*)img {
+-(void)showPhoto:(UIImage*)img
+{
     imageView.image = img;
     imageView.hidden=NO;
     [self.loading stopAnimating];

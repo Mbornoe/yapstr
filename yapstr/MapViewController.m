@@ -7,20 +7,24 @@
  *
  * @section DESCRIPTION
  *
- * The class handles all interaction with the Map.
+ * The class handles presentation and all interaction with the Map. 
  */
 
 #import "MapViewController.h"
 
 @interface MapViewController ()
+/** Refrence to the selected event on the map. */
 @property Event* selectedEvent;
+
 @end
+
 @implementation MapViewController
 
 @synthesize events;
 @synthesize mapView;
 @synthesize selectedEvent;
 
+/** Initial setup, requesting events from server and setting up delegate for getting location. */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -28,8 +32,38 @@
     events = [NetworkDriver regEvents];
     [self plotEvents];
     mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
- 
 }
+
+/** Initial setup of map view and slideing menu. */
+- (void)viewWillAppear:(BOOL)animated {
+    mapView.delegate = self;
+    mapView.showsUserLocation = YES;
+    [super viewWillAppear:animated];
+    
+    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    }
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
+
+/** Center on user as soon as the view appears. */
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self centerOnUser];
+}
+
+/** Center the map view on the user's location, with an area of 5km*5km. */
+- (void)centerOnUser
+{
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = mainDelegate.myLocation.latitude;
+    zoomLocation.longitude= mainDelegate.myLocation.longitude;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 5000, 5000);
+    [mapView setRegion:viewRegion animated:YES];
+}
+
+
+/** Plot events on map. */
 - (void)plotEvents {
     for (id<MKAnnotation> annotation in mapView.annotations)
     {
@@ -63,48 +97,28 @@
         vs.event=selectedEvent;
     }
 }
+
+/** Show icons on the map, representing each of the events. */
 - (MKAnnotationView *)mapView:(MKMapView *)unused viewForAnnotation:(id <MKAnnotation>)annotation {
     static NSString *identifier = @"Event";
-    if ([annotation isKindOfClass:[Event class]]) {
-        
+    if ([annotation isKindOfClass:[Event class]])
+    {
         MKAnnotationView *annotationView = (MKAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-        if (annotationView == nil) {
+        if (annotationView == nil)
+        {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"partyIcon.png"];//here we use a nice image instead of the default pins
+            annotationView.image = [UIImage imageNamed:@"partyIcon.png"]; //here we use a nice image instead of the default pins
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        } else {
+        }
+        else
+        {
             annotationView.annotation = annotation;
         }
         return annotationView;
-    }
-    
+    }    
     return nil;
-}
-
-- (void)centerOnUser
-{
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = mainDelegate.myLocation.latitude;
-    zoomLocation.longitude= mainDelegate.myLocation.longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 5000, 5000);
-    [mapView setRegion:viewRegion animated:YES];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    mapView.delegate = self;
-    mapView.showsUserLocation = YES;
-    [super viewWillAppear:animated];
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    }
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-       [self centerOnUser];  
 }
 
 @end

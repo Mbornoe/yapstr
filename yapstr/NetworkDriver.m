@@ -80,8 +80,10 @@
     NSString *locationJSON = [self parseToJSON:locationDict];
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];    
     NSString *typeJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/EventController/getEvents?data=%@",locationJSON];
-    NSURL *typeJSONUrl = [NSURL URLWithString:typeJSONUrlString];   
+    NSURL *typeJSONUrl = [NSURL URLWithString:typeJSONUrlString];
     NSData *jsonData = [NSData dataWithContentsOfURL:typeJSONUrl];
+    NSString *test = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", test);
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     NSArray *events = [json objectForKey:@"EventsList"];
     for(NSDictionary *event in events)

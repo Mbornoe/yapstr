@@ -21,6 +21,7 @@
 @synthesize snappedPhoto;
 @synthesize imageView;
 
+/** Initial setup, resizing and showing the snapped image. */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
