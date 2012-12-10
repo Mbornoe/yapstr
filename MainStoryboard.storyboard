@@ -345,7 +345,14 @@
                             <outletCollection property="gestureRecognizers" destination="KcV-rw-XTl" appends="YES" id="GK7-3G-VgF"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="eZK-sx-vxz"/>
+                    <navigationItem key="navigationItem" id="eZK-sx-vxz">
+                        <barButtonItem key="rightBarButtonItem" title="delete" id="JCM-S6-ecR">
+                            <color key="tintColor" red="0.78431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="deleteFlag:" destination="UW8-4t-S8c" id="I9r-lP-NZQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="al2-V4-0jD" id="XDt-OO-XY9"/>
                         <outlet property="loading" destination="Q6i-nc-iuu" id="1z0-Xw-cGS"/>
@@ -601,7 +608,6 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ss5-PX-pKe">
                                 <items>
                                     <navigationItem id="XNi-rU-YMQ">
-                                        <nil key="title"/>
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="clb-By-i2u">
                                             <connections>
                                                 <segue destination="Npf-Tc-tQQ" kind="modal" identifier="backFromCreateEvent" id="jtp-2K-Ftj"/>
@@ -640,11 +646,9 @@
                             <constraint firstItem="rr9-pJ-s7A" firstAttribute="leading" secondItem="7Mn-ej-wsF" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="jSS-KK-3Ay"/>
                             <constraint firstItem="Ss5-PX-pKe" firstAttribute="leading" secondItem="Y5a-7P-uog" secondAttribute="leading" type="default" id="kYL-oM-sdV"/>
                             <constraint firstItem="7Mn-ej-wsF" firstAttribute="top" secondItem="Y5a-7P-uog" secondAttribute="top" constant="59" id="mkr-ua-xlb"/>
-                            <constraint firstItem="jQ3-tG-IFc" firstAttribute="leading" secondItem="Y5a-7P-uog" secondAttribute="leading" constant="95" id="o1s-5B-gkc"/>
                             <constraint firstItem="aN8-qh-5zj" firstAttribute="leading" secondItem="aTN-CU-z5d" secondAttribute="leading" type="default" id="q7X-EI-Zc0"/>
                             <constraint firstItem="aTN-CU-z5d" firstAttribute="top" secondItem="jEx-Cx-Fre" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qUF-bI-Sjq"/>
                             <constraint firstItem="aTN-CU-z5d" firstAttribute="leading" secondItem="jEx-Cx-Fre" secondAttribute="leading" type="default" id="twq-pq-N2a"/>
-                            <constraint firstItem="jQ3-tG-IFc" firstAttribute="top" secondItem="aN8-qh-5zj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zL5-c0-S3e"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7us-el-vVv"/>
@@ -677,6 +681,5 @@
         <segue reference="xtK-uh-sDg"/>
         <segue reference="WFX-CD-Z6q"/>
         <segue reference="jtp-2K-Ftj"/>
-        <segue reference="BEK-Hz-goO"/>
     </inferredMetricsTieBreakers>
 </document>

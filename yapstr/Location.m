@@ -7,15 +7,19 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The purpose of this class is to deliver create an object which contains longitude and latitude informations.
  */
 
 #import "Location.h"
 
 @implementation Location
+
+/** The compiler to create getter/setters for the following properties */
 @synthesize longitude;
 @synthesize latitude;
--(id) initWithLatitude: (double)inLatitude andLongitude: (double)inLongitude{
+
+/** Method used to set the latitude and longitude coordinates. */
+-(id) initWithLatitude:(float)inLatitude andLongitude:(float)inLongitude{
     self.latitude = inLatitude;
     self.longitude = inLongitude;
     return self;

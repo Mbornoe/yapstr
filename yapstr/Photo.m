@@ -7,35 +7,70 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The purpose of this class is to deliver a information of a photo on the external server. The class contains info about path to the image and its thumbnail, userid, a Location object, eventID and a photoID.
  */
 
 #import "Photo.h"
 
 @implementation Photo
 
-- (void) startCamera
+@synthesize img;
+
+-(UIImage*)resizeImg:(UIImage*)sourceImage
 {
+    UIImage *newImage = nil;
+    CGSize imageSize = sourceImage.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+   
+    CGFloat targetWidth = 640;
+    CGFloat targetHeight = 920;
+     CGSize targetSize = CGSizeMake(targetWidth, targetHeight);
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
     
-}
-- (void) takePhoto
-{
+    if (CGSizeEqualToSize(imageSize, targetSize) == NO)
+    {
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+        
+        if (widthFactor > heightFactor)
+            scaleFactor = widthFactor; // scale to fit height
+        else
+            scaleFactor = heightFactor; // scale to fit width
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+        // center the image
+        if (widthFactor > heightFactor)
+        {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        }
+        else
+            if (widthFactor < heightFactor)
+            {
+                thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+            }
+    }
     
-}
-- (void) showPhoto
-{
+    UIGraphicsBeginImageContext(targetSize); // this will crop
     
-}
-- (void) setDeleteFlag
-{
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
     
-}
-- (void) selectPhotoFromCameraRoll
-{
+    [sourceImage drawInRect:thumbnailRect];
     
-}
-- (void) requestPhotosFromServer
-{
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    if(newImage == nil)
+        NSLog(@"could not scale image");
     
+    //pop the context to get back to the default
+    UIGraphicsEndImageContext();
+    return newImage;
 }
+
 @end

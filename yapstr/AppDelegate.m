@@ -1,20 +1,33 @@
-//
-//  AppDelegate.m
-//  yapstr
-//
-//  Created by Morten Bornø Jensen on 14/11/12.
-//  Copyright (c) 2012 AAU_ITC5. All rights reserved.
-//
+/**
+ * @file AppDelegate.m
+ * @author ITC5 Group 550
+ * @date Fall 2012
+ * @version 1.0
+ *
+ *
+ * @section DESCRIPTION
+ *
+ *
+ */
 
 #import "AppDelegate.h"
 
 @implementation AppDelegate
 @synthesize myUser;
-
+@synthesize locationManager;
+@synthesize myLocation;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     myUser = [[User alloc] init];
+    myLocation = [[Location alloc] init];
+    
+    /** Start determining location */
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    
     return YES;
 }
 							
@@ -44,5 +57,52 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+/** Obtaining location using the CoreLocation framework */
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *currentLocation = [locations lastObject];
+    
+    if (currentLocation != nil) {
+        myLocation.longitude =  currentLocation.coordinate.longitude;
+        myLocation.latitude =  currentLocation.coordinate.latitude;
+    }
+}
+
+
+/** Error handling for locationManager
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSString *errorString = [[NSString alloc] init];
+    
+    switch (error.code) {
+        case kCLErrorLocationUnknown:
+            errorString = @"Location unknown";
+            break;
+            
+        case kCLErrorDenied:
+            errorString = @"Access denied";
+            break;
+            
+        case kCLErrorNetwork:
+            errorString = @"No network coverage";
+            break;
+            
+        case kCLErrorDeferredAccuracyTooLow:
+            errorString = @"Accuracy is too low to display";
+            break;
+            
+        default:
+            break;
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting location"
+                                                    message:errorString
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+*/
 
 @end

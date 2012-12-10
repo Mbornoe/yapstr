@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The class hold properties of the user on the mobile client.
  */
 
 #import <Foundation/Foundation.h>
@@ -15,10 +15,19 @@
 
 @interface User : NSObject
 
+/** Parameter which is used as a container for the user's name. */
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSNumber *userID;
-@property (strong, nonatomic) NSString *facebookID;
 
+/** Parameter which is used as a container for the user's ID. */
+@property (strong, nonatomic) NSNumber *userId;
+
+/** Parameter which is used as a container for the user's Facebook ID. */
+@property (strong, nonatomic) NSString *facebookId;
+
+/** Method for debugging. Printing the name, userID and facebookID when executed. */
 - (void)dumpUserDataInTerminal;
+
+/** Method that clear the name, userID and facebookID by declaring it to nil. */
 - (void)clearUser;
+
 @end

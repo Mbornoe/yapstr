@@ -7,25 +7,38 @@
  *
  * @section DESCRIPTION
  *
- *
+ * The class hold properties of the user on the mobile client.
  */
 
 #import "User.h"
 
 @implementation User
-@synthesize facebookID, name, userID;
 
+/** The compiler to create getter/setters for the following properties */
+@synthesize facebookId, name, userId;
+
+
+/** Methods for debugging. Printing the name, userID and facebookID when executed. */
 - (void)dumpUserDataInTerminal{
+    /** Printing name. */
     NSLog(@"Name: %@", name);
-    NSLog(@"userID: %@", userID);
-    NSLog(@"facebookID: %@", facebookID);
+    
+    /** Printing userID. */
+    NSLog(@"userID: %@", userId);
+    
+    /** Printing facebookID. */
+    NSLog(@"facebookID: %@", facebookId);
 }
 
+
+/** Method that clear the name, userID and facebookID by declaring it to nil. */
 - (void)clearUser{
+    /** Printing a debugging notation to make sure the User Data is cleared.. */
     NSLog(@"Clear User Data");
+    
     name = nil;
-    userID = nil;
-    facebookID = nil;
+    userId = nil;
+    facebookId = nil;
 }
 
 @end

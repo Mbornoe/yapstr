@@ -11,16 +11,32 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "PhotoCollectionViewController.h"
+#import "NetworkDriver.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+
 
 @interface EventViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *tableView;
 }
+
+/** Refernce to a NSArray that held all of the Events.*/
 @property (strong) NSArray *events;
+
+/** Reference to a UITableView that contain all of the Events in a table.*/
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+/** Reference to the ActivityIndicatorView that are used to indicate that the method is currently loading.  */
 @property (strong) IBOutlet UIActivityIndicatorView *loading;
-- (void) requestEvents;
+
+
+/** This method requests a list of all the Event's on the external server.*/
+- (void) requestEventList;
+
+/** Selects which event the user wants to see the contents of. */
 - (void) selectEvent;
-- (void) showEvent;
-- (void) showEvents;
+
 
 @end

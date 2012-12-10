@@ -1,16 +1,17 @@
-//
-//  PreviewPhotoViewController.m
-//  yapstr
-//
-//  Created by Jonas Markussen on 27/11/12.
-//  Copyright (c) 2012 AAU_ITC5. All rights reserved.
-//
+/**
+ * @file  PreviewPhotoViewController.m
+ * @author ITC5 Group 550
+ * @date Fall 2012
+ * @version 1.0
+ *
+ *
+ * @section DESCRIPTION
+ *
+ *
+ */
 
 #import "PreviewPhotoViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "ECSlidingViewController.h"
-#import "MenuViewController.h"
-#import "SelectEventViewController.h"
+
 
 @interface PreviewPhotoViewController ()
 
@@ -24,19 +25,19 @@
 {
     [super viewDidLoad];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-	self.imageView.image=self.snappedPhoto;
+	Photo *photo = [[Photo alloc] init];
+    photo.img = self.snappedPhoto;
+    self.imageView.image=[photo resizeImg:photo.img];
 }
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"PreviewToSelect"]){
         SelectEventViewController *vc = (SelectEventViewController *)[segue destinationViewController];
-        vc.image=self.snappedPhoto;
-        vc.imageView.image = vc.image;
+        /** Copy of image for uploading */
+        vc.image=self.imageView.image;
+        /** Copy of image for previewing */
+        vc.imageView.image = self.imageView.image;
     }
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

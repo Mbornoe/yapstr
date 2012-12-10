@@ -11,7 +11,6 @@
  */
 
 #import "MenuViewController.h"
-#import "LoginViewController.h"
 
 @interface MenuViewController ()
 
@@ -43,6 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+/** An IBAction button that is used to navigate to the Take Photo View. */
 - (IBAction)takePhotoButton:(id)sender {
     NSString *identifier = [NSString stringWithFormat:@"cameraView"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
@@ -54,6 +54,8 @@
         [self.slidingViewController resetTopView];
     }];
 }
+
+/** An IBAction button that is used to navigate to the View Event View. */
 - (IBAction)viewEventButton:(id)sender {
     NSString *identifier = [NSString stringWithFormat:@"eventView"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
@@ -66,12 +68,13 @@
     }];
 }
 
+
+/** An IBAction button that is used to navigate to the Login View*/
 - (IBAction)logout:(id)sender {
     [self performSegueWithIdentifier:@"logoutSague" sender:self];
 }
 
-
-
+/** An IBAction button that is used to navigate to the Upload Photo View*/
 - (IBAction)uploadPhotoButton:(id)sender {
     NSString *identifier = [NSString stringWithFormat:@"SelectPhoto"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
