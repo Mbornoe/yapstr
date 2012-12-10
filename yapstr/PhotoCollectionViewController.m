@@ -53,8 +53,9 @@
     Photo *tempPhoto = [Photo alloc];
     tempPhoto= [photoList objectAtIndex:[indexPath row]];
     NSURL *url = [NSURL URLWithString:tempPhoto.thumpnailPath];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc] initWithData:data];
+    
+    UIImage *img = [NetworkDriver reqPhotoFromServer:url];
+    
     PhotoCollectionViewCell *cvc = (PhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cvc.imageView.image = img;
     cvc.contentMode = UIViewContentModeScaleToFill;
