@@ -127,14 +127,16 @@
 /** Method allowing upload of event. Takes an event object as input parameters. */
 + (Event*)uploadEvent:(Event*)eventIn;
 {
+    NSDictionary *location = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [NSString stringWithFormat:@"%f",eventIn.location.longitude], @"longitude",
+                              [NSString stringWithFormat:@"%f",eventIn.location.latitude], @"latitude", nil];
     NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                eventIn.name, @"name",
                                eventIn.privateOn, @"privateOn",
                                eventIn.date, @"date",
                                eventIn.description, @"description",
                                eventIn.password, @"password",
-                               [NSString stringWithFormat:@"%f",eventIn.location.longitude], @"longitude",
-                               [NSString stringWithFormat:@"%f",eventIn.location.latitude], @"latitude",
+                               location, @"location",
                                nil];
     NSString *eventJSON = [self parseToJSON:eventDict];
     NSString *eventJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/EventController/storeEvent/?data=%@",eventJSON];
