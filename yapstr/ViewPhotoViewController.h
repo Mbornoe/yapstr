@@ -32,22 +32,19 @@
 @property (strong) IBOutlet UIActivityIndicatorView *loading;
 
 /** Reference to a IBAction that is used when the user swipes right.*/
--(IBAction)swipeRight:(id)sender;
+-(IBAction)nextPhoto:(id)sender;
 
 /** Reference to a IBAction that is used when the user swipes left.*/
--(IBAction)swipeLeft:(id)sender;
-
-/** Reference to a IBAction that is used when the user markes a photo for deletion.*/
-- (IBAction)deleteFlag:(id)sender;
+-(IBAction)previousPhoto:(id)sender;
 
 /** Requests a photo from the server to be presented. */
-- (void) requestPhotoFromServer;
+- (void) requestPhoto;
 
 /** Shows the photo that the user wants to be presented. */
 - (void)showPhoto:(UIImage*)img;
 
 /** Method that can be used in case the user wants a picture deleted. */
-- (void) deleteFlag;
+- (IBAction)requestSetDeleteFlag;
 
 /** Method that requests the photos from server. */
 - (void) loadPhoto;

@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- * The class handles presentation and all interaction with the Map. 
+ * The class handles presentation and all interaction with the Map.
  */
 
 #import <UIKit/UIKit.h>

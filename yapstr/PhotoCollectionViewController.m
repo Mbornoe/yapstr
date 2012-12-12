@@ -36,7 +36,7 @@
     static NSString *identifier = @"PhotoCell";
     PhotoCollectionViewCell *cvc = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cvc.loading startAnimating];
-   
+    
     NSOperationQueue *queue = [NSOperationQueue new];
     NSInvocationOperation *operation = [[NSInvocationOperation alloc]
                                         initWithTarget:self
@@ -47,14 +47,14 @@
     return cvc;
 }
 
-/** Requests all the thumbnails photos to a photoList, afterwards they are presented in the cell image view(cvc.imageview). 
+/** Requests all the thumbnails photos to a photoList, afterwards they are presented in the cell image view(cvc.imageview).
  */
 - (void)requestPhotosFromServer:(NSIndexPath*)indexPath {
     Photo *tempPhoto = [Photo alloc];
     tempPhoto= [photoList objectAtIndex:[indexPath row]];
     NSURL *url = [NSURL URLWithString:tempPhoto.thumpnailPath];
     
-    UIImage *img = [NetworkDriver reqPhotoFromServer:url];
+    UIImage *img = [NetworkDriver requestPhoto:url];
     
     PhotoCollectionViewCell *cvc = (PhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cvc.imageView.image = img;
@@ -77,7 +77,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }

@@ -7,7 +7,7 @@
  *
  * @section DESCRIPTION
  *
- * The class handles presentation and all interaction with the Map. 
+ * The class handles presentation and all interaction with the Map.
  */
 
 #import "MapViewController.h"
@@ -28,9 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.   
-    events = [NetworkDriver regEvents];
-    [self plotEvents];
+    // Do any additional setup after loading the view.
+    events = [NetworkDriver requestEvents];
+    for (Event *event in events) {
+        CLLocationCoordinate2D coordinate;
+        coordinate.latitude = event.location.latitude;
+        coordinate.longitude = event.location.longitude;
+        [event setCoordinate:coordinate];
+        [mapView addAnnotation:event];
+    }
     mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
 }
 
@@ -46,38 +52,6 @@
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
-/** Center on user as soon as the view appears. */
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self centerOnUser];
-}
-
-/** Center the map view on the user's location, with an area of 5km*5km. */
-- (void)centerOnUser
-{
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = mainDelegate.myLocation.latitude;
-    zoomLocation.longitude= mainDelegate.myLocation.longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 5000, 5000);
-    [mapView setRegion:viewRegion animated:YES];
-}
-
-
-/** Plot events on map. */
-- (void)plotEvents {
-    for (id<MKAnnotation> annotation in mapView.annotations)
-    {
-        [mapView removeAnnotation:annotation];
-    }
-    for (Event *event in events)
-    {
-        CLLocationCoordinate2D coordinate;
-        coordinate.latitude = event.location.latitude;
-        coordinate.longitude = event.location.longitude;
-        [event setCoordinate:coordinate];
-        [mapView addAnnotation:event];
-    }
-}
 
 /** Handles passing the selected event along to the PhotoCollectionViewController when the user selects an event. */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
@@ -117,7 +91,7 @@
             annotationView.annotation = annotation;
         }
         return annotationView;
-    }    
+    }
     return nil;
 }
 

@@ -20,13 +20,13 @@
 @interface NetworkDriver : NSObject
 
 /** Method inform the Server that a certain photo has been flaged for deletion. Takes the said photo object as input parameter. */
-+ (void)reqSetDeleteFlag:(Photo*)photo;
++ (void)requestSetDeleteFlag:(Photo*)photo;
 
 /** Method allowing upload of photo Takes an image and an event object as input parameters. */
 + (void)uploadPhoto:(UIImage*)image withEvent:(Event*)event;
 
 /** Method for requesting all events. */
-+ (NSArray*)regEvents;
++ (NSArray*)requestEvents;
 
 /** Method for requesting the events in the in the vicinity of the users location. Takes an event object holding the users current location as input parameter. */
 + (NSArray*)regEvents:(Location*)location;
@@ -40,6 +40,6 @@
 /** Method for requesting userId and information. */
 + (User*) regUserId:(FacebookUser*)facebookUser;
 
-+ (UIImage*) reqPhotoFromServer:(NSURL*)url;
++ (UIImage*) requestPhoto:(NSURL*)url;
 
 @end

@@ -57,7 +57,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self requestEventList];
+    [self requestEvents];
 }
 
 
@@ -71,9 +71,9 @@
 }
 
 /** This method requests a list of all the Event's on the external server.*/
-- (void) requestEventList
+- (void) requestEvents
 {
-  events = [NetworkDriver regEvents];
+    events = [NetworkDriver requestEvents];
 }
 
 /** Selects which event the user wants to see the contents of. */

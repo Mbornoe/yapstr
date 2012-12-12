@@ -54,7 +54,7 @@
     CGRect layerRect = [[[self view] layer] bounds];
 	[previewLayer setBounds:layerRect];
 	[previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect),
-                                                                  CGRectGetMidY(layerRect))];
+                                          CGRectGetMidY(layerRect))];
 	[[[self view] layer] addSublayer:previewLayer];
     
     
@@ -64,7 +64,7 @@
     [takePhotoButton setFrame:CGRectMake(0, 65, 320, 640)];
     [takePhotoButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
     [[self view] addSubview:takePhotoButton];
-       
+    
     /** Configuring camera */
     [self setStillImageOutput:[[AVCaptureStillImageOutput alloc] init]];
     NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey,nil];
@@ -82,7 +82,7 @@
             break;
         }
     }
-
+    
     [captureSession addOutput:[self stillImageOutput]];
     /** Starts the camera.*/
 	[captureSession startRunning];
@@ -133,7 +133,7 @@
                                                              NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
                                                              UIImage *img = [[UIImage alloc] initWithData:imageData];
                                                              [self performSelectorOnMainThread:@selector(doSegue:) withObject:img waitUntilDone:NO];
-                                                             }];
+                                                         }];
 }
 
 /** Method for storing captured image, to be passed on to PreviewPhotoViewController afterwards. */

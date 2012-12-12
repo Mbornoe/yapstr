@@ -33,18 +33,18 @@
 }
 
 /** Reference to a IBAction that is used when the user swipes right. When this is done a new picture will be loaded in the imageview due to decreasement of the integer currentPic. */
--(IBAction)swipeRight:(id)sender {
+-(IBAction)previousPhoto:(id)sender {
     NSLog(@"swipped right");
     if(currentPic>0) {
         currentPic--;
         NSLog(@"Decremented to: %i", self.currentPic);
         [self loadPhoto];
     }
-
+    
 }
 
 /** Reference to a IBAction that is used when the user swipes left. When this is done a new picture will be loaded in the imageview due to increasement of the integer currentPic. */
--(IBAction)swipeLeft:(id)sender {
+-(IBAction)nextPhoto:(id)sender {
     NSLog(@"swipped left");
     if(currentPic<([photos count]-1)) {
         currentPic++;
@@ -54,8 +54,8 @@
 }
 
 /** Method that can be used in case the user wants a picture deleted. */
-- (IBAction)deleteFlag:(id)sender {
-    [NetworkDriver reqSetDeleteFlag:[photos objectAtIndex:currentPic]];
+- (IBAction)requestSetDeleteFlag {
+    [NetworkDriver requestSetDeleteFlag:[photos objectAtIndex:currentPic]];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete"
                                                     message:@"Your photo is requested deleted"
                                                    delegate:nil
@@ -64,18 +64,12 @@
     [alert show];
 }
 
-/** Requests selected pictured from camera roll to be presented, unused method, apples imagepicker is used instead. */
-- (void) requestPhotoFromCameraRoll
-{
-    
-}
-
 /** Requests a photo from the server to be presented. */
-- (void) requestPhotoFromServer{
+- (void) requestPhoto{
     Photo *photo = [photos objectAtIndex:currentPic];
     NSURL *url = [NSURL URLWithString:photo.photoPath];
     NSLog(@"%@",url);
-    UIImage *img = [NetworkDriver reqPhotoFromServer:url];
+    UIImage *img = [NetworkDriver requestPhoto:url];
     [self performSelectorOnMainThread:@selector(showPhoto:) withObject:img waitUntilDone:NO];
 }
 
@@ -88,7 +82,7 @@
     NSOperationQueue *queue = [NSOperationQueue new];
     NSInvocationOperation *operation = [[NSInvocationOperation alloc]
                                         initWithTarget:self
-                                        selector:@selector(requestPhotoFromServer)
+                                        selector:@selector(requestPhoto)
                                         object:nil];
     [queue addOperation:operation];
     [self.loading startAnimating];

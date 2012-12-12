@@ -70,14 +70,19 @@
 }
 
 /** Creating an event using the information collected from user and location data */
-- (IBAction)createEvent
+- (IBAction)uploadEvent
 {
+    //Getting the date
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    //Generating the event!
     Event *newEvent = [[Event alloc] init];
     newEvent.location = [[Location alloc] init];
     newEvent.name =[name text];
     newEvent.description = [description text];
     newEvent.password = [password text];
-    newEvent.date = [self getDateString];
+    newEvent.date = strDate;
     if ([privateSwitch isOn])
     {
         newEvent.privateOn = @"1";
@@ -98,15 +103,6 @@
     [self performSegueWithIdentifier:@"createdEventToUpload" sender:self];
 }
 
-/** Fetching the current date GTM+0 */
-- (NSString*) getDateString
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
-    return strDate;
-}
-
 /** Handling Segues back to SelectEventViewController */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -124,14 +120,10 @@
 }
 
 /** Handling of the private/public switch */
-- (IBAction)checkPrivat
-{
-    if ([privateSwitch isOn])
-    {
+- (IBAction)checkPrivat {
+    if ([privateSwitch isOn]) {
         password.hidden=NO;
-    }
-    else
-    {
+    } else {
         password.hidden=YES;
     }
 }

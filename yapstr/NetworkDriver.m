@@ -15,10 +15,10 @@
 @implementation NetworkDriver
 
 /** Method inform the Server that a certain photo has been flaged for deletion. Takes the said photo object as input parameter. */
-+ (void)reqSetDeleteFlag:(Photo*)photo{
++ (void)requestSetDeleteFlag:(Photo*)photo{
     NSDictionary *photoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: photo.photoID, @"photoId", nil];
     NSString *json = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/setDeleteFlag?data=%@", [self parseToJSON:photoDictionary]];
-    NSURL *jsonURL = [NSURL URLWithString:json];    
+    NSURL *jsonURL = [NSURL URLWithString:json];
     [NSData dataWithContentsOfURL:jsonURL];
 }
 
@@ -50,7 +50,7 @@
 }
 
 /** Method for requesting all events from the Server. */
-+ (NSArray*)regEvents {
++ (NSArray*)requestEvents {
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];
     NSURL *jsonUrl = [NSURL URLWithString:@"http://12gr550.lab.es.aau.dk/EventController/getEvents"];
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonUrl];
@@ -73,12 +73,12 @@
 + (NSArray*)regEvents:(Location*)location
 {
     NSDictionary *coordinateDict =  [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [NSString stringWithFormat:@"%f",location.longitude], @"longitude",
-                                    [NSString stringWithFormat:@"%f",location.latitude], @"latitude",
+                                     [NSString stringWithFormat:@"%f",location.longitude], @"longitude",
+                                     [NSString stringWithFormat:@"%f",location.latitude], @"latitude",
                                      nil];
     NSDictionary *locationDict = [[NSDictionary alloc] initWithObjectsAndKeys: coordinateDict, @"location", nil];
     NSString *locationJSON = [self parseToJSON:locationDict];
-    NSMutableArray* returnArray = [[NSMutableArray alloc] init];    
+    NSMutableArray* returnArray = [[NSMutableArray alloc] init];
     NSString *typeJSONUrlString = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/EventController/getEvents?data=%@",locationJSON];
     NSURL *typeJSONUrl = [NSURL URLWithString:typeJSONUrlString];
     NSData *jsonData = [NSData dataWithContentsOfURL:typeJSONUrl];
@@ -101,7 +101,7 @@
 
 /** Method for requesting the photos associated with a certain event. Takes the event object that the photos are associated with as input parameter. */
 + (NSArray*)reqPhotosFromServer:(Event*)event
-{     
+{
     NSDictionary *jsonTypeDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%i", [[event eventId] integerValue]], @"eventId", nil];
     NSString *url = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/getPhotos?data=%@", [self parseToJSON:jsonTypeDictionary]];
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];
@@ -183,11 +183,11 @@
 }
 
 
-+ (UIImage*) reqPhotoFromServer:(NSURL*)url
++ (UIImage*) requestPhoto:(NSURL*)url
 {
     NSData *data = [NSData dataWithContentsOfURL:url];
     return [[UIImage alloc] initWithData:data];
-
+    
 }
 
 @end

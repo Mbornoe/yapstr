@@ -19,7 +19,7 @@
 /** CreateEventViewController is a view controller that recives userinput and collects location data, to create an event that will be uploaded to a server's database. */
 @interface CreateEventViewController : UIViewController <UITextFieldDelegate,CLLocationManagerDelegate>
 {
-/** Reference to the AppDelegate, needed to get the users location. */
+    /** Reference to the AppDelegate, needed to get the users location. */
     AppDelegate *mainDelegate;
 }
 
@@ -45,12 +45,9 @@
 @property UIImage* image;
 
 /** Creating an event using the collected user info and location data. */
-- (IBAction)createEvent;
+- (IBAction)uploadEvent;
 
 /** Switching between private and public event is done using */
 - (IBAction)checkPrivat;
-
-/** Fetching the current date GTM+0 */
-- (NSString*) getDateString;
 
 @end

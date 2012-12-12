@@ -33,7 +33,7 @@
 
 
 /** This method requests a list of all the Event's on the external server.*/
-- (void) requestEventList;
+- (void) requestEvents;
 
 /** Selects which event the user wants to see the contents of. */
 - (void) selectEvent;
