@@ -61,11 +61,6 @@
 }
 
 
-/** An IBAction button that is used to navigate to the Login View*/
-- (IBAction)logout {
-    [self performSegueWithIdentifier:@"logoutSague" sender:self];
-}
-
 /** An IBAction button that is used to navigate to the Upload Photo View*/
 - (IBAction)uploadPhoto {
     NSString *identifier = [NSString stringWithFormat:@"SelectPhoto"];

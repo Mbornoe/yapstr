@@ -70,7 +70,7 @@
 }
 
 /** Method for requesting the events in the in the vicinity of the users location. Takes an event object holding the users current location as input parameter. */
-+ (NSArray*)regEvents:(Location*)location
++ (NSArray*)requestEvents:(Location*)location
 {
     NSDictionary *coordinateDict =  [NSDictionary dictionaryWithObjectsAndKeys:
                                      [NSString stringWithFormat:@"%f",location.longitude], @"longitude",
@@ -100,7 +100,7 @@
 }
 
 /** Method for requesting the photos associated with a certain event. Takes the event object that the photos are associated with as input parameter. */
-+ (NSArray*)reqPhotosFromServer:(Event*)event
++ (NSArray*)requestPhotosFromServer:(Event*)event
 {
     NSDictionary *jsonTypeDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%i", [[event eventId] integerValue]], @"eventId", nil];
     NSString *url = [NSString stringWithFormat:@"http://12gr550.lab.es.aau.dk/PhotoController/getPhotos?data=%@", [self parseToJSON:jsonTypeDictionary]];
@@ -160,7 +160,7 @@
 }
 
 
-+ (User*) regUserId:(FacebookUser*)facebookUser
++ (User*) reqUserId:(FacebookUser*)facebookUser
 {
     NSDictionary *dataToServer = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [facebookUser getFacebookID], @"facebookId",

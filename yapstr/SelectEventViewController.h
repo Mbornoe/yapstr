@@ -34,6 +34,9 @@
 @property UIPickerView* eventPicker;
 
 @property UILabel* eventLabel;
+ 
+/** Method for uploading the image to the server. */
+- (IBAction)uploadImage;
 
 /** Array holding the events recieved from the server. */
 @property NSArray* events;

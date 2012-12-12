@@ -24,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.photoList = [NetworkDriver reqPhotosFromServer:event];
+    self.photoList = [NetworkDriver requestPhotosFromServer:event];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
