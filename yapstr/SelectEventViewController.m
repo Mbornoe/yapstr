@@ -47,7 +47,7 @@
     imageView.image = image;
     
     /** Request list of events from server */
-	events = [NetworkDriver regEvents:location];
+	events = [NetworkDriver requestEvents:location];
     if(event!=nil) {
         eventLabel.text=event.name;
     }
