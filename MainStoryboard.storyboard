@@ -358,12 +358,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqw-a9-tJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Gwh-nv-M4Y">
                     <connections>
-                        <action selector="nextPhoto:" destination="UW8-4t-S8c" id="Cu5-w0-7tQ"/>
+                        <action selector="previousPhoto:" destination="UW8-4t-S8c" id="7hR-zh-VD6"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="KcV-rw-XTl">
                     <connections>
-                        <action selector="previousPhoto:" destination="UW8-4t-S8c" id="Zf1-C9-ktK"/>
+                        <action selector="nextPhoto:" destination="UW8-4t-S8c" id="6SU-Nw-bWG"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
