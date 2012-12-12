@@ -17,16 +17,12 @@
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITabBarControllerDelegate>
 
 /** An IBAction button that is used to navigate to the Take Photo View. */
-- (IBAction)takePhotoButton:(id)sender;
+- (IBAction)takePhoto;
 
 /** An IBAction button that is used to navigate to the View Event View. */
-- (IBAction)viewEventButton:(id)sender;
+- (IBAction)viewEvent;
 
 /** An IBAction button that is used to navigate to the Upload Photo View. */
-- (IBAction)uploadPhotoButton:(id)sender;
-
-/** An IBAction button that is used to navigate to the Login View. */
-- (IBAction)logout:(id)sender;
-
+- (IBAction)uploadPhoto;
 
 @end

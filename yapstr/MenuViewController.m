@@ -18,14 +18,6 @@
 
 @implementation MenuViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -43,7 +35,7 @@
 }
 
 /** An IBAction button that is used to navigate to the Take Photo View. */
-- (IBAction)takePhotoButton:(id)sender {
+- (IBAction)takePhoto{ 
     NSString *identifier = [NSString stringWithFormat:@"cameraView"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     
@@ -56,7 +48,7 @@
 }
 
 /** An IBAction button that is used to navigate to the View Event View. */
-- (IBAction)viewEventButton:(id)sender {
+- (IBAction)viewEvent {
     NSString *identifier = [NSString stringWithFormat:@"eventView"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     
@@ -70,12 +62,12 @@
 
 
 /** An IBAction button that is used to navigate to the Login View*/
-- (IBAction)logout:(id)sender {
+- (IBAction)logout {
     [self performSegueWithIdentifier:@"logoutSague" sender:self];
 }
 
 /** An IBAction button that is used to navigate to the Upload Photo View*/
-- (IBAction)uploadPhotoButton:(id)sender {
+- (IBAction)uploadPhoto {
     NSString *identifier = [NSString stringWithFormat:@"SelectPhoto"];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     
@@ -87,13 +79,5 @@
     }];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if([segue.identifier isEqualToString:@"logoutSague"]){
-        LoginViewController *vc = (LoginViewController *)[segue destinationViewController];
-        vc.logout=YES;
-    }
-
-}
 
 @end
