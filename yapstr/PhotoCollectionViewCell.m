@@ -15,7 +15,7 @@
 @implementation PhotoCollectionViewCell
 @synthesize loading;
 
-- (id)initWithFrame:(CGRect)frame
+/*- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -23,6 +23,6 @@
         [self.loading startAnimating];
     }
     return self;
-}
+}*/
 
 @end

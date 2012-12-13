@@ -42,13 +42,6 @@
     self.password.delegate=self;
 }
 
-/** The create event view should always be shown in Portrait */
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 /** Hiding keyboard when the user resignes it */
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
