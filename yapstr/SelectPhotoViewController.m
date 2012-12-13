@@ -28,17 +28,28 @@
     if(!firstTime)
     {
     // Do any additional setup after loading the view.
+        [self requestPhotosFromCameraRoll];
+    }
+}
+
+- (void)selectPhoto:(UIImage *)pickedImg
+{
+    img = pickedImg;
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [self performSegueWithIdentifier:@"SelectPhotoToPreview" sender:self];
+}
+
+- (void)requestPhotosFromCameraRoll{
+    // Do any additional setup after loading the view.
     imgPicker = [[UIImagePickerController alloc] init];
 	imgPicker.delegate = self;
     imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imgPicker animated:YES completion:nil];
-    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage*)pickedImg editingInfo:(NSDictionary *)editInfo {
-    img = pickedImg;
-    [self dismissModalViewControllerAnimated:NO];
-    [self performSegueWithIdentifier:@"SelectPhotoToPreview" sender:self];    
+    [self selectPhoto:pickedImg];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

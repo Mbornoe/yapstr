@@ -17,7 +17,7 @@
 @end
 
 @implementation LoginViewController
-@synthesize myFacebook, logout;
+@synthesize myFacebook;
 
 NSString *const FacebookDataLoadedNotification =
 @"yapstr_itc:FacebookDataLoadedNotification";
@@ -30,37 +30,27 @@ NSString *const FacebookDataLoadedNotification =
     myFacebook = [[FacebookUser alloc] init];
     self.loginButton.hidden = YES;
     self.loading.hidesWhenStopped = YES;
-    
+
+    /**  Method that is used when the Facebook data has been succesfully loaded, and the application are ready to proceed. */
     [[NSNotificationCenter defaultCenter]
      addObserver:self
-     selector:@selector(facebookDataLoaded:)
+     selector:@selector(collectUserData)
      name:FacebookDataLoadedNotification
      object:nil];
     
-    if (!logout) {
         
-        if ([myFacebook getFacebookID]) {
-            [self collectUserData];
-            NSLog(@"Is login");
-        }
-        else
-        {
-            [self.loading startAnimating];
-            
-            NSLog(@"Is NOT login");
-            
-            if(![self openSessionWithAllowLoginUI:NO]){
-                [self.loading stopAnimating];
-                self.loginButton.hidden = NO;
-            }
-            
-        }
-    }else {
-        self.loginButton.hidden = NO;
-        [mainDelegate.myUser clearUser];
-        [self logFacebookOut];
-    }
-    
+     if ([myFacebook getFacebookID]) {
+         [self collectUserData];
+     }
+     else
+     {
+         [self.loading startAnimating];
+         if(![self sendLoginInfoToFacebook:NO]){
+             [self.loading stopAnimating];
+             self.loginButton.hidden = NO;
+         }
+         
+     }
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -74,39 +64,25 @@ NSString *const FacebookDataLoadedNotification =
     
     [self.loading stopAnimating];
     
-    [mainDelegate.myUser dumpUserDataInTerminal];
-    
-}
-
-/**  Method that is used when the Facebook data has been succesfully loaded, and the application are ready to proceed. */
-- (void)facebookDataLoaded:(NSNotification*)notification {
-    [self collectUserData];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
+    
+    //[mainDelegate.myUser dumpUserDataInTerminal];
+    
 }
 
 /** A button the will log the user in.*/
 - (IBAction)Login:(id)sender {
-    NSLog(@"Button pust");
     [self.loading startAnimating];
-    logout=NO;
-    if ([self openSessionWithAllowLoginUI:YES]){
+    if ([self sendLoginInfoToFacebook:YES]){
         NSLog(@"Kunne Ikke Logge på Facebook!");
         [self.loading stopAnimating];
     }
 }
 
-/** Method that will close the Facebook session and define the related attributes to nil. */
-- (void)logFacebookOut{
-    NSLog(@"Facebook Logout");
-    [FBSession.activeSession closeAndClearTokenInformation];
-    myFacebook.facebookID = nil;
-    myFacebook.name = nil;
-    myFacebook.birthday = nil;
-}
-
 /** Opens a Facebook session using the framework FacebookSDK. */
-- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI { NSLog(@"openSessionWithAllowLoginUI is calld");
+- (BOOL)sendLoginInfoToFacebook:(BOOL)allowLoginUI
+{
     return [FBSession openActiveSessionWithReadPermissions:nil
                                               allowLoginUI:allowLoginUI
                                          completionHandler:^(FBSession *session,
