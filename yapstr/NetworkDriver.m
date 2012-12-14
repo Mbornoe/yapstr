@@ -160,7 +160,7 @@
 }
 
 
-+ (User*) regUserId:(FacebookUser*)facebookUser
++ (User*) requestUserId:(FacebookUser*)facebookUser
 {
     NSDictionary *dataToServer = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [facebookUser getFacebookID], @"facebookId",

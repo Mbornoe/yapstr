@@ -60,7 +60,7 @@ NSString *const FacebookDataLoadedNotification =
 - (void)collectUserData{
     [self.loading startAnimating];
     
-    mainDelegate.myUser = [NetworkDriver regUserId:myFacebook];
+    mainDelegate.myUser = [NetworkDriver requestUserId:myFacebook];
     
     [self.loading stopAnimating];
     

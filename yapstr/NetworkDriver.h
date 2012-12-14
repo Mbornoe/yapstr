@@ -38,7 +38,7 @@
 + (Event*) uploadEvent:(Event*)eventIn;
 
 /** Method for requesting userId and information. */
-+ (User*) regUserId:(FacebookUser*)facebookUser;
++ (User*) requestUserId:(FacebookUser*)facebookUser;
 
 + (UIImage*) requestPhoto:(NSURL*)url;
 
