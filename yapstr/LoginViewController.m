@@ -27,27 +27,12 @@
     myFacebook = [[FacebookUser alloc] init];
     self.loginButton.hidden = YES;
     self.loading.hidesWhenStopped = YES;
-
-    /**  Method that is used when the Facebook data has been succesfully loaded, and the application are ready to proceed. */
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(collectUserData)
-     name:@"yapstr_itc:FacebookDataLoadedNotification"
-     object:nil];
-    
         
-     if ([myFacebook getFacebookID]) {
-         [self collectUserData];
-     }
-     else
-     {
-         [self.loading startAnimating];
-         if(![self sendLoginInfoToFacebook:NO]){
-             [self.loading stopAnimating];
-             self.loginButton.hidden = NO;
-         }
-         
-     }
+    [self.loading startAnimating];
+    if(![self sendLoginInfoToFacebook:NO]){
+        [self.loading stopAnimating];
+        self.loginButton.hidden = NO;
+    }
 }
 
 
@@ -107,10 +92,8 @@
                     myFacebook.name = FBGraphUserUser.name;
                     myFacebook.birthday = FBGraphUserUser.birthday;
                     
+                    [self collectUserData];
                     
-                    [[NSNotificationCenter defaultCenter]
-                     postNotificationName:@"yapstr_itc:FacebookDataLoadedNotification"
-                     object:session];
                 }];
             }
             break;
@@ -121,7 +104,6 @@
         default:
             break;
     }
-    
     
     if (error) {
         
