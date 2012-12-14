@@ -19,20 +19,13 @@
 @implementation LoginViewController
 @synthesize myFacebook, user;
 
-- (void)viewDidLoad {
-    
+- (void)viewDidLoad
+{ 
     [super viewDidLoad];
     NSLog(@"ViewDidLoad");
     user = [[User alloc] init];
     myFacebook = [[FacebookUser alloc] init];
-    self.loginButton.hidden = YES;
     self.loading.hidesWhenStopped = YES;
-        
-    [self.loading startAnimating];
-    if(![self sendLoginInfoToFacebook:NO]){
-        [self.loading stopAnimating];
-        self.loginButton.hidden = NO;
-    }
 }
 
 
@@ -41,7 +34,7 @@
     [self.loading startAnimating];
     
     user = [NetworkDriver requestUserId:myFacebook];
-
+    
     mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     mainDelegate.myUser = user;
     
@@ -59,15 +52,16 @@
 {
     [self.loading startAnimating];
     [FBSession openActiveSessionWithReadPermissions:nil
-                allowLoginUI:allowLoginUI
-                completionHandler:^(FBSession *session,
-                                    FBSessionState state,
-                                    NSError *error) {
-                                             [self sessionStateChanged:session
-                                                    state:state
-                                                    error:error];
-                                              }
+                                       allowLoginUI:allowLoginUI
+                                  completionHandler:^(FBSession *session,
+                                                      FBSessionState state,
+                                                      NSError *error) {
+                                      [self sessionStateChanged:session
+                                                          state:state
+                                                          error:error];
+                                  }
      ];
+
 }
 
 /** Determine if the Facebook session state has been changed. I.e. if the Facebook state has been closed or other errors has occured. */
@@ -85,8 +79,8 @@
                     myFacebook.name = FBGraphUserUser.name;
                     myFacebook.birthday = FBGraphUserUser.birthday;
                     
-                    [self collectUserData];
                     
+                    [self collectUserData];
                 }];
             }
             break;
@@ -97,6 +91,7 @@
         default:
             break;
     }
+    
     
     if (error) {
         

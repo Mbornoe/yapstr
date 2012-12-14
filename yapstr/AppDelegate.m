@@ -16,6 +16,7 @@
 @synthesize myUser;
 @synthesize locationManager;
 @synthesize myLocation;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -68,41 +69,5 @@
         myLocation.latitude =  currentLocation.coordinate.latitude;
     }
 }
-
-
-/** Error handling for locationManager
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSString *errorString = [[NSString alloc] init];
-    
-    switch (error.code) {
-        case kCLErrorLocationUnknown:
-            errorString = @"Location unknown";
-            break;
-            
-        case kCLErrorDenied:
-            errorString = @"Access denied";
-            break;
-            
-        case kCLErrorNetwork:
-            errorString = @"No network coverage";
-            break;
-            
-        case kCLErrorDeferredAccuracyTooLow:
-            errorString = @"Accuracy is too low to display";
-            break;
-            
-        default:
-            break;
-    }
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting location"
-                                                    message:errorString
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-*/
 
 @end

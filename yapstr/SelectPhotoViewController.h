@@ -24,7 +24,7 @@
 /** Reference to the image chosen from the iPhones cameraroll. */
 @property (nonatomic, retain) UIImage *img;
 
-/** Reference to . */
+/** Is used to determine if it is the first time the contriller is loaded. */
 @property BOOL *firstTime;
 
 @end
