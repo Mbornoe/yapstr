@@ -17,16 +17,13 @@
 @end
 
 @implementation LoginViewController
-@synthesize myFacebook;
-
-NSString *const FacebookDataLoadedNotification =
-@"yapstr_itc:FacebookDataLoadedNotification";
+@synthesize myFacebook, user;
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     NSLog(@"ViewDidLoad");
-    mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    user = [[User alloc] init];
     myFacebook = [[FacebookUser alloc] init];
     self.loginButton.hidden = YES;
     self.loading.hidesWhenStopped = YES;
@@ -35,7 +32,7 @@ NSString *const FacebookDataLoadedNotification =
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(collectUserData)
-     name:FacebookDataLoadedNotification
+     name:@"yapstr_itc:FacebookDataLoadedNotification"
      object:nil];
     
         
@@ -53,21 +50,22 @@ NSString *const FacebookDataLoadedNotification =
      }
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    // Do any additional setup after loading the view, typically from a nib.
-}
+
 /** This method collects data about the user. The data that are pulled is facebookID and name. This information should be sent to the external server to see if the user has been using the application before. */
 - (void)collectUserData{
     [self.loading startAnimating];
     
-    mainDelegate.myUser = [NetworkDriver requestUserId:myFacebook];
+    user = [NetworkDriver requestUserId:myFacebook];
+
+    mainDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    mainDelegate.myUser = user;
     
     [self.loading stopAnimating];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
     
-    //[mainDelegate.myUser dumpUserDataInTerminal];
+    [mainDelegate.myUser dumpUserDataInTerminal];
     
 }
 
@@ -102,16 +100,16 @@ NSString *const FacebookDataLoadedNotification =
     switch (state) {
         case FBSessionStateOpen:
             if (!error) {
-                [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> user, NSError *error) {
+                [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> FBGraphUserUser, NSError *error) {
                     
                     /** If we have a valid session, the User data are stored in parameteres */
-                    myFacebook.facebookID = user.id;
-                    myFacebook.name = user.name;
-                    myFacebook.birthday = user.birthday;
+                    myFacebook.facebookID = FBGraphUserUser.id;
+                    myFacebook.name = FBGraphUserUser.name;
+                    myFacebook.birthday = FBGraphUserUser.birthday;
                     
                     
                     [[NSNotificationCenter defaultCenter]
-                     postNotificationName:FacebookDataLoadedNotification
+                     postNotificationName:@"yapstr_itc:FacebookDataLoadedNotification"
                      object:session];
                 }];
             }

@@ -19,14 +19,15 @@
 /** The LoginViewController is a viewcontroller that is used to handle the login session with Facebook and the server */
 @interface LoginViewController : UIViewController{
     FacebookUser* myFacebook;
+    User *user;
     AppDelegate *mainDelegate;
 }
 
-/** Reference to an external String that are used by Facebook. */
-extern NSString *const FacebookDataLoadedNotification;
-
 /** Reference to an instance of FacebookUser from the Facebook Model. */
 @property (strong, nonatomic) FacebookUser* myFacebook;
+
+/** Reference to an instance of User from the User Model. */
+@property (strong, nonatomic) User* user;
 
 /** Reference to the ActivityIndicatorView that are used to indicate that the method is currently loading.  */
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
