@@ -28,10 +28,6 @@
 /** Reference to a UITableView that contain all of the Events in a table.*/
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
-/** Reference to the ActivityIndicatorView that are used to indicate that the method is currently loading.  */
-@property (strong) IBOutlet UIActivityIndicatorView *loading;
-
-
 /** This method requests a list of all the Event's on the external server.*/
 - (void) requestEvents;
 

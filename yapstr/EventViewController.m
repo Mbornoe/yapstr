@@ -19,7 +19,6 @@
 @implementation EventViewController
 @synthesize events;
 @synthesize tableView;
-@synthesize loading;
 
 /** Customize the number of rows in the table view. */
 - (NSInteger)tableView:(UITableView *)unused numberOfRowsInSection:(NSInteger)section {
