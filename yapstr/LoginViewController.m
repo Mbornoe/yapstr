@@ -54,27 +54,20 @@
     
 }
 
-/** A button the will log the user in.*/
-- (IBAction)Login:(id)sender {
-    [self.loading startAnimating];
-    if ([self sendLoginInfoToFacebook:YES]){
-        NSLog(@"Kunne Ikke Logge på Facebook!");
-        [self.loading stopAnimating];
-    }
-}
-
 /** Opens a Facebook session using the framework FacebookSDK. */
-- (BOOL)sendLoginInfoToFacebook:(BOOL)allowLoginUI
+- (IBAction)sendLoginInfoToFacebook:(BOOL)allowLoginUI
 {
-    return [FBSession openActiveSessionWithReadPermissions:nil
-                                              allowLoginUI:allowLoginUI
-                                         completionHandler:^(FBSession *session,
-                                                             FBSessionState state,
-                                                             NSError *error) {
+    [self.loading startAnimating];
+    [FBSession openActiveSessionWithReadPermissions:nil
+                allowLoginUI:allowLoginUI
+                completionHandler:^(FBSession *session,
+                                    FBSessionState state,
+                                    NSError *error) {
                                              [self sessionStateChanged:session
-                                                                 state:state
-                                                                 error:error];
-                                         }];
+                                                    state:state
+                                                    error:error];
+                                              }
+     ];
 }
 
 /** Determine if the Facebook session state has been changed. I.e. if the Facebook state has been closed or other errors has occured. */

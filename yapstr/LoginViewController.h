@@ -36,7 +36,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 
 /** Opens a Facebook session using the framework FacebookSDK. */
-- (BOOL)sendLoginInfoToFacebook:(BOOL)allowLoginUI;
+- (IBAction)sendLoginInfoToFacebook:(BOOL)allowLoginUI;
 
 /** This method collects data about the user. The data that are pulled is facebookID and name. This information should be sent to the external server to see if the user has been using the application before. */
 - (void)collectUserData;
